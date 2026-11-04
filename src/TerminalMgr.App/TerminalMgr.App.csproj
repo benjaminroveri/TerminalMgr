@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
-    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
     <ApplicationIcon>Assets\\TerminalMgr.ico</ApplicationIcon>
     <AssemblyTitle>TerminalMgr</AssemblyTitle>
     <AssemblyVersion>3.0.0</AssemblyVersion>
@@ -21,6 +21,7 @@
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4191.47" />
     <Resource Include="Assets\\TerminalMgr.ico" />
     <Resource Include="Assets\\TerminalMgr.png" />
+
     <Content Include="Terminal\\**\\*\" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="Integrations\\**\\*\" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
