@@ -16,12 +16,12 @@
 
   <!-- Add string resources below. Use the same key names in every language. -->
   <data name="WindowTitle" xml:space="preserve">
-    <value>Terminal Manager</value>
+    <value>TerminalMgr</value>
   </data>
   <data name="LoadingText" xml:space="preserve">
-    <value>Loading…</value>
+    <value>Your Server. A Workplace.</value>
   </data>
   <data name="SettingsTooltip" xml:space="preserve">
-    <value>Configure settings</value>
+    <value>Settings</value>
   </data>
 </root>

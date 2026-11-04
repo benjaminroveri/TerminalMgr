@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- The following fields are required by the .NET resource system. -->
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value>
+  </resheader>
+
+  <!-- Add string resources below. Use the same key names in every language. -->
+  <data name="WindowTitle" xml:space="preserve">
+    <value>TerminalMgr</value>
+  </data>
+  <data name="LoadingText" xml:space="preserve">
+    <value>Ihr Server. Ein Arbeitsplatz.</value>
+  </data>
+  <data name="SettingsTooltip" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+</root>
