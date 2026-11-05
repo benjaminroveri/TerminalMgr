@@ -4,6 +4,8 @@ using Windows.Media.SpeechRecognition;
 
 namespace TerminalMgr.Windows;
 
+using TerminalMgr.App.Resources;
+
 /// <summary>
 /// Windows.Media.SpeechRecognition (the dictation of Windows itself). It records from the default microphone on its own and needs no key
 /// or Azure resource, but Windows only lets it run when "Online speech recognition" is switched on in the privacy settings,
@@ -89,7 +91,7 @@ public sealed class WindowsSpeechEngine(DictationOptions options) : ISpeechEngin
         catch (Exception ex) when (ex.HResult == PrivacyPolicyNotAccepted)
         {
             Fail(generation, new SpeechUnavailableException(
-                "Die Windows-Spracherkennung ist ausgeschaltet. Sie läuft nur, wenn unter Windows-Einstellungen › Datenschutz › Spracherkennung " +
+                AppLocalization.WindowsSpeechEngine92 +
                 "„Onlinespracherkennung“ eingeschaltet ist; dann geht das Audio an den Microsoft-Dienst. TerminalMgr ändert diese Einstellung nicht."));
         }
         catch (Exception ex) { Fail(generation, ex); }

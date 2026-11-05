@@ -184,11 +184,11 @@ const output = (page, data) => page.evaluate(d => window.__hostMessage({type:'ou
 test('OSC 52 from tmux (Claude Code copy) reaches the host while mouse tracking is on; BEL and ST both work', async ({page}) => {
   await output(page, '\x1b[?1000h\x1b[?1006h\x1b[?25l● Claude Code\r\n> markierter Satz\r\n');
   await output(page, `\x1b]52;c;${b64('markierter Satz')}\x07`);
-  await output(page, `\x1b]52;;${b64('zweiter Text mit Umlauten äöü')}\x1b\\`);
+  await output(page, `\x1b]52;;${b64('AppLocalization.Get("terminal.spec_187")')}\x1b\\`);
   await expect.poll(async () => (await messages(page, 'osc52')).length).toBe(2);
   const sent = await messages(page, 'osc52');
   expect(sent[0]).toMatchObject({id:'one', data:`c;${b64('markierter Satz')}`});
-  expect(sent[1].data).toBe(`;${b64('zweiter Text mit Umlauten äöü')}`);
+  expect(sent[1].data).toBe(`;${b64('AppLocalization.Get("terminal.spec_191")')}`);
   await expect(page.locator('.xterm-rows')).toContainText('markierter Satz'); // the sequence itself stays invisible
   await expect(page.locator('.xterm-rows')).not.toContainText(']52');
 });

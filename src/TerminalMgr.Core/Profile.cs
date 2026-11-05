@@ -1,5 +1,7 @@
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 public enum StartMode { SshConfig, Tmux, Command }
 
 public sealed record Profile
@@ -26,7 +28,7 @@ public sealed record Profile
             throw new ArgumentException("tmux-Name: nur Buchstaben, Zahlen, Unterstrich und Bindestrich.");
         if (Mode == StartMode.Command && string.IsNullOrWhiteSpace(Command))
             throw new ArgumentException("Bitte einen Startbefehl angeben.");
-        if (Command.Contains('\0')) throw new ArgumentException("Startbefehl enthält ein ungültiges Zeichen.");
+        if (Command.Contains('\0')) throw new ArgumentException(AppLocalization.Profile29);
     }
 }
 

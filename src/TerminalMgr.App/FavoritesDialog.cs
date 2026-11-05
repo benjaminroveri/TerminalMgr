@@ -6,6 +6,8 @@ using TerminalMgr.Core;
 
 namespace TerminalMgr.App;
 
+using TerminalMgr.App.Resources;
+
 /// <summary>
 /// Favorites: tmux windows with a name and an own shortcut, bound to server, session name and window name.
 /// New ones come from the windows used last (the history) or are typed in; the shortcut field records the pressed keys.
@@ -41,7 +43,7 @@ public sealed class FavoritesDialog : Window
         var header = new StackPanel();
         DockPanel.SetDock(header, Dock.Top);
         header.Children.Add(new TextBlock { Text = "Ein Favorit springt per Tastenkürzel in ein tmux-Fenster, auch auf einem getrennten Server (er wird dann verbunden). " +
-            "Gebunden wird an Server, Session-Name und Fenster-Name, nicht an tmux-IDs; bei gleichnamigen Fenstern gilt das erste.",
+            AppLocalization.FavoritesDialog44,
             TextWrapping = TextWrapping.Wrap, Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, 0, 0, 8) });
         var add = new WrapPanel();
         var recentBox = new ComboBox { MinWidth = 330, Padding = new Thickness(8), Margin = new Thickness(0, 0, 8, 0) };

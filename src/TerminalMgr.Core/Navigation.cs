@@ -1,5 +1,7 @@
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 /// <summary>
 /// A saved tmux window with its own shortcut. It is bound to the server (profile), the session name and the window name,
 /// not to tmux IDs: those change after a tmux restart.
@@ -82,7 +84,7 @@ public static class TmuxNavigation
 
     /// <summary>A window by its stable ID (@12), for windows beyond index 9 and for clicks in the strip.</summary>
     public static string SelectWindowId(string windowId) =>
-        TmuxWindowParser.IsWindowId(windowId) ? "select-window -t " + windowId : throw new ArgumentException("Ungültige tmux-Fenster-ID.");
+        TmuxWindowParser.IsWindowId(windowId) ? "select-window -t " + windowId : throw new ArgumentException(AppLocalization.Navigation85);
 
 
     public const string Next = "next-window";

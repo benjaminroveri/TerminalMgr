@@ -113,4 +113,685 @@
 <data name="PrepareAtStartLabel" xml:space="preserve"><value>Prepare speech recognition at TerminalMgr start</value></data>
 <data name="ThresholdLabel" xml:space="preserve"><value>Level threshold for speech (0.002-0.2; default 0.015, higher = less sensitive)</value></data>
 <data name="ClipboardEntriesLabel" xml:space="preserve"><value>Clipboard entries</value></data>
+    <data name="ConfigCheck_37" xml:space="preserve"><value>Schlüsseldatei fehlt: {key} (separat auf diesen Rechner kopieren)</value></data>
+    <data name="WhisperModels_17" xml:space="preserve"><value>Leichter, für schwächere Rechner</value></data>
+    <data name="Profile_29" xml:space="preserve"><value>Startbefehl enthält ein ungültiges Zeichen.</value></data>
+    <data name="Navigation_85" xml:space="preserve"><value>Ungültige tmux-Fenster-ID.</value></data>
+    <data name="TmuxWindows_57" xml:space="preserve"><value>Ungültige tmux-Session-ID.</value></data>
+    <data name="TmuxWindows_58" xml:space="preserve"><value>Ungültige tmux-Fenster-ID.</value></data>
+    <data name="ConfigFile_132" xml:space="preserve"><value>Die Datei ist passwortgeschützt. Bitte das Passwort eingeben.</value></data>
+    <data name="ConfigFile_137" xml:space="preserve"><value>Die Verschlüsselungsangaben der Datei sind ungültig.</value></data>
+    <data name="ConfigFile_142" xml:space="preserve"><value>Falsches Passwort oder beschädigte Datei.</value></data>
+    <data name="ConfigFile_143" xml:space="preserve"><value>Die Datei ist beschädigt (ungültige Kodierung).</value></data>
+    <data name="ConfigFile_144" xml:space="preserve"><value>Die Datei ist beschädigt.</value></data>
+    <data name="ConfigFile_149" xml:space="preserve"><value>Die Datei ist ungewöhnlich groß und wird nicht gelesen.</value></data>
+    <data name="ConfigFile_155" xml:space="preserve"><value>Die Formatversion der Datei ist ungültig.</value></data>
+    <data name="ConfigFile_157" xml:space="preserve"><value>Die verschlüsselten Daten fehlen.</value></data>
+    <data name="UpdateSwap_34" xml:space="preserve"><value>Der alte Ordner ließ sich nicht umbenennen (Dateien in Benutzung?). Die alte Version bleibt unverändert.</value></data>
+    <data name="ReconnectPolicy_36" xml:space="preserve"><value>Die Sitzung wurde regulär beendet.</value></data>
+    <data name="TmuxStripStream_41" xml:space="preserve"><value>Die Verbindung für die Fensterleiste wurde beendet.</value></data>
+    <data name="AiAccountSource_25" xml:space="preserve"><value>CLI nicht erreichbar, nicht installiert oder Abfrage nicht unterstützt</value></data>
+    <data name="FavoritesDialog_44" xml:space="preserve"><value>Gebunden wird an Server</value></data>
+    <data name="WindowsSpeechEngine_92" xml:space="preserve"><value>Die Windows-Spracherkennung ist ausgeschaltet. Sie läuft nur</value></data>
+    <data name="terminal.spec_187" xml:space="preserve"><value>zweiter Text mit Umlauten äöü</value></data>
+    <data name="terminal.spec_191" xml:space="preserve"><value>zweiter Text mit Umlauten äöü</value></data>
+    <data name="palette.spec_27" xml:space="preserve"><value>{ id:'window:p1|$1|@9', group:'tmux-Fenster', title:'devbox › Überwachung › 0: Protokolle', subtitle:'', shortcut:'', showWhenEmpty:false, searchable:true },</value></data>
+    <data name="palette.spec_28" xml:space="preserve"><value>{ id:'clip:0', group:'Clipboard', title:'git status --short', subtitle:'Enter fügt ein', shortcut:'', showWhenEmpty:false, searchable:true },</value></data>
+    <data name="palette.spec_30" xml:space="preserve"><value>{ id:'action:settings', group:'Aktionen', title:'Einstellungen öffnen', subtitle:'', shortcut:'', showWhenEmpty:false, searchable:true }</value></data>
+    <data name="palette.spec_73" xml:space="preserve"><value>expect(await rows(page)).toEqual(['devbox › Überwachung › 0: Protokolle']);</value></data>
+    <data name="palette.spec_75" xml:space="preserve"><value>expect(await rows(page)).toEqual(['devbox › Überwachung › 0: Protokolle']);</value></data>
+    <data name="palette.spec_86" xml:space="preserve"><value>expect((await rows(page))[0]).toBe('Einstellungen öffnen');</value></data>
+    <data name="palette.spec_150" xml:space="preserve"><value>expect(await page.evaluate(() => window.TerminalPalette.fold('ÄÖÜ Élan'))).toBe('aou elan');</value></data>
+    <data name="Program_872" xml:space="preserve"><value>äöü ß 日本\nzweite Zeile\ttab</value></data>
+    <data name="ConfigCheck_44" xml:space="preserve"><value>Der Host „{profile.Destination}“ ist in der SSH-Config nicht definiert; der Name wird direkt aufgelöst.</value></data>
+    <data name="UpdateInfo_90" xml:space="preserve"><value>Das neueste Release hat kein Paket für Ihren Prozessor ({architecture}); vorhanden: {string.Join(</value></data>
+    <data name="Program_301" xml:space="preserve"><value>der Server läuft</value></data>
+    <data name="Program_376" xml:space="preserve"><value>Das ist der endgültige Text</value></data>
+    <data name="Program_474" xml:space="preserve"><value>ungültig</value></data>
+    <data name="Program_782" xml:space="preserve"><value>tmux-Präfix</value></data>
+    <data name="Program_1197" xml:space="preserve"><value>unverändert</value></data>
+    <data name="Program_1276" xml:space="preserve"><value>Prüfsumme</value></data>
+    <data name="Program_1326" xml:space="preserve"><value>Zeitüberschreitung</value></data>
+    <data name="Program_1404" xml:space="preserve"><value>passwortgeschützt</value></data>
+    <data name="Program_1417" xml:space="preserve"><value>ungültig</value></data>
+    <data name="Program_1581" xml:space="preserve"><value>äöü 日本</value></data>
+    <data name="SpeechBench_65" xml:space="preserve"><value>Zeitüberschreitung</value></data>
+    <data name="Program_1836" xml:space="preserve"><value>Prüfe im Log mit tail</value></data>
+    <data name="Program_384" xml:space="preserve"><value>Das ist der endgültige Text</value></data>
+    <data name="Program_1583" xml:space="preserve"><value>äöü 日本</value></data>
+        <data name="terminal.spec_124" xml:space="preserve"><value>zweiter Text mit Umlauten äöü</value></data>
+        <data name="palette.spec_124" xml:space="preserve"><value>expect(await page.evaluate(() => window.TerminalPalette.fold('ÄÖÜ Élan'))).toBe('aou elan');</value></data>
+        <data name="Program_124" xml:space="preserve"><value>Check(slow.Error!.Contains(Zeitüberschreitung") && clock.Elapsed < TimeSpan.FromSeconds(3)</value></data>
+        <data name="palette_124" xml:space="preserve"><value>// Umlauts and accents are ignored (ae" is not "ä"</value></data>
+        <data name="ConfigCheck_124" xml:space="preserve"><value>problems.Add(new(profile.Name, Im Ordner .ssh liegt kein Standard-Schlüssel; die Anmeldung klappt nur mit einem SSH-Agenten oder einem Passwort."));"</value></data>
+        <data name="WhisperModels_124" xml:space="preserve"><value>Leichter, für schwächere Rechner</value></data>
+        <data name="Profile_124" xml:space="preserve"><value>if (Command.Contains(' ')) throw new ArgumentException(Startbefehl enthält ein ungültiges Zeichen.");"</value></data>
+        <data name="Navigation_124" xml:space="preserve"><value>TmuxWindowParser.IsWindowId(windowId) ? select-window -t " + windowId : throw new ArgumentException("Ungültige tmux-Fenster-ID.");"</value></data>
+        <data name="TmuxWindows_124" xml:space="preserve"><value>if (!IsWindowId(windowId)) throw new ArgumentException(Ungültige tmux-Fenster-ID.");"</value></data>
+        <data name="ConfigFile_124" xml:space="preserve"><value>if (e.Iterations is < 10_000 or > 5_000_000 || salt.Length != 16 || nonce.Length != 12 || tag.Length != 16) throw new ConfigFormatException(Die Verschlüsselungsangaben der Datei sind ungültig.");"</value></data>
+        <data name="UpdateSwap_124" xml:space="preserve"><value>return new SwapResult(false, Der alte Ordner ließ sich nicht umbenennen (Dateien in Benutzung?). Die alte Version bleibt unverändert.");"</value></data>
+        <data name="Shortcut_124" xml:space="preserve"><value>TryParse(text, out var shortcut) ? shortcut : throw new ArgumentException(Ungültiges Tastenkürzel: " + text);"</value></data>
+        <data name="UpdateInfo_124" xml:space="preserve"><value>Das neueste Release hat kein Paket für Ihren Prozessor ({architecture}); vorhanden: {string.Join(</value></data>
+        <data name="ReconnectPolicy_124" xml:space="preserve"><value>if (!IsConnectionLost(exitCode)) return new(false, TimeSpan.Zero, 0, Die Sitzung wurde regulär beendet.");"</value></data>
+        <data name="WindowStrip_124" xml:space="preserve"><value>StripState.Running => läuft"</value></data>
+        <data name="TmuxStripStream_124" xml:space="preserve"><value>const string reason = Die Verbindung für die Fensterleiste wurde beendet.";"</value></data>
+        <data name="AiAccountSource_124" xml:space="preserve"><value>Abfrage fehlgeschlagen • Anmeldung / SSH-Key und CLI-Version prüfen</value></data>
+        <data name="SpeechBench_124" xml:space="preserve"><value>return new(engineName, name, reference, ", audioSeconds, 1, 1, null, null, 0, 0, 0, 0, timeline, ex is TimeoutException ? Zeitüberschreitung" : ex.Message);"</value></data>
+        <data name="AiProvidersDialog_124" xml:space="preserve"><value>_state.Text = Kontostatus wird geprüft …";"</value></data>
+        <data name="ClipboardMenu_124" xml:space="preserve"><value>Add(In aktive Session einfügen"</value></data>
+        <data name="ExportDialog_124" xml:space="preserve"><value>? Ohne Passwort enthält die Datei Hostnamen</value></data>
+        <data name="FavoriteSaveDialog_124" xml:space="preserve"><value>panel.Children.Add(new TextBlock { Text = Ohne Kürzel ist der Favorit nur über die Befehlspalette erreichbar. Gebunden wird an Server</value></data>
+        <data name="FavoritesDialog_124" xml:space="preserve"><value>var shortcut = Box(favorite.Shortcut, 4, Leer: nur über die Befehlspalette erreichbar");"</value></data>
+        <data name="ImportDialog_124" xml:space="preserve"><value>_body.Children.Add(Note(Vor dem Schreiben wird eine Sicherung config.bak-<Datum> angelegt; vorhandene Hosts bleiben unverändert."));"</value></data>
+        <data name="MainWindow.Config_124" xml:space="preserve"><value>if (result.HostBlocksToAdd.Count > 0) summary.AppendLine($SSH-Host-Blöcke angehängt: {result.HostBlocksToAdd.Count}.");"</value></data>
+        <data name="MainWindow.Dictation_124" xml:space="preserve"><value>DictationButton.ToolTip = Aufnahme läuft – Diktat stoppen (" + DictationSettings.Shortcut + ")";"</value></data>
+        <data name="MainWindow.Layout_124" xml:space="preserve"><value>{ StatusText.Text = Der Link konnte nicht geöffnet werden: " + ex.Message; }"</value></data>
+        <data name="MainWindow.Navigation_124" xml:space="preserve"><value>StatusText.Text = Es gibt noch kein früheres Fenster</value></data>
+        <data name="MainWindow.Palette_124" xml:space="preserve"><value>if (id.StartsWith(favorite:")) { StatusText.Text = "Das ist schon ein Favorit. Änderungen unter Einstellungen › Favoriten verwalten."; return; }"</value></data>
+        <data name="MainWindow.Subscriptions_124" xml:space="preserve"><value>var source = new MenuItem { Header = local ? Dieser PC" : "Ausgewählter SSH-Server"</value></data>
+        <data name="MainWindow.Update_124" xml:space="preserve"><value>ShowError(Der Updater konnte nicht gestartet werden. Die installierte Version bleibt unverändert."</value></data>
+        <data name="MainWindow.xaml_124" xml:space="preserve"><value>else StatusText.Text = Zum Einfügen zuerst eine laufende Session auswählen.";"</value></data>
+        <data name="ProfileDialog_124" xml:space="preserve"><value>_ => Der Befehl läuft bei jeder manuellen oder automatischen Verbindung. Nach seinem Ende schließt SSH. Für eine anschließende Shell z. B.: dein-befehl; exec bash -l""</value></data>
+        <data name="TmuxSessionDialog_124" xml:space="preserve"><value>Text = Die ausgewählte Session wird hier angehängt. Eine bisherige tmux-Session läuft auf dem Server weiter."</value></data>
+        <data name="UpdateDialog_124" xml:space="preserve"><value>catch (Exception ex) { _progress.Children.Remove(cancelButton); Reset(Das Update ist fehlgeschlagen: " + ex.Message + "
+Die installierte Version bleibt unverändert."); }"</value></data>
+        <data name="ShortcutRules_124" xml:space="preserve"><value>if (invalid is not null) return $Das Tastenkürzel „{invalid.Shortcut}“ des Favoriten „{invalid.Label}“ ist ungültig.";"</value></data>
+        <data name="SshCommand_124" xml:space="preserve"><value>if (string.IsNullOrWhiteSpace(sessionTarget) || sessionTarget.Any(char.IsControl)) throw new ArgumentException(Ungültige tmux-Session.");"</value></data>
+        <data name="UpdateService_124" xml:space="preserve"><value>return text.Length > 4096 ? throw new InvalidDataException(Die Prüfsummen-Datei ist unerwartet groß.") : text;"</value></data>
+        <data name="WindowsSpeechEngine_124" xml:space="preserve"><value>Die Windows-Spracherkennung ist ausgeschaltet. Sie läuft nur</value></data>
+        <data name="ConfigCheck_35" xml:space="preserve"><value>Schlüsseldatei fehlt: {key} (separat auf diesen Rechner kopieren)</value></data>
+<data name="terminal.spec_187" xml:space="preserve"><value>zweiter Text mit Umlauten äöü</value></data>
+<data name="terminal.spec_191" xml:space="preserve"><value>zweiter Text mit Umlauten äöü</value></data>
+<data name="terminal.spec_213" xml:space="preserve"><value>const lines = Array.from({length: 12}, (_, i) => `Ausgabezeile ${i + 1} mit etwas Text`).join('\r\n');</value></data>
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string" />
+                            <xsd:attribute name="xml:space" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="terminal.spec_196" xml:space="preserve"><value>test('OSC 52 read requests are never answered and the sequence can be switched off', async ({page}) => {</value></data>
+    <data name="terminal.spec_272" xml:space="preserve"><value>await output(page, 'Hallo Welt aus der Shell\\r\\n');</value></data>
+    <data name="palette_7" xml:space="preserve"><value>// Umlauts and accents are ignored (\"ae\" is not \"ä\", but \"a\" finds \"ä\"), case does not matter.</value></data>
+    <data name="ConfigCheck_42" xml:space="preserve"><value>Der Host \"{profile.Destination}\" ist in der SSH-Config nicht definiert; der Name wird direkt aufgelöst.</value></data>
+    <data name="PaletteBuilder_63" xml:space="preserve"><value>{text.Contains('\n') ? $\"{text.Count(c => c == '\n') + 1} Zeilen, Enter fügt ein\" : \"Enter fügt ein\"}</value></data>
+    <data name="UpdateSwap_44" xml:space="preserve"><value>Die neue Version ließ sich nicht einsetzen: \" + ex.Message + \" Die alte Version wurde wiederhergestellt.</value></data>
+    <data name="Shortcut_49" xml:space="preserve"><value>TryParse(text, out var shortcut) ? shortcut : throw new ArgumentException(\"Ungültiges Tastenkürzel: \" + text);</value></data>
+    <data name="WindowStrip_222" xml:space="preserve"><value>StripState.Running => \"läuft\", StripState.Done => \"fertig\", StripState.Asking => \"fragt\", _ => \"ruhig</value></data>
+    <data name="Program_439" xml:space="preserve"><value>vier, fünf</value></data>
+    <data name="Program_441" xml:space="preserve"><value>vier, sechs, fünf</value></data>
+    <data name="SpeechBench_24" xml:space="preserve"><value>Zwischenstand, Endtext, bestätigte Wörter</value></data>
+    <data name="AiProvidersDialog_25" xml:space="preserve"><value>Note(\"Jede Anmeldung gilt für die gewählte Maschine und deren Benutzer. Kontoweite Abo-Limits, Sitzungswerte und API-Budgets bleiben getrennt. Es werden keine kostenpflichtigen Modellanfragen gestartet.\")</value></data>
+    <data name="AiProvidersDialog_36" xml:space="preserve"><value>Note(\"Claude CLI muss installiert sein. Anmeldung öffnet ein separates Fenster. Für Limits die Statuszeile einmal einrichten; Python 3.9+ wird dafür auf dieser Maschine benötigt. Eine vorhandene Statuszeile wird gesichert und weiterhin ausgeführt.\")</value></data>
+    <data name="AiProvidersDialog_43" xml:space="preserve"><value>_openRouter.Children.Add(new TextBlock { Text = \"API-Key eingeben. ‚Verbinden‘ prüft ihn und speichert ihn in der Windows-Anmeldeinformationsverwaltung. Er wird nicht auf SSH-Server kopiert und nicht exportiert. Sichtbar sind Key-Verbrauch und verfügbare Budgets.\", TextWrapping = TextWrapping.Wrap });</value></data>
+    <data name="AiProvidersDialog_55" xml:space="preserve"><value>AiCredentialStore.SaveOpenRouter(secret); _state.Text = \"OpenRouter verbunden. Key geschützt in Windows gespeichert.\";</value></data>
+    <data name="AiProvidersDialog_67" xml:space="preserve"><value>Heading(\"Verbindung prüfen\")</value></data>
+    <data name="AiProvidersDialog_91" xml:space="preserve"><value>start = new ProcessStartInfo(TmuxSessionQuery.SshExecutable) { UseShellExecute = true };</value></data>
+    <data name="AiProvidersDialog_101" xml:space="preserve"><value>_state.Text = \"Anmeldung im separaten Fenster abschließen, danach ‚Status prüfen‘. Bestehende Sessions laufen weiter.\";</value></data>
+    <data name="AiProvidersDialog_110" xml:space="preserve"><value>_state.Text = \"Kontostatus wird geprüft …\";</value></data>
+    <data name="AiProvidersDialog_119" xml:space="preserve"><value>{ _state.Text = \"Kontostatus nicht erreichbar. Anmeldung, Netzwerk und SSH-Key prüfen.\"; }</value></data>
+    <data name="ClipboardMenu_21" xml:space="preserve"><value>Add(\"In aktive Session einfügen\", paste, \"Doppelklick\")</value></data>
+    <data name="ClipboardMenu_24" xml:space="preserve"><value>menu.Items.Add(new Separator());</value></data>
+    <data name="ExportDialog_29" xml:space="preserve"><value>_profiles = Check($\"Profile mit allen Optionen ({settings.Profiles.Count})\", settings.Profiles.Count > 0, settings.Profiles.Count > 0, \"Auto-Verbindung, Startmodus, Startaktion, Wiederverbindung\")</value></data>
+    <data name="ExportDialog_30" xml:space="preserve"><value>_settings = Check(\"App-Einstellungen\", true, true, \"Schriftgröße, Tastenkürzel, Diktat ohne Modell und Mikrofon, Update-Einstellungen, Clipboard-Limit\")</value></data>
+    <data name="ExportDialog_34" xml:space="preserve"><value>_hosts = Check($\"Host-Blöcke der SSH-Config, die die Profile benutzen ({hostBlocks.Count})\", hostBlocks.Count > 0, hostBlocks.Count > 0,</value></data>
+    <data name="ExportDialog_35" xml:space="preserve"><value>aliases.Count > 0 ? \"Hosts: \" + string.Join(", ", aliases) : \"Für die Profile wurden keine Host-Blöcke gefunden.\")</value></data>
+    <data name="ExportDialog_39" xml:space="preserve"><value>Text = \"Nie in der Datei: private Schlüssel, known_hosts, Passwörter und das Whisper-Modell.\" +</value></data>
+    <data name="ExportDialog_40" xml:space="preserve"><value>(keys.Count > 0 ? \"\nDie Host-Blöcke verweisen auf Schlüsseldateien, die Sie separat auf den anderen Rechner kopieren müssen: \" + string.Join(", ", keys) : \"\") });</value></data>
+    <data name="ExportDialog_49" xml:space="preserve"><value>? \"Ohne Passwort enthält die Datei Hostnamen, Benutzernamen und Befehle im Klartext. Verschlüsselt wird mit AES-256-GCM, der Schlüssel entsteht per PBKDF2 aus dem Passwort.\"</value></data>
+    <data name="FavoriteSaveDialog_10" xml:space="preserve"><value>public sealed class FavoriteSaveDialog : Window</value></data>
+    <data name="FavoriteSaveDialog_12" xml:space="preserve"><value>private readonly Favorite _favorite;</value></data>
+    <data name="FavoriteSaveDialog_14" xml:space="preserve"><value>public Favorite? Result { get; private set; }</value></data>
+    <data name="FavoriteSaveDialog_16" xml:space="preserve"><value>public FavoriteSaveDialog(Favorite favorite, string serverName)</value></data>
+    <data name="FavoriteSaveDialog_20" xml:space="preserve"><value>Title = \"Als Favorit speichern\";</value></data>
+    <data name="FavoriteSaveDialog_24" xml:space="preserve"><value>panel.Children.Add(new TextBlock { Text = \"{serverName} › {favorite.SessionName} › {favorite.WindowName}\", FontWeight = FontWeights.SemiBold, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 10) });</value></data>
+    <data name="FavoriteSaveDialog_28" xml:space="preserve"><value>panel.Children.Add(new TextBlock { Text = \"Tastenkürzel (Feld anklicken und Kombination drücken; Entf löscht)\" });</value></data>
+    <data name="FavoriteSaveDialog_32" xml:space="preserve"><value>panel.Children.Add(new TextBlock { Text = \"Ohne Kürzel ist der Favorit nur über die Befehlspalette erreichbar. Gebunden wird an Server, Session-Name und Fenster-Name.\"</value></data>
+    <data name="FavoriteSaveDialog_35" xml:space="preserve"><value>var ok = new Button { Content = \"Speichern\", IsDefault = true };</value></data>
+    <data name="FavoritesDialog_10" xml:space="preserve"><value>// Favorites: tmux windows with a name and an own shortcut, bound to server, session name and window name.</value></data>
+    <data name="FavoritesDialog_13" xml:space="preserve"><value>public sealed class FavoritesDialog : Window</value></data>
+    <data name="FavoritesDialog_19" xml:space="preserve"><value>public List<Favorite>? Result { get; private set; }</value></data>
+    <data name="FavoritesDialog_21" xml:space="preserve"><value>private sealed record Row(Favorite Original, TextBox Name, ComboBox Server, TextBox Session, TextBox Window, TextBox Shortcut, UIElement Visual);</value></data>
+    <data name="FavoritesDialog_23" xml:space="preserve"><value>public FavoritesDialog(IEnumerable<Favorite> favorites, IReadOnlyList<Profile> profiles, IReadOnlyList<NavigationPosition> recent)</value></data>
+    <data name="FavoritesDialog_28" xml:space="preserve"><value>Title = \"Favoriten\";</value></data>
+    <data name="FavoritesDialog_43" xml:space="preserve"><value>header.Children.Add(new TextBlock { Text = \"Ein Favorit springt per Tastenkürzel in ein tmux-Fenster, auch auf einem getrennten Server (er wird dann verbunden). \" +</value></data>
+    <data name="FavoritesDialog_48" xml:space="preserve"><value>recentBox.ItemsSource = _recent.Select(p => \"{ServerName(p.ProfileId)} › {p.SessionName} › {p.WindowName}\").ToList();</value></data>
+    <data name="FavoritesDialog_49" xml:space="preserve"><value>recentBox.ToolTip = \"Die zuletzt benutzten tmux-Fenster (seit dem Start der App)\";</value></data>
+    <data name="FavoritesDialog_51" xml:space="preserve"><value>var addRecent = new Button { Content = \"Zuletzt benutztes Fenster hinzufügen\", IsEnabled = _recent.Count > 0 };</value></data>
+    <data name="FavoritesDialog_52" xml:space="preserve"><value>addRecent.Click += (_, _) => { if (recentBox.SelectedIndex >= 0) AddRow(new Favorite { ProfileId = _recent[recentBox.SelectedIndex].ProfileId, SessionName = _recent[recentBox.SelectedIndex].SessionName, WindowName = _recent[recentBox.SelectedIndex].WindowName }); };</value></data>
+    <data name="FavoritesDialog_53" xml:space="preserve"><value>var addEmpty = new Button { Content = \"Leeren Favoriten hinzufügen\" };</value></data>
+    <data name="FavoritesDialog_54" xml:space="preserve"><value>addEmpty.Click += (_, _) => AddRow(new Favorite { ProfileId = profiles.FirstOrDefault()?.Id ?? \"\" });</value></data>
+    <data name="FavoritesDialog_57" xml:space="preserve"><value>header.Children.Add(new TextBlock { Text = \"Name · Server · Session · Fenster · Tastenkürzel (Feld anklicken und Kombination drücken)\", Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, 10, 0, 4) });</value></data>
+    <data name="FavoritesDialog_63" xml:space="preserve"><value>private string ServerName(string profileId) => _profiles.FirstOrDefault(p => p.Id == profileId)?.Name ?? \"(Server fehlt)\";</value></data>
+    <data name="FavoritesDialog_65" xml:space="preserve"><value>private void AddRow(Favorite favorite)</value></data>
+    <data name="FavoritesDialog_77" xml:space="preserve"><value>var name = Box(favorite.Name, 0, \"Anzeigename (leer: Session › Fenster)\");</value></data>
+    <data name="FavoritesDialog_82" xml:space="preserve"><value>var session = Box(favorite.SessionName, 2, \"Name der tmux-Session\");</value></data>
+    <data name="FavoritesDialog_83" xml:space="preserve"><value>var window = Box(favorite.WindowName, 3, \"Name des tmux-Fensters\");</value></data>
+    <data name="FavoritesDialog_84" xml:space="preserve"><value>var shortcut = Box(favorite.Shortcut, 4, \"Leer: nur über die Befehlspalette erreichbar\");</value></data>
+    <data name="FavoritesDialog_96" xml:space="preserve"><value>var remove = new Button { Content = \"×\", ToolTip = \"Favorit entfernen\" };</value></data>
+    <data name="FavoritesDialog_107" xml:space="preserve"><value>var result = new List<Favorite>();</value></data>
+    <data name="FavoritesDialog_110" xml:space="preserve"><value>if (row.Session.Text.Trim().Length == 0 || row.Window.Text.Trim().Length == 0)</value></data>
+    <data name="FavoritesDialog_111" xml:space="preserve"><value>{ MessageBox.Show(this, \"Jeder Favorit braucht einen Session- und einen Fenster-Namen.\", Title, MessageBoxButton.OK, MessageBoxImage.Information); return; }</value></data>
+    <data name="FavoritesDialog_113" xml:space="preserve"><value>{ MessageBox.Show(this, \"Es gibt noch keinen Server.\", Title, MessageBoxButton.OK, MessageBoxImage.Information); return; }</value></data>
+    <data name="FavoritesDialog_115" xml:space="preserve"><value>Name = row.Name.Text.Trim(), ProfileId = _profiles[Math.Max(0, row.Server.SelectedIndex)].Id,</value></data>
+    <data name="FavoritesDialog_116" xml:space="preserve"><value>SessionName = row.Session.Text.Trim(), WindowName = row.Window.Text.Trim(), Shortcut = row.Shortcut.Text</value></data>
+    <data name="ImportDialog_95" xml:space="preserve"><value>_body.Children.Add(Note(\"Schriftgröße, Tastenkürzel, Diktat (ohne Modell und Mikrofon), Update-Einstellungen, Clipboard-Limit. Modell, Mikrofon und Start mit Windows bleiben, wie sie auf diesem Rechner sind.\"));</value></data>
+    <data name="ImportDialog_105" xml:space="preserve"><value>_takeHosts = Section($\"SSH-Host-Blöcke in ~/.ssh/config übernehmen ({_plan.Hosts.Count - conflicts} neu, {conflicts} schon vorhanden)\", _plan.Hosts.Count > conflicts);</value></data>
+    <data name="ImportDialog_110" xml:space="preserve"><value>_body.Children.Add(Note(\"Vor dem Schreiben wird eine Sicherung config.bak-<Datum> angelegt; vorhandene Hosts bleiben unverändert.\"));</value></data>
+    <data name="MainWindow.Config_13" xml:space="preserve"><value>private const string ConfigFilter = \"TerminalMgr-Konfiguration (*.tmconfig)|*.tmconfig|Alle Dateien (*.*)|*.*\";</value></data>
+    <data name="MainWindow.Config_48" xml:space="preserve"><value>var ask = new PasswordDialog(\"Die Datei ist passwortgeschützt. Passwort eingeben:\\", error) { Owner = this };</value></data>
+    <data name="MainWindow.Config_77" xml:space="preserve"><value>if (result.HostBlocksToAdd.Count > 0) summary.AppendLine($\"SSH-Host-Blöcke angehängt: {result.HostBlocksToAdd.Count}.\");</value></data>
+    <data name="MainWindow.Dictation_35" xml:space="preserve"><value>sessionModifier = options.SessionModifier</value></data>
+    <data name="MainWindow.Dictation_58" xml:space="preserve"><value>if (Selected is not { } target) { StatusText.Text = \"Zum Diktieren zuerst eine Session auswählen.\"; return; }</value></data>
+    <data name="MainWindow.Dictation_142" xml:space="preserve"><value>$\"Es wird von huggingface.co nach\n{AppPaths.ModelsDirectory()}\ngeladen. Danach läuft die Spracherkennung vollständig lokal; Audio verlässt den Rechner nicht.\n\nJetzt herunterladen?\"</value></data>
+    <data name="MainWindow.Dictation_176" xml:space="preserve"><value>if (session is DictationSession whisper) whisper.Ready += Ready;</value></data>
+    <data name="MainWindow.Dictation_202" xml:space="preserve"><value>return new DictationSession(() => new MicrophoneSource(options.Microphone), _transcriber, options, interim: smallModel ? _interimTranscriber : null);</value></data>
+    <data name="MainWindow.Dictation_221" xml:space="preserve"><value>MessageBox.Show(this, ex.Message + \"\n\nIn den Einstellungen unter „Diktat“ kann die Engine „Whisper (lokal, GPU)“ gewählt werden; sie braucht weder Dienst noch Schlüssel.\"</value></data>
+    <data name="MainWindow.Dictation_236" xml:space="preserve"><value>DictationButton.ToolTip = \"Aufnahme läuft – Diktat stoppen (\" + DictationSettings.Shortcut + \")\";</value></data>
+    <data name="MainWindow.Layout_17" xml:space="preserve"><value>private const double ServerPanelWidth = 260, ClipboardPanelWidth = 312;</value></data>
+    <data name="MainWindow.Layout_19" xml:space="preserve"><value>private bool _updatingTabs, _focusMode, _focusRestoreServer, _focusRestoreClipboard;</value></data>
+    <data name="MainWindow.Layout_23" xml:space="preserve"><value>SessionTabs.ItemsSource = _tabs;</value></data>
+    <data name="MainWindow.Layout_44" xml:space="preserve"><value>if (!LinkRules.TryNormalize(address, out var uri)) { StatusText.Text = \"Dieser Link wird nicht geöffnet (nur http und https).\"; return; }</value></data>
+    <data name="MainWindow.Layout_47" xml:space="preserve"><value>{ StatusText.Text = \"Der Link konnte nicht geöffnet werden: \" + ex.Message; }</value></data>
+    <data name="MainWindow.Layout_50" xml:space="preserve"><value>private bool ServerPanelOpen => ServerColumn.Width.Value > 0;</value></data>
+    <data name="MainWindow.Layout_53" xml:space="preserve"><value>private void SetServerPanel(bool open)</value></data>
+    <data name="MainWindow.Layout_55" xml:space="preserve"><value>if (open == ServerPanelOpen) { ServerButton.IsChecked = open; return; }</value></data>
+    <data name="MainWindow.Layout_56" xml:space="preserve"><value>if (!open) _serverWidth = ServerColumn.ActualWidth > 40 ? ServerColumn.ActualWidth : ServerPanelWidth;</value></data>
+    <data name="MainWindow.Layout_57" xml:space="preserve"><value>ServerColumn.Width = new GridLength(open ? Math.Max(_serverWidth, 180) : 0);</value></data>
+    <data name="MainWindow.Layout_58" xml:space="preserve"><value>ServerSplitterColumn.Width = new GridLength(open ? 4 : 0);</value></data>
+    <data name="MainWindow.Layout_59" xml:space="preserve"><value>ServerPanel.Visibility = ServerSplitter.Visibility = open ? Visibility.Visible : Visibility.Collapsed;</value></data>
+    <data name="MainWindow.Layout_60" xml:space="preserve"><value>ServerButton.IsChecked = open;</value></data>
+    <data name="MainWindow.Layout_74" xml:space="preserve"><value>private void ToggleServerPanel(object sender, RoutedEventArgs e) { SetServerPanel(!ServerPanelOpen); SaveSettings(); }</value></data>
+    <data name="MainWindow.Layout_82" xml:space="preserve"><value>_focusRestoreServer = ServerPanelOpen; _focusRestoreClipboard = ClipboardOpen;</value></data>
+    <data name="MainWindow.Layout_83" xml:space="preserve"><value>SetServerPanel(false); SetClipboard(false);</value></data>
+    <data name="MainWindow.Layout_89" xml:space="preserve"><value>SetServerPanel(_focusRestoreServer); SetClipboard(_focusRestoreClipboard);</value></data>
+    <data name="MainWindow.Layout_115" xml:space="preserve"><value>if (_updatingTabs || SessionTabs is null) return;</value></data>
+    <data name="MainWindow.Layout_131" xml:space="preserve"><value>SessionTabs.SelectedItem = _tabs.FirstOrDefault(t => ReferenceEquals(t.Item, Selected));</value></data>
+    <data name="MainWindow.Layout_138" xml:space="preserve"><value>if (_updatingTabs || SessionTabs.SelectedItem is not TabModel tab) return;</value></data>
+    <data name="MainWindow.Layout_145" xml:space="preserve"><value>if (ItemsControl.ContainerFromElement(SessionTabs, source) is not ListBoxItem { DataContext: TabModel tab } container) return;</value></data>
+    <data name="MainWindow.Layout_147" xml:space="preserve"><value>ShowServerMenu(tab.Item, container);</value></data>
+    <data name="MainWindow.Navigation_38" xml:space="preserve"><value>if (action.StartsWith(\"favorite:\\")) { await RunFavoriteAsync(action[\"favorite:\\".Length..]); return; }</value></data>
+    <data name="MainWindow.Navigation_60" xml:space="preserve"><value>StatusText.Text = \"Zum Wechseln des tmux-Fensters zuerst einen verbundenen Server auswählen.\";</value></data>
+    <data name="MainWindow.Navigation_90" xml:space="preserve"><value>_history.Visit(new(item.Profile.Id, window.SessionId, window.SessionName, window.WindowId, window.Name));</value></data>
+    <data name="MainWindow.Navigation_107" xml:space="preserve"><value>StatusText.Text = $\"Zurück: {item.Name} ist nicht erreichbar.\";</value></data>
+    <data name="MainWindow.Navigation_110" xml:space="preserve"><value>var window = windows.FirstOrDefault(w => w.SessionId == target.SessionId && w.WindowId == target.WindowId);</value></data>
+    <data name="MainWindow.Navigation_119" xml:space="preserve"><value>StatusText.Text = \"Es gibt noch kein früheres Fenster, zu dem man zurückkehren könnte.\";</value></data>
+    <data name="MainWindow.Navigation_122" xml:space="preserve"><value>/// <summary>Favorite: look the window up by session and window name on the server (connected or not), connect if necessary, switch.</summary></value></data>
+    <data name="MainWindow.Navigation_123" xml:space="preserve"><value>private async Task RunFavoriteAsync(string favoriteId)</value></data>
+    <data name="MainWindow.Navigation_125" xml:space="preserve"><value>var favorite = _settings.Favorites.FirstOrDefault(f => f.Id == favoriteId);</value></data>
+    <data name="MainWindow.Navigation_128" xml:space="preserve"><value>if (item is null) { StatusText.Text = $\"Favorit \"{favorite.Label}\": Der Server ist nicht mehr in der Liste.\"; return; }</value></data>
+    <data name="MainWindow.Navigation_129" xml:space="preserve"><value>StatusText.Text = $\"Favorit \"{favorite.Label}\" …\";</value></data>
+    <data name="MainWindow.Navigation_134" xml:space="preserve"><value>StatusText.Text = $\"Favorit \"{favorite.Label}\": {item.Name} ist nicht erreichbar.\";</value></data>
+    <data name="MainWindow.Navigation_137" xml:space="preserve"><value>var resolution = FavoriteResolver.Resolve(favorite, windows);</value></data>
+    <data name="MainWindow.Navigation_140" xml:space="preserve"><value>StatusText.Text = $\"Favorit \"{favorite.Label}\": {item.Name} › {window.SessionName} › {window.Name}\";</value></data>
+    <data name="MainWindow.Palette_25" xml:space="preserve"><value>return new PaletteServer(p.Profile.Id, p.Name, connected, attached, windows ?? []);</value></data>
+    <data name="MainWindow.Palette_32" xml:space="preserve"><value>new(\"connect\", \"Ausgewählten Server verbinden\", \"\");</value></data>
+    <data name="MainWindow.Palette_33" xml:space="preserve"><value>new(\"disconnect\", \"Ausgewählten Server trennen\", \"\");</value></data>
+    <data name="MainWindow.Palette_39" xml:space="preserve"><value>new(\"back\", \"Zurück zum zuletzt benutzten Fenster\", Keys(\"windowBack\"));</value></data>
+    <data name="MainWindow.Palette_40" xml:space="preserve"><value>new(\"next\", \"Nächstes tmux-Fenster\", shortcuts.NextWindow),</value></data>
+    <data name="MainWindow.Palette_41" xml:space="preserve"><value>new(\"previous\", \"Voriges tmux-Fenster\", shortcuts.PreviousWindow),</value></data>
+    <data name="MainWindow.Palette_53" xml:space="preserve"><value>PaletteBuilder.FavoritesGroup => AppLocalization.Get(\"Web.GroupFavorites\")</value></data>
+    <data name="MainWindow.Palette_96" xml:space="preserve"><value>if (item is null) { StatusText.Text = \"Der Server dieses Fensters ist nicht mehr in der Liste.\"; return; }</value></data>
+    <data name="MainWindow.Palette_97" xml:space="preserve"><value>var record = (_paletteWindows.GetValueOrDefault(profileId) ?? []).FirstOrDefault(w => w.SessionId == sessionId && w.WindowId == windowId)</value></data>
+    <data name="MainWindow.Palette_98" xml:space="preserve"><value>?? _history.Items.Where(p => p.ProfileId == profileId && p.SessionId == sessionId && p.WindowId == windowId)</value></data>
+    <data name="MainWindow.Palette_99" xml:space="preserve"><value>.Select(p => new TmuxWindowRecord(p.SessionId, p.SessionName, p.WindowId, 0, p.WindowName, \"\", false)).FirstOrDefault();</value></data>
+    <data name="MainWindow.Palette_106" xml:space="preserve"><value>if (Selected is not { } target) { StatusText.Text = \"Zum Einfügen zuerst eine Session auswählen.\"; return; }</value></data>
+    <data name="MainWindow.Palette_138" xml:space="preserve"><value>private void SavePaletteFavorite(string id)</value></data>
+    <data name="MainWindow.Palette_140" xml:space="preserve"><value>if (id.StartsWith(\"favorite:\\")) { StatusText.Text = \"Das ist schon ein Favorit. Änderungen unter Einstellungen › Favoriten verwalten.\"; return; }</value></data>
+    <data name="MainWindow.Palette_142" xml:space="preserve"><value>var record = (_paletteWindows.GetValueOrDefault(profileId) ?? []).FirstOrDefault(w => w.SessionId == sessionId && w.WindowId == windowId);</value></data>
+    <data name="MainWindow.Palette_143" xml:space="preserve"><value>var recent = _history.Items.FirstOrDefault(p => p.ProfileId == profileId && p.SessionId == sessionId && p.WindowId == windowId);</value></data>
+    <data name="MainWindow.Palette_144" xml:space="preserve"><value>string? session = record?.SessionName ?? recent?.SessionName, window = record?.Name ?? recent?.WindowName;</value></data>
+    <data name="MainWindow.Palette_147" xml:space="preserve"><value>var dialog = new FavoriteSaveDialog(new Favorite { ProfileId = profileId, SessionName = session, WindowName = window, Name = window }, server) { Owner = this };</value></data>
+    <data name="MainWindow.Palette_149" xml:space="preserve"><value>var candidate = _settings with { Favorites = [.. _settings.Favorites, favorite] };</value></data>
+    <data name="MainWindow.Palette_152" xml:space="preserve"><value>MessageBox.Show(this, conflict + \"\n\nDer Favorit wurde nicht gespeichert.\", \"Favorit\", MessageBoxButton.OK, MessageBoxImage.Warning);</value></data>
+    <data name="MainWindow.Palette_159" xml:space="preserve"><value>StatusText.Text = $\"Favorit \"{favorite.Label}\" gespeichert\" + (favorite.Shortcut.Length > 0 ? $\" ({favorite.Shortcut}).\" : \".\");</value></data>
+    <data name="MainWindow.Placement_42" xml:space="preserve"><value>ServerOpen = _focusMode ? _focusRestoreServer : ServerPanelOpen,</value></data>
+    <data name="MainWindow.Placement_43" xml:space="preserve"><value>ServerWidth = ServerPanelOpen ? ServerColumn.ActualWidth : _serverWidth,</value></data>
+    <data name="MainWindow.Placement_55" xml:space="preserve"><value>_serverWidth = WindowLayout.PanelWidth(layout?.ServerWidth ?? 0, ServerPanelWidth, 180);</value></data>
+    <data name="MainWindow.Placement_57" xml:space="preserve"><value>SetServerPanel(layout?.ServerOpen ?? serverOpenByDefault);</value></data>
+    <data name="MainWindow.Strip_60" xml:space="preserve"><value>SessionTabs.Visibility = show ? Visibility.Collapsed : Visibility.Visible;</value></data>
+    <data name="MainWindow.Strip_143" xml:space="preserve"><value>private void StripSessionChanged(string profileId, string? sessionId)</value></data>
+    <data name="MainWindow.Subscriptions_26" xml:space="preserve"><value>ServerPanel.IsVisibleChanged += (_, _) => { if (ServerPanel.IsVisible) ChangeAiSource(); else CancelAiRead(); };</value></data>
+    <data name="MainWindow.Subscriptions_28" xml:space="preserve"><value>if (ServerPanel.IsVisible && !_aiCollapsed && !_aiBusy) await RefreshAiAsync();</value></data>
+    <data name="MainWindow.Subscriptions_39" xml:space="preserve"><value>AiSourceLabel.Text = _aiLocal ? \"Dieser PC · lokale Konten\" : profile?.Name + \" · kontoweite Nutzung\";</value></data>
+    <data name="MainWindow.Subscriptions_40" xml:space="preserve"><value>if (_aiKey is null) { AiSourceLabel.Text = \"Server auswählen oder Dieser PC über ⋯\"; _aiAccounts = []; }</value></data>
+    <data name="MainWindow.Subscriptions_43" xml:space="preserve"><value>if (_layoutReady && ServerPanel.IsVisible && !_aiCollapsed && _aiKey is not null) _ = RefreshAiAsync();</value></data>
+    <data name="MainWindow.Subscriptions_83" xml:space="preserve"><value>{ if (generation == _aiGeneration) AiSourceLabel.Text = \"Kontodaten nicht erreichbar · Setup über ⋯\"; }</value></data>
+    <data name="MainWindow.Subscriptions_105" xml:space="preserve"><value>if (AiPanelRow is null || ServerContent is null || AiPanelBody is null) return;</value></data>
+    <data name="MainWindow.Subscriptions_106" xml:space="preserve"><value>double height = Math.Min(_aiHeight, Math.Max(36, ServerContent.ActualHeight - 69));</value></data>
+    <data name="MainWindow.Subscriptions_127" xml:space="preserve"><value>menu.Items.Add(new Separator());</value></data>
+    <data name="MainWindow.Update_61" xml:space="preserve"><value>MessageBox.Show(this, \"Beim Aktualisieren werden die offenen SSH-Verbindungen getrennt. Fortfahren?\", \"Update\", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)</value></data>
+    <data name="MainWindow.Update_108" xml:space="preserve"><value>ShowError(\"Der Updater konnte nicht gestartet werden. Die installierte Version bleibt unverändert.\", ex);</value></data>
+    <data name="MainWindow.xaml_29" xml:space="preserve"><value>private readonly TmuxSessionQuery _tmuxQuery = new();</value></data>
+    <data name="MainWindow.xaml_37" xml:space="preserve"><value>private readonly Dictionary<string, PtySession> _sessions = [];</value></data>
+    <data name="MainWindow.xaml_149" xml:space="preserve"><value>case \"paletteFavorite\":</value></data>
+    <data name="MainWindow.xaml_150" xml:space="preserve"><value>if (m.GetProperty(\"id\").GetString() is { } favoriteId) SavePaletteFavorite(favoriteId);</value></data>
+    <data name="MainWindow.xaml_231" xml:space="preserve"><value>private async Task ConnectAsync(ProfileItem item, string? tmuxSessionId = null, string? tmuxWindowId = null, bool automatic = false)</value></data>
+    <data name="MainWindow.xaml_238" xml:space="preserve"><value>PtySession? pty = null;</value></data>
+    <data name="MainWindow.xaml_251" xml:space="preserve"><value>pty = new PtySession();</value></data>
+    <data name="MainWindow.xaml_271" xml:space="preserve"><value>var arguments = tmuxSessionId is null ? SshCommand.Arguments(item.Profile)</value></data>
+    <data name="MainWindow.xaml_272" xml:space="preserve"><value>: tmuxWindowId is null ? SshCommand.TmuxAttachArguments(item.Profile, tmuxSessionId)</value></data>
+    <data name="MainWindow.xaml_273" xml:space="preserve"><value>: SshCommand.TmuxAttachArguments(item.Profile, tmuxSessionId, tmuxWindowId);</value></data>
+    <data name="MainWindow.xaml_275" xml:space="preserve"><value>if (tmuxSessionId is not null) _tmuxAttached[id] = (tmuxSessionId, null);</value></data>
+    <data name="MainWindow.xaml_276" xml:space="preserve"><value>else if (item.Profile.Mode == StartMode.Tmux) _tmuxAttached[id] = (null, item.Profile.TmuxSession);</value></data>
+    <data name="MainWindow.xaml_279" xml:space="preserve"><value>item.Status = item.Profile.AutoConnect ? \"● SSH läuft · Autostart\" : \"● SSH läuft\";</value></data>
+    <data name="MainWindow.xaml_280" xml:space="preserve"><value>StatusText.Text = automatic ? item.Name + \": wieder verbunden.\" : \"SSH läuft. Anmeldung und Host-Key-Abfragen erscheinen im Terminal.\";</value></data>
+    <data name="MainWindow.xaml_287" xml:space="preserve"><value>item.Status = \"Verbindung fehlgeschlagen\";</value></data>
+    <data name="MainWindow.xaml_288" xml:space="preserve"><value>ShowError(\"Verbindung zu \"+ item.Name + \\
+    <data name="MainWindow.xaml_308" xml:space="preserve"><value>private void ScheduleReconnect(ProfileItem item, int exitCode, string? tmuxSessionId)</value></data>
+    <data name="MainWindow.xaml_316" xml:space="preserve"><value>_ = ReconnectAfterAsync(item, decision, tmuxSessionId, wait);</value></data>
+    <data name="MainWindow.xaml_319" xml:space="preserve"><value>private async Task ReconnectAfterAsync(ProfileItem item, ReconnectDecision decision, string? tmuxSessionId, CancellationTokenSource wait)</value></data>
+    <data name="MainWindow.xaml_326" xml:space="preserve"><value>Post(new { type = "output", id, data = $"\x1b[90m[Verbindung abgebrochen. Neuer Versuch in {decision.Delay.TotalSeconds:0} s ({attempt})]\x1b[0m\r\n" });</value></data>
+    <data name="MainWindow.xaml_329" xml:space="preserve"><value>item.Status = $"Verbindung verloren · neuer Versuch in {left} s ({attempt})";</value></data>
+    <data name="MainWindow.xaml_336" xml:space="preserve"><value>await ConnectAsync(item, tmuxSessionId, null, automatic: true);</value></data>
+    <data name="MainWindow.xaml_373" xml:space="preserve"><value>Post(new { type = "output", id = item.Profile.Id, data = "\r\n\x1b[90m[Verbindung getrennt]\x1b[0m\r\n" });</value></data>
+    <data name="MainWindow.xaml_404" xml:space="preserve"><value>SessionTitle.Text = TitleFor(item);</value></data>
+    <data name="MainWindow.xaml_415" xml:space="preserve"><value>StripSessionChanged(id, null);</value></data>
+    <data name="MainWindow.xaml_416" xml:space="preserve"><value>if (_tmuxLabel.Remove(id) && Selected?.Profile.Id == id) SessionTitle.Text = TitleFor(Selected);</value></data>
+    <data name="MainWindow.xaml_426" xml:space="preserve"><value>private void ServerRightClick(object sender, MouseButtonEventArgs e)</value></data>
+    <data name="MainWindow.xaml_432" xml:space="preserve"><value>ShowServerMenu(item, container);</value></data>
+    <data name="MainWindow.xaml_437" xml:space="preserve"><value>private void ShowServerMenu(ProfileItem item, FrameworkElement container)</value></data>
+    <data name="MainWindow.xaml_446" xml:space="preserve"><value>Add("tmux-Session auswählen …", ChooseTmuxSession);</value></data>
+    <data name="MainWindow.xaml_447" xml:space="preserve"><value>Add("tmux-Fensterwahl öffnen (Ctrl+B w)", OpenTmuxWindowPicker);</value></data>
+    <data name="MainWindow.xaml_448" xml:space="preserve"><value>menu.Items.Add(new Separator());</value></data>
+    <data name="MainWindow.xaml_450" xml:space="preserve"><value>var placeholder = new MenuItem { Header = "Fenster werden geladen …", IsEnabled = false };</value></data>
+    <data name="MainWindow.xaml_452" xml:space="preserve"><value>menu.Items.Add(new Separator());</value></data>
+    <data name="MainWindow.xaml_475" xml:space="preserve"><value>menu.Items.Insert(at, new MenuItem { Header = "Keine tmux-Sessions auf dem Server", IsEnabled = false });</value></data>
+    <data name="MainWindow.xaml_489" xml:space="preserve"><value>placeholder.Header = TmuxMenu.Escape("tmux-Fenster nicht verfügbar: " + (first.Length > 70 ? first[..70] + "…" : first));</value></data>
+    <data name="MainWindow.xaml_505" xml:space="preserve"><value>return (null, TmuxWindowParser.SessionNameFromCommand(command));</value></data>
+    <data name="MainWindow.xaml_516" xml:space="preserve"><value>await TmuxClient.SwitchToWindowAsync(pty, window.SessionId, window.WindowId, _shutdown.Token);</value></data>
+    <data name="MainWindow.xaml_517" xml:space="preserve"><value>_tmuxAttached[id] = (window.SessionId, null);</value></data>
+    <data name="MainWindow.xaml_518" xml:space="preserve"><value>StripSessionChanged(id, window.SessionId);</value></data>
+    <data name="MainWindow.xaml_522" xml:space="preserve"><value>await ConnectAsync(item, window.SessionId, window.WindowId);</value></data>
+    <data name="MainWindow.xaml_525" xml:space="preserve"><value>_tmuxLabel[id] = $"tmux: {window.SessionName} / {window.Name}";</value></data>
+    <data name="MainWindow.xaml_526" xml:space="preserve"><value>_history.Visit(new(id, window.SessionId, window.SessionName, window.WindowId, window.Name));</value></data>
+    <data name="MainWindow.xaml_527" xml:space="preserve"><value>SessionTitle.Text = TitleFor(item);</value></data>
+    <data name="MainWindow.xaml_531" xml:space="preserve"><value>catch (Exception ex) { ShowError("Wechsel in das tmux-Fenster fehlgeschlagen.", ex); }</value></data>
+    <data name="MainWindow.xaml_533" xml:space="preserve"><value>private async void ChooseTmuxSession(object sender, RoutedEventArgs e)</value></data>
+    <data name="MainWindow.xaml_537" xml:space="preserve"><value>var dialog = new TmuxSessionDialog(item.Profile) { Owner = this };</value></data>
+    <data name="MainWindow.xaml_538" xml:space="preserve"><value>if (dialog.ShowDialog() != true || dialog.SelectedSession is not { } session) return;</value></data>
+    <data name="MainWindow.xaml_543" xml:space="preserve"><value>SessionTitle.Text = TitleFor(item);</value></data>
+    <data name="MainWindow.xaml_554" xml:space="preserve"><value>else StatusText.Text = "Zuerst verbinden. Der Aufruf setzt eine laufende tmux-Session mit Präfix Ctrl+B voraus.";</value></data>
+    <data name="MainWindow.xaml_637" xml:space="preserve"><value>SessionTitle.Text = TitleFor(item);</value></data>
+    <data name="MainWindow.xaml_638" xml:space="preserve"><value>StatusText.Text = "Profil gespeichert. Änderungen gelten ab der nächsten Verbindung.";</value></data>
+    <data name="MainWindow.xaml_645" xml:space="preserve"><value>var dialog = new OpenFileDialog { Title = "OpenSSH-Config importieren", Filter = "Alle Dateien|*.*",</value></data>
+    <data name="MainWindow.xaml_660" xml:space="preserve"><value>StatusText.Text = count + " Profile importiert. Automatische Verbindung im Profil aktivieren.";</value></data>
+    <data name="MainWindow.xaml_712" xml:space="preserve"><value>if (!_sessions.ContainsKey(id)) { StatusText.Text = "Zum Einfügen zuerst eine laufende Session auswählen."; return; }</value></data>
+    <data name="MainWindow.xaml_757" xml:space="preserve"><value>else StatusText.Text = "Zum Einfügen zuerst eine laufende Session auswählen.";</value></data>
+    <data name="MainWindow.xaml_834" xml:space="preserve"><value>SessionHint.Text = $"{shortcuts.SessionModifier}+1 … {shortcuts.SessionModifier}+9 · Session wechseln";</value></data>
+    <data name="MainWindow.xaml_854" xml:space="preserve"><value>catch (Exception ex) { ShowError("Einstellungen konnten nicht gespeichert werden.", ex); }</value></data>
+    <data name="MainWindow.xaml_863" xml:space="preserve"><value>if (e.Key == Key.Escape && ServerPanelOpen && !_focusMode && !ReferenceEquals(Keyboard.FocusedElement, DictationBox) && ProfilesList.IsKeyboardFocusWithin)</value></data>
+    <data name="MainWindow.xaml_865" xml:space="preserve"><value>SetServerPanel(false);</value></data>
+    <data name="MainWindow.xaml_883" xml:space="preserve"><value>// Session switching: the configured modifier plus 1 to 9 (the terminal page handles the same keys while it has the focus).</value></data>
+    <data name="MainWindow.xaml_885" xml:space="preserve"><value>Shortcut.Parse(_settings.Shortcuts.Normalized().SessionModifier + "+" + pressed.Key) == pressed)</value></data>
+    <data name="MainWindow.xaml_907" xml:space="preserve"><value>StatusText.Text = "SSH-Sessions werden geschlossen …";</value></data>
+    <data name="ProfileDialog_19" xml:space="preserve"><value>Title = profile is null ? "Verbindungsprofil anlegen" : "Verbindungsprofil bearbeiten";</value></data>
+    <data name="ProfileDialog_34" xml:space="preserve"><value>_reconnect = new CheckBox { Content = "Nach Verbindungsabbruch automatisch neu verbinden", IsChecked = _original.AutoReconnect,</value></data>
+    <data name="ProfileDialog_35" xml:space="preserve"><value>ToolTip = "Nur bei verlorener Verbindung (SSH-Exit 255), nicht nach exit oder tmux-Detach. Wartezeit 2 bis 30 s, höchstens 10 Versuche." };</value></data>
+    <data name="ProfileDialog_37" xml:space="preserve"><value>panel.Children.Add(new TextBlock { Text = "Nach dem Verbindungsaufbau" });</value></data>
+    <data name="ProfileDialog_39" xml:space="preserve"><value>ItemsSource = new[] { "SSH-Config verwenden (inklusive RemoteCommand)", "tmux-Session öffnen oder anlegen", "Eigenen Remote-Befehl ausführen" },</value></data>
+    <data name="ProfileDialog_42" xml:space="preserve"><value>_session = Field("tmux-Session", _original.TmuxSession);</value></data>
+    <data name="ProfileDialog_53" xml:space="preserve"><value>1 => "An bestehende Session anhängen. Der optionale Befehl läuft nur beim Erstellen einer neuen Session.",</value></data>
+    <data name="ProfileDialog_54" xml:space="preserve"><value>_ => "Der Befehl läuft bei jeder manuellen oder automatischen Verbindung. Nach seinem Ende schließt SSH. Für eine anschließende Shell z. B.: dein-befehl; exec bash -l"</value></data>
+    <data name="ProfileDialog_60" xml:space="preserve"><value>var save = new Button { Content = "Speichern", IsDefault = true };</value></data>
+    <data name="ProfileDialog_68" xml:space="preserve"><value>TmuxSession = _session.Text.Trim(), Command = _command.Text</value></data>
+    <data name="Localization_66" xml:space="preserve"><value>public static string SessionModifier => Get(nameof(SessionModifier));</value></data>
+    <data name="Localization_73" xml:space="preserve"><value>public static string FavoritesButton => Get(nameof(FavoritesButton));</value></data>
+    <data name="Localization_74" xml:space="preserve"><value>public static string FavoritesButtonTooltip => Get(nameof(FavoritesButtonTooltip));</value></data>
+    <data name="Localization_99" xml:space="preserve"><value>public static string ServerListTooltip => Get(nameof(ServerListTooltip));</value></data>
+    <data name="Localization_103" xml:space="preserve"><value>public static string ServerListTitle => Get(nameof(ServerListTitle));</value></data>
+    <data name="Localization_110" xml:space="preserve"><value>public static string SessionHintText => Get(nameof(SessionHintText));</value></data>
+    <data name="Localization_145" xml:space="preserve"><value>["groupFavorites"] = "Web.GroupFavorites",</value></data>
+    <data name="SettingsDialog_31" xml:space="preserve"><value>private List<Favorite> _favorites;</value></data>
+    <data name="SettingsDialog_37" xml:space="preserve"><value>_favorites = [.. settings.Favorites];</value></data>
+    <data name="SettingsDialog_94" xml:space="preserve"><value>_sessionModifier = Combo(AppLocalization.Get("SessionModifier"), ShortcutRules.SessionModifiers.Select(m => m + "+1 … 9"), shortcuts.SessionModifier + "+1 … 9");</value></data>
+    <data name="SettingsDialog_102" xml:space="preserve"><value>var favoritesButton = new Button { Content = string.Format(AppLocalization.Get("FavoritesButton"), _favorites.Count), ToolTip = AppLocalization.Get("FavoritesButtonTooltip"), HorizontalAlignment = HorizontalAlignment.Left };</value></data>
+    <data name="SettingsDialog_105" xml:space="preserve"><value>var dialog = new FavoritesDialog(_favorites, _original.Profiles, recentWindows ?? []) { Owner = this };</value></data>
+    <data name="SettingsDialog_106" xml:space="preserve"><value>if (dialog.ShowDialog() == true && dialog.Result is { } result) { _favorites = result; favoritesButton.Content = string.Format(AppLocalization.Get("FavoritesButton"), _favorites.Count); }</value></data>
+    <data name="SettingsDialog_236" xml:space="preserve"><value>SessionModifier = ShortcutRules.SessionModifiers[Math.Max(0, _sessionModifier.SelectedIndex)],</value></data>
+    <data name="SettingsDialog_240" xml:space="preserve"><value>Favorites = _favorites,</value></data>
+    <data name="ThemeResources_43" xml:space="preserve"><value>return new FontFamily(new Uri(directory + Path.DirectorySeparatorChar), $"./#{family}, {fallback}");</value></data>
+    <data name="TmuxMenu_13" xml:space="preserve"><value>public static string SessionTitle(TmuxSessionWindows session, bool connected) =></value></data>
+    <data name="TmuxMenu_14" xml:space="preserve"><value>$"{session.Name} · {session.Windows.Count} Fenster" + (connected ? " · verbunden" : "");</value></data>
+    <data name="TmuxMenu_16" xml:space="preserve"><value>public static IReadOnlyList<Control> Build(IReadOnlyList<TmuxSessionWindows> sessions,</value></data>
+    <data name="TmuxMenu_17" xml:space="preserve"><value>Func<TmuxSessionWindows, bool> isConnected, Action<TmuxWindowRecord> choose)</value></data>
+    <data name="TmuxMenu_23" xml:space="preserve"><value>string title = Escape(SessionTitle(session, isConnected(session)));</value></data>
+    <data name="TmuxSessionDialog_8" xml:space="preserve"><value>public sealed class TmuxSessionDialog : Window</value></data>
+    <data name="TmuxSessionDialog_14" xml:space="preserve"><value>private readonly Button _attach = new() { Content = "Session öffnen", IsEnabled = false, IsDefault = true };</value></data>
+    <data name="TmuxSessionDialog_16" xml:space="preserve"><value>public TmuxSessionInfo? SelectedSession { get; private set; }</value></data>
+    <data name="TmuxSessionDialog_18" xml:space="preserve"><value>public TmuxSessionDialog(Profile profile)</value></data>
+    <data name="TmuxSessionDialog_22" xml:space="preserve"><value>Title = "tmux-Sessions · " + profile.Name;</value></data>
+    <data name="TmuxSessionDialog_27" xml:space="preserve"><value>var title = new TextBlock { Text = "Vorhandene Sessions auf " + profile.Name,</value></data>
+    <data name="TmuxSessionDialog_33" xml:space="preserve"><value>Text = "Die ausgewählte Session wird hier angehängt. Eine bisherige tmux-Session läuft auf dem Server weiter.",</value></data>
+    <data name="TmuxSessionDialog_52" xml:space="preserve"><value>if (_list.SelectedItem is ListBoxItem { Tag: TmuxSessionInfo session })</value></data>
+    <data name="TmuxSessionDialog_54" xml:space="preserve"><value>SelectedSession = session; DialogResult = true;</value></data>
+    <data name="TmuxSessionDialog_61" xml:space="preserve"><value>_list.Items.Clear(); _status.Text = "Sessions werden abgefragt …";</value></data>
+    <data name="TmuxSessionDialog_64" xml:space="preserve"><value>var sessions = await new TmuxSessionQuery().ListAsync(_profile, _cancellation.Token);</value></data>
+    <data name="TmuxSessionDialog_73" xml:space="preserve"><value>_status.Text = sessions.Count == 0 ? "Auf diesem Server laufen keine tmux-Sessions." : $"{sessions.Count} Session(s) gefunden";</value></data>
+    <data name="UiModels_54" xml:space="preserve"><value>: _status.StartsWith("Verbinde", StringComparison.Ordinal) || _status.StartsWith("Verbindung verloren", StringComparison.Ordinal) ? ConnectionState.Connecting : ConnectionState.Disconnected;</value></data>
+    <data name="UpdateDialog_39" xml:space="preserve"><value>Text = $"Diese App läuft nicht aus {installDirectory} (Entwicklungs-Build oder Kopie). Es wird nichts ausgetauscht; installieren Sie die neue Version mit scripts\\Install-Local.ps1 oder aus dem Release." });</value></data>
+    <data name="UpdateDialog_45" xml:space="preserve"><value>var install = new Button { Content = "Jetzt aktualisieren", IsDefault = true, IsEnabled = canInstall, ToolTip = "Lädt die neue Version, prüft die Prüfsumme und startet TerminalMgr neu. Offene SSH-Verbindungen werden getrennt." };</value></data>
+    <data name="UpdateDialog_66" xml:space="preserve"><value>catch (OperationCanceledException) { _progress.Children.Remove(cancelButton); Reset("Abgebrochen. Die installierte Version bleibt unverändert."); }</value></data>
+    <data name="UpdateDialog_67" xml:space="preserve"><value>catch (Exception ex) { _progress.Children.Remove(cancelButton); Reset("Das Update ist fehlgeschlagen: " + ex.Message + "\nDie installierte Version bleibt unverändert."); }</value></data>
+    <data name="AiAccounts_108" xml:space="preserve"><value>var facts = new List<AiFact> { new("Anmeldung", method), new("Quelle", "Claude auth status / Statuszeile"), new("Geltungsbereich", "Claude-Konto; Sitzungswerte separat"), new("Verlängerung / Rechnungen", "Von dieser Schnittstelle nicht geliefert") };</value></data>
+    <data name="AiAccounts_121" xml:space="preserve"><value>string session = Text(snapshot, "session_id") ?? "Sitzung";</value></data>
+    <data name="AiAccounts_122" xml:space="preserve"><value>facts.Add(new("Sitzung", session));</value></data>
+    <data name="AiAccounts_126" xml:space="preserve"><value>foreach (var (key, label) in new[] { ("total_cost_usd", "Sitzungsschätzung USD (keine Abo-Kosten)"), ("total_duration_ms", "Sitzungsdauer (ms)"), ("total_api_duration_ms", "API-Dauer (ms)") }) Field(facts, Get(snapshot, "cost"), key, label);</value></data>
+    <data name="AppPaths_23" xml:space="preserve"><value>string full = Path.GetFullPath(path).TrimEnd('\\', '/') + Path.DirectorySeparatorChar;</value></data>
+    <data name="AppPaths_24" xml:space="preserve"><value>string root = Path.GetFullPath(directory).TrimEnd('\\', '/') + Path.DirectorySeparatorChar;</value></data>
+    <data name="ConfigFile_36" xml:space="preserve"><value>/// <summary>Favorite tmux windows; they refer to servers by profile ID, which an imported profile keeps.</summary></value></data>
+    <data name="ConfigFile_37" xml:space="preserve"><value>public List<Favorite> Favorites { get; init; } = [];</value></data>
+    <data name="ConfigFile_99" xml:space="preserve"><value>CheckForUpdates = settings.Update.CheckOnStart, Shortcuts = settings.Shortcuts.Normalized(), Favorites = settings.Favorites.ToList(),</value></data>
+    <data name="ConfigImport_83" xml:space="preserve"><value>// Favorites: replaced entirely in "replace all", otherwise the incoming ones are added (an entry with the same ID is replaced).</value></data>
+    <data name="ConfigImport_84" xml:space="preserve"><value>Favorites = plan.Mode == ImportMode.ReplaceAll ? s.Favorites.ToList()</value></data>
+    <data name="ConfigImport_85" xml:space="preserve"><value>: result.Favorites.Where(f => s.Favorites.All(i => i.Id != f.Id)).Concat(s.Favorites).ToList(),</value></data>
+    <data name="Navigation_7" xml:space="preserve"><value>public sealed record Favorite</value></data>
+    <data name="Navigation_12" xml:space="preserve"><value>public string SessionName { get; init; } = "";</value></data>
+    <data name="Navigation_17" xml:space="preserve"><value>public string Label => string.IsNullOrWhiteSpace(Name) ? $"{SessionName} › {WindowName}" : Name;</value></data>
+    <data name="Navigation_20" xml:space="preserve"><value>public enum FavoriteStatus { Found, NoSession, NoWindow }</value></data>
+    <data name="Navigation_23" xml:space="preserve"><value>public sealed record FavoriteResolution(FavoriteStatus Status, TmuxWindowRecord? Window, string Message);</value></data>
+    <data name="Navigation_25" xml:space="preserve"><value>public static class FavoriteResolver</value></data>
+    <data name="Navigation_28" xml:space="preserve"><value>public static FavoriteResolution Resolve(Favorite favorite, IEnumerable<TmuxWindowRecord> windows)</value></data>
+    <data name="Navigation_30" xml:space="preserve"><value>var inSession = windows.Where(w => string.Equals(w.SessionName, favorite.SessionName, StringComparison.Ordinal)).OrderBy(w => w.Index).ToList();</value></data>
+    <data name="Navigation_31" xml:space="preserve"><value>if (inSession.Count == 0)</value></data>
+    <data name="Navigation_32" xml:space="preserve"><value>return new(FavoriteStatus.NoSession, null, $"Favorit „{favorite.Label}“: Die tmux-Session „{favorite.SessionName}“ gibt es auf dem Server nicht.");</value></data>
+    <data name="Navigation_33" xml:space="preserve"><value>var match = inSession.FirstOrDefault(w => string.Equals(w.Name, favorite.WindowName, StringComparison.Ordinal));</value></data>
+    <data name="Navigation_35" xml:space="preserve"><value>? new(FavoriteStatus.NoWindow, null, $"Favorit „{favorite.Label}“: In der Session „{favorite.SessionName}“ gibt es kein Fenster „{favorite.WindowName}“.")</value></data>
+    <data name="Navigation_36" xml:space="preserve"><value>: new(FavoriteStatus.Found, match, "");</value></data>
+    <data name="Navigation_40" xml:space="preserve"><value>public static Favorite For(string profileId, TmuxWindowRecord window) =></value></data>
+    <data name="Navigation_41" xml:space="preserve"><value>new() { ProfileId = profileId, SessionName = window.SessionName, WindowName = window.Name };</value></data>
+    <data name="Navigation_45" xml:space="preserve"><value>public sealed record NavigationPosition(string ProfileId, string SessionId, string SessionName, string WindowId, string WindowName)</value></data>
+    <data name="Navigation_48" xml:space="preserve"><value>ProfileId == other.ProfileId && SessionId == other.SessionId && WindowId == other.WindowId;</value></data>
+    <data name="PaletteBuilder_9" xml:space="preserve"><value>public sealed record PaletteServer(string ProfileId, string Name, bool Connected, string? AttachedSessionId, IReadOnlyList<TmuxWindowRecord> Windows);</value></data>
+    <data name="PaletteBuilder_16" xml:space="preserve"><value>public const string FavoritesGroup = "Favoriten", RecentGroup = "Zuletzt benutzt", WindowsGroup = "tmux-Fenster", ClipboardGroup = "Clipboard", ActionsGroup = "Aktionen";</value></data>
+    <data name="PaletteBuilder_18" xml:space="preserve"><value>public static readonly string[] GroupOrder = [FavoritesGroup, RecentGroup, WindowsGroup, ClipboardGroup, ActionsGroup];</value></data>
+    <data name="PaletteBuilder_30" xml:space="preserve"><value>if (parts.Length != 3 || parts[0].Length == 0 || !TmuxSessionParser.IsSessionId(parts[1]) || !TmuxWindowParser.IsWindowId(parts[2])) return false;</value></data>
+    <data name="PaletteBuilder_35" xml:space="preserve"><value>public static IReadOnlyList<PaletteItem> Build(AppSettings settings, IReadOnlyList<PaletteServer> servers, IReadOnlyList<NavigationPosition> recent,</value></data>
+    <data name="PaletteBuilder_39" xml:space="preserve"><value>string ServerName(string profileId) => servers.FirstOrDefault(s => s.ProfileId == profileId)?.Name</value></data>
+    <data name="PaletteBuilder_40" xml:space="preserve"><value>?? settings.Profiles.FirstOrDefault(p => p.Id == profileId)?.Name ?? "(Server fehlt)";</value></data>
+    <data name="PaletteBuilder_42" xml:space="preserve"><value>foreach (var favorite in settings.Favorites)</value></data>
+    <data name="PaletteBuilder_43" xml:space="preserve"><value>items.Add(new($"favorite:{favorite.Id}", FavoritesGroup, favorite.Label, $"{ServerName(favorite.ProfileId)} › {favorite.SessionName} › {favorite.WindowName}", favorite.Shortcut, true, true));</value></data>
+    <data name="PaletteBuilder_46" xml:space="preserve"><value>items.Add(new(WindowId(position.ProfileId, position.SessionId, position.WindowId), RecentGroup, $"{ServerName(position.ProfileId)} › {position.SessionName} › {position.WindowName}", "", "", true, false));</value></data>
+    <data name="PaletteBuilder_54" xml:space="preserve"><value>string hint = window.SessionId == server.AttachedSessionId && window.Index is >= 0 and <= 9 ? $"{modifier}+{window.Index}" : "";</value></data>
+    <data name="PaletteBuilder_55" xml:space="preserve"><value>items.Add(new(WindowId(server.ProfileId, window.SessionId, window.WindowId), WindowsGroup, $"{server.Name} › {session.Name} › {window.Label}", window.Active ? "aktives Fenster" : "", hint, false, true));</value></data>
+    <data name="Profile_15" xml:space="preserve"><value>public string TmuxSession { get; init; } = "main";</value></data>
+    <data name="Profile_24" xml:space="preserve"><value>if (Mode == StartMode.Tmux && (string.IsNullOrWhiteSpace(TmuxSession) ||</value></data>
+    <data name="Profile_25" xml:space="preserve"><value>TmuxSession.Any(c => !char.IsAsciiLetterOrDigit(c) && c != '_' && c != '-')))</value></data>
+    <data name="Profile_81" xml:space="preserve"><value>/// <summary>Modifier for session switching together with 1–9, one of <see cref="ShortcutRules.SessionModifiers"/>.</summary></value></data>
+    <data name="Profile_82" xml:space="preserve"><value>public string SessionModifier { get; init; } = "Alt";</value></data>
+    <data name="Profile_100" xml:space="preserve"><value>SessionModifier = ShortcutRules.SessionModifiers.Contains(SessionModifier) ? SessionModifier : "Alt"</value></data>
+    <data name="Profile_129" xml:space="preserve"><value>/// <summary>Saved tmux windows with their own shortcut (see <see cref="Favorite"/>).</summary></value></data>
+    <data name="Profile_130" xml:space="preserve"><value>public List<Favorite> Favorites { get; init; } = [];</value></data>
+    <data name="ShortcutRules_11" xml:space="preserve"><value>public static readonly string[] SessionModifiers = ["Alt", "Ctrl+Alt", "Alt+Shift", "Ctrl+Shift"];</value></data>
+    <data name="ShortcutRules_27" xml:space="preserve"><value>/// <summary>Session switching takes the chosen modifier together with the digits 1 to 9.</summary></value></data>
+    <data name="ShortcutRules_28" xml:space="preserve"><value>public static IReadOnlyList<ShortcutAssignment> SessionShortcuts(string modifier) =></value></data>
+    <data name="ShortcutRules_29" xml:space="preserve"><value>Enumerable.Range(1, 9).Select(n => new ShortcutAssignment("session" + n, "Session " + n, Shortcut.Parse(modifier + "+" + n))).ToList();</value></data>
+    <data name="ShortcutRules_36" xml:space="preserve"><value>for (int n = 0; n <= 9; n++) list.Add(new("window" + n, "tmux-Fenster " + n, Shortcut.Parse(shortcuts.WindowModifier + "+" + n)));</value></data>
+    <data name="ShortcutRules_37" xml:space="preserve"><value>list.Add(new("windowNext", "Nächstes tmux-Fenster", Shortcut.Parse(shortcuts.NextWindow)));</value></data>
+    <data name="ShortcutRules_38" xml:space="preserve"><value>list.Add(new("windowPrevious", "Voriges tmux-Fenster", Shortcut.Parse(shortcuts.PreviousWindow)));</value></data>
+    <data name="ShortcutRules_39" xml:space="preserve"><value>list.Add(new("windowBack", "Zurück zum letzten Fenster", Shortcut.Parse(shortcuts.Back)));</value></data>
+    <data name="ShortcutRules_40" xml:space="preserve"><value>list.Add(new("palette", "Befehlspalette", Shortcut.Parse(shortcuts.Palette)));</value></data>
+    <data name="ShortcutRules_41" xml:space="preserve"><value>foreach (var favorite in settings.Favorites.Where(f => f.Shortcut.Length > 0))</value></data>
+    <data name="ShortcutRules_42" xml:space="preserve"><value>if (Shortcut.TryParse(favorite.Shortcut, out var parsed)) list.Add(new("favorite:" + favorite.Id, "Favorit „" + favorite.Label + "“", parsed));</value></data>
+    <data name="ShortcutRules_49" xml:space="preserve"><value>var invalid = settings.Favorites.FirstOrDefault(f => f.Shortcut.Length > 0 && !Shortcut.TryParse(f.Shortcut, out _));</value></data>
+    <data name="ShortcutRules_50" xml:space="preserve"><value>if (invalid is not null) return $"Das Tastenkürzel „{invalid.Shortcut}“ des Favoriten „{invalid.Label}“ ist ungültig.";</value></data>
+    <data name="ShortcutRules_51" xml:space="preserve"><value>var all = Assignments(settings).Concat(SessionShortcuts(settings.Shortcuts.Normalized().SessionModifier)).Concat(NavigationShortcuts(settings)).ToList();</value></data>
+    <data name="ShortcutRules_56" xml:space="preserve"><value>var labels = duplicate.Select(a => a.Action.StartsWith("session") ? "Sessionwechsel" : a.Action.StartsWith("window") && a.Action.Length == 7 ? "tmux-Fenster 0 bis 9" : a.Label).Distinct();</value></data>
+    <data name="SshCommand_13" xml:space="preserve"><value>args.AddRange(["-o", "ServerAliveInterval=15", "-o", "ServerAliveCountMax=3", "-o", "ConnectTimeout=15"]);</value></data>
+    <data name="SshCommand_19" xml:space="preserve"><value>var command = "tmux new-session -A -s " + ShellQuote(profile.TmuxSession);</value></data>
+    <data name="SshCommand_33" xml:space="preserve"><value>if (!TmuxSessionParser.IsSessionId(sessionId)) throw new ArgumentException("Ungültige tmux-Session-ID.");</value></data>
+    <data name="SshCommand_44" xml:space="preserve"><value>if (string.IsNullOrWhiteSpace(sessionTarget) || sessionTarget.Any(char.IsControl)) throw new ArgumentException("Ungültige tmux-Session.");</value></data>
+    <data name="SshCommand_69" xml:space="preserve"><value>args.AddRange(["-o", "ServerAliveInterval=15", "-o", "ServerAliveCountMax=3", profile.Destination, command]);</value></data>
+    <data name="TmuxSessionParser_3" xml:space="preserve"><value>public sealed record TmuxSessionRecord(string Id, string Name, int Windows, int Attached);</value></data>
+    <data name="TmuxSessionParser_5" xml:space="preserve"><value>public static class TmuxSessionParser</value></data>
+    <data name="TmuxSessionParser_7" xml:space="preserve"><value>public static bool IsSessionId(string value) =></value></data>
+    <data name="TmuxSessionParser_10" xml:space="preserve"><value>public static IReadOnlyList<TmuxSessionRecord> Parse(string output)</value></data>
+    <data name="TmuxSessionParser_12" xml:space="preserve"><value>var sessions = new List<TmuxSessionRecord>();</value></data>
+    <data name="TmuxSessionParser_16" xml:space="preserve"><value>if (fields.Length != 4 || !IsSessionId(fields[0]) ||</value></data>
+    <data name="TmuxWindows_5" xml:space="preserve"><value>public sealed record TmuxWindowRecord(string SessionId, string SessionName, string WindowId, int Index, string Name, string Command, bool Active)</value></data>
+    <data name="TmuxWindows_12" xml:space="preserve"><value>public sealed record TmuxSessionWindows(string Id, string Name, IReadOnlyList<TmuxWindowRecord> Windows);</value></data>
+    <data name="TmuxWindows_30" xml:space="preserve"><value>if (f.Length < 7 || !TmuxSessionParser.IsSessionId(f[0]) || !IsWindowId(f[1]) ||</value></data>
+    <data name="TmuxWindows_32" xml:space="preserve"><value>// Session name is the first free-text field, the command the last; anything in between belongs to the window name.</value></data>
+    <data name="TmuxWindows_38" xml:space="preserve"><value>public static IReadOnlyList<TmuxSessionWindows> Group(IEnumerable<TmuxWindowRecord> windows) =></value></data>
+    <data name="TmuxWindows_39" xml:space="preserve"><value>windows.GroupBy(w => w.SessionId)</value></data>
+    <data name="TmuxWindows_40" xml:space="preserve"><value>.Select(g => new TmuxSessionWindows(g.Key, g.First().SessionName, g.OrderBy(w => w.Index).ToList()))</value></data>
+    <data name="TmuxWindows_44" xml:space="preserve"><value>public static bool UseSubmenus(IReadOnlyList<TmuxSessionWindows> sessions) =></value></data>
+    <data name="TmuxWindows_62" xml:space="preserve"><value>/// <summary>Session name from a RemoteCommand such as "tmux new -A -s main" or "tmux attach -t main".</summary></value></data>
+    <data name="TmuxWindows_63" xml:space="preserve"><value>public static string? SessionNameFromCommand(string? command)</value></data>
+    <data name="TmuxWindows_66" xml:space="preserve"><value>var match = SessionOption().Match(command);</value></data>
+    <data name="TmuxWindows_71" xml:space="preserve"><value>private static partial Regex SessionOption();</value></data>
+    <data name="WindowLayout_28" xml:space="preserve"><value>public bool? ServerOpen { get; init; }</value></data>
+    <data name="WindowLayout_29" xml:space="preserve"><value>public double ServerWidth { get; init; }</value></data>
+    <data name="WindowStrip_21" xml:space="preserve"><value>public sealed record WindowPoll(long ServerEpoch, IReadOnlyList<WindowSnapshot> Windows);</value></data>
+    <data name="Program_75" xml:space="preserve"><value>if (process.MainWindowHandle == IntPtr.Zero) { log("Kein Fenster der neuen Version innerhalb von 40 s."); try { process.Kill(); } catch (InvalidOperationException) { } return false; }</value></data>
+    <data name="Program_78" xml:space="preserve"><value>log("Die neue Version läuft.");</value></data>
+    <data name="AiAccountSource_40" xml:space="preserve"><value>start.FileName = TmuxSessionQuery.SshExecutable;</value></data>
+    <data name="AiAccountSource_42" xml:space="preserve"><value>foreach (string arg in new[] { "-T", "-o", "RemoteCommand=none", "-o", "BatchMode=yes", "-o", "ConnectTimeout=8", "-o", "ServerAliveInterval=10", "-o", "ServerAliveCountMax=2", profile.Destination }) start.ArgumentList.Add(arg);</value></data>
+    <data name="AiAccountSource_118" xml:space="preserve"><value>if (line is null) throw new IOException("Codex-Verbindung beendet.");</value></data>
+    <data name="DictationSession_15" xml:space="preserve"><value>public sealed class DictationSession(Func<IAudioSource> createSource, ITranscriber transcriber, DictationOptions options, double partialSeconds = 1.75,</value></data>
+    <data name="PtySession_11" xml:space="preserve"><value>public sealed class PtySession : IAsyncDisposable</value></data>
+    <data name="PtySession_33" xml:space="preserve"><value>if (_console != IntPtr.Zero || _stopping) throw new InvalidOperationException("Session bereits gestartet.");</value></data>
+    <data name="TmuxClient_11" xml:space="preserve"><value>public static async Task RunCommandAsync(PtySession session, string tmuxCommand, CancellationToken cancellationToken = default)</value></data>
+    <data name="TmuxClient_22" xml:space="preserve"><value>public static async Task SwitchToWindowAsync(PtySession session, string sessionId, string windowId, CancellationToken cancellationToken = default)</value></data>
+    <data name="TmuxSessionQuery_6" xml:space="preserve"><value>public sealed record TmuxSessionInfo(string Id, string Name, int Windows, int Attached)</value></data>
+    <data name="TmuxSessionQuery_8" xml:space="preserve"><value>public string Detail => $"{Windows} Fenster · {Attached} aktive Verbindung(en)";</value></data>
+    <data name="TmuxSessionQuery_12" xml:space="preserve"><value>public sealed class TmuxSessionQuery</value></data>
+    <data name="TmuxSessionQuery_17" xml:space="preserve"><value>public async Task<IReadOnlyList<TmuxSessionInfo>> ListAsync(Profile profile, CancellationToken cancellationToken = default)</value></data>
+    <data name="TmuxSessionQuery_20" xml:space="preserve"><value>return TmuxSessionParser.Parse(stdout).Select(s => new TmuxSessionInfo(s.Id, s.Name, s.Windows, s.Attached)).ToList();</value></data>
+    <data name="TmuxSessionQuery_78" xml:space="preserve"><value>throw new TimeoutException($"Der Server hat innerhalb von {limit.TotalSeconds:0} Sekunden nicht geantwortet.");</value></data>
+    <data name="TmuxStripStream_27" xml:space="preserve"><value>var start = new ProcessStartInfo(TmuxSessionQuery.SshExecutable)</value></data>
+    <data name="UpdateService_51" xml:space="preserve"><value>catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested) { return new(null, "Update-Prüfung nicht möglich (Zeitüberschreitung)."); }</value></data>
+    <data name="UpdateService_52" xml:space="preserve"><value>catch (HttpRequestException) { return new(null, "Update-Prüfung nicht möglich (keine Verbindung)."); }</value></data>
+    <data name="UpdateService_71" xml:space="preserve"><value>string expected = UpdateInfo.ParseChecksum(checksumText, release.ZipName) ?? throw new InvalidDataException("Die Prüfsummen-Datei ist unlesbar.");</value></data>
+    <data name="UpdateService_73" xml:space="preserve"><value>if (actual != expected) throw new InvalidDataException("Die Prüfsumme der heruntergeladenen Datei stimmt nicht. Die Installation bleibt unverändert.");</value></data>
+    <data name="UpdateService_131" xml:space="preserve"><value>return text.Length > 4096 ? throw new InvalidDataException("Die Prüfsummen-Datei ist unerwartet groß.") : text;</value></data>
+    <data name="WindowsSpeechEngine_81" xml:space="preserve"><value>var session = recognizer.ContinuousRecognitionSession;</value></data>
+    <data name="WindowsSpeechEngine_157" xml:space="preserve"><value>try { if (recognizer is not null) await recognizer.ContinuousRecognitionSession.StopAsync(); }</value></data>
+    <data name="WindowsSpeechEngine_176" xml:space="preserve"><value>try { if (recognizer is not null) { await recognizer.ContinuousRecognitionSession.CancelAsync(); recognizer.Dispose(); } }</value></data>
+    <data name="Program_307" xml:space="preserve"><value>Check(cleaned.Count <= 2 && cleaned[0].Text == "Linux", "Separate comma entries between the repeats: " + string.Join("|", cleaned.Select(c => c.Text)));</value></data>
+    <data name="Program_364" xml:space="preserve"><value>(DictationSession Session, List<string> Partials, List<DictationState> States, List<DictationResult> Results, List<Exception> Errors) Observe(DictationSession session)</value></data>
+    <data name="Program_377" xml:space="preserve"><value>var o = Observe(new DictationSession(() => source, transcriber, new DictationOptions { PingStart = false }, partialSeconds: 1.0));</value></data>
+    <data name="Program_378" xml:space="preserve"><value>o.Session.Start();</value></data>
+    <data name="Program_381" xml:space="preserve"><value>Check(o.Results.Count == 0 && o.Session.State == DictationState.Recording, "Ended while speaking");</value></data>
+    <data name="Program_414" xml:space="preserve"><value>var session = new DictationSession(() => source, transcriber, new DictationOptions { PingStart = tone });</value></data>
+    <data name="Program_470" xml:space="preserve"><value>AppSettings With(params Favorite[] favorites) => new() { Favorites = [.. favorites] };</value></data>
+    <data name="Program_471" xml:space="preserve"><value>Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+2" })) is { } c1 && c1.Contains("Ctrl+2") && c1.Contains("tmux-Fenster"), "Favorite on Ctrl+2");</value></data>
+    <data name="Program_472" xml:space="preserve"><value>Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+Alt+A" }, new Favorite { Name = "B", Shortcut = "Ctrl+Alt+A" })) is { } c2 && c2.Contains("doppelt"), "Two favorites on the same keys");</value></data>
+    <data name="Program_473" xml:space="preserve"><value>Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+B" })) is { } c3 && c3.Contains("tmux"), "Ctrl+B stays with tmux");</value></data>
+    <data name="Program_475" xml:space="preserve"><value>Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+Alt+A" }, new Favorite { Name = "Nur Palette" })) is null, "A favorite without shortcut is fine");</value></data>
+    <data name="Program_476" xml:space="preserve"><value>var sameModifier = new AppSettings { Shortcuts = new ShortcutOptions { SessionModifier = "Alt+Shift", WindowModifier = "Alt+Shift" } };</value></data>
+    <data name="Program_477" xml:space="preserve"><value>Check(ShortcutRules.FindConflict(sameModifier) is { } c5 && c5.Contains("doppelt"), "Session and window digits on the same modifier");</value></data>
+    <data name="Program_480" xml:space="preserve"><value>Test("Favorites resolve by server, session name and window name, not by tmux IDs", () =></value></data>
+    <data name="Program_483" xml:space="preserve"><value>var favorite = new Favorite { ProfileId = "p1", SessionName = "main", WindowName = "archyx", Name = "Archyx" };</value></data>
+    <data name="Program_485" xml:space="preserve"><value>var found = FavoriteResolver.Resolve(favorite, before);</value></data>
+    <data name="Program_486" xml:space="preserve"><value>Check(found.Status == FavoriteStatus.Found && found.Window!.WindowId == "@4", "The first window of that name in that session wins");</value></data>
+    <data name="Program_488" xml:space="preserve"><value>Check(FavoriteResolver.Resolve(favorite, afterRestart).Window!.WindowId == "@20" && FavoriteResolver.Resolve(favorite, afterRestart).Window!.SessionId == "$5", "New IDs after a tmux restart");</value></data>
+    <data name="Program_489" xml:space="preserve"><value>var noWindow = FavoriteResolver.Resolve(favorite, [Win("$0", "main", "@1", 0, "shell")]);</value></data>
+    <data name="Program_490" xml:space="preserve"><value>Check(noWindow.Status == FavoriteStatus.NoWindow && noWindow.Window is null && noWindow.Message.Contains("kein Fenster"), "Missing window is a hint: " + noWindow.Message);</value></data>
+    <data name="Program_491" xml:space="preserve"><value>var noSession = FavoriteResolver.Resolve(favorite, [Win("$1", "work", "@9", 0, "archyx")]);</value></data>
+    <data name="Program_492" xml:space="preserve"><value>Check(noSession.Status == FavoriteStatus.NoSession && noSession.Message.Contains("Session"), "Missing session is a hint");</value></data>
+    <data name="Program_493" xml:space="preserve"><value>Check(FavoriteResolver.Resolve(favorite, []).Status == FavoriteStatus.NoSession, "Empty server");</value></data>
+    <data name="Program_494" xml:space="preserve"><value>var made = FavoriteResolver.For("p1", before[1]);</value></data>
+    <data name="Program_495" xml:space="preserve"><value>Check(made.SessionName == "main" && made.WindowName == "archyx" && made.ProfileId == "p1" && made.Label == "main › archyx", "Favorite from a window");</value></data>
+    <data name="Program_528" xml:space="preserve"><value>store.Save(new() { Favorites = [new Favorite { Name = "Archyx", ProfileId = "p1", SessionName = "main", WindowName = "archyx", Shortcut = "Ctrl+Alt+A" }],</value></data>
+    <data name="Program_531" xml:space="preserve"><value>Check(loaded.Favorites.Single() is { Name: "Archyx", SessionName: "main", WindowName: "archyx", Shortcut: "Ctrl+Alt+A" } && loaded.Shortcuts.WindowModifier == "Alt+Shift" && loaded.Shortcuts.Back == "Ctrl+Shift+Left", "Round trip");</value></data>
+    <data name="Program_533" xml:space="preserve"><value>Check(old.Favorites.Count == 0 && old.Shortcuts.Normalized().NextWindow == "Ctrl+Tab" && old.Shortcuts.Normalized().Back == "Ctrl+<", "Old file");</value></data>
+    <data name="Program_535" xml:space="preserve"><value>Test("Favorites are exported with the settings and merged (or replaced) on import", () =></value></data>
+    <data name="Program_537" xml:space="preserve"><value>var mine = new Favorite { Id = "f1", Name = "Archyx", ProfileId = "p1", SessionName = "main", WindowName = "archyx", Shortcut = "Ctrl+Alt+A" };</value></data>
+    <data name="Program_538" xml:space="preserve"><value>var theirs = new Favorite { Id = "f2", Name = "Logs", ProfileId = "p1", SessionName = "main", WindowName = "logs", Shortcut = "Ctrl+Alt+L" };</value></data>
+    <data name="Program_539" xml:space="preserve"><value>var source = new AppSettings { Favorites = [mine] };</value></data>
+    <data name="Program_542" xml:space="preserve"><value>Check(content.Settings!.Favorites.Single().Shortcut == "Ctrl+Alt+A", "Favorites in the file");</value></data>
+    <data name="Program_543" xml:space="preserve"><value>var target = new AppSettings { Favorites = [theirs] };</value></data>
+    <data name="Program_545" xml:space="preserve"><value>Check(merged.Favorites.Select(f => f.Id).OrderBy(i => i).SequenceEqual(["f1", "f2"]), "Merge keeps both");</value></data>
+    <data name="Program_547" xml:space="preserve"><value>Check(replaced.Favorites.Single().Id == "f1", "Replace all takes the file's favorites");</value></data>
+    <data name="Program_555" xml:space="preserve"><value>Favorites = [new Favorite { Id = "f1", Name = "Archyx", ProfileId = "p1", SessionName = "main", WindowName = "archyx", Shortcut = "Ctrl+Alt+A" }]</value></data>
+    <data name="Program_559" xml:space="preserve"><value>new PaletteServer("p1", "devbox", true, "$0", [Win("$0", "main", "@1", 0, "shell", true), Win("$0", "main", "@4", 2, "archyx"), Win("$1", "work", "@9", 0, "logs")]),</value></data>
+    <data name="Program_560" xml:space="preserve"><value>new PaletteServer("p2", "server1", false, null, [Win("$0", "x", "@1", 0, "never shown")])</value></data>
+    <data name="Program_565" xml:space="preserve"><value>var favorite = items.Single(i => i.Group == PaletteBuilder.FavoritesGroup);</value></data>
+    <data name="Program_566" xml:space="preserve"><value>Check(favorite.Id == "favorite:f1" && favorite.Title == "Archyx" && favorite.Subtitle == "devbox › main › archyx" && favorite.Shortcut == "Ctrl+Alt+A" && favorite.ShowWhenEmpty && favorite.Searchable, "Favorite item");</value></data>
+    <data name="Program_571" xml:space="preserve"><value>Check(windows.Single(w => w.Title.Contains("0: shell")).Subtitle == "aktives Fenster", "Active window marked");</value></data>
+    <data name="Program_577" xml:space="preserve"><value>Check(PaletteBuilder.GroupOrder.SequenceEqual(["Favoriten", "Zuletzt benutzt", "tmux-Fenster", "Clipboard", "Aktionen"]), "Group order");</value></data>
+    <data name="Program_603" xml:space="preserve"><value>Check(WordErrorRate.Compute("Starte den Server", "starte den server.") == 0, "Case and punctuation do not count");</value></data>
+    <data name="Program_631" xml:space="preserve"><value>var session = new DictationSession(() => source, final, new DictationOptions { PingStart = false, InterimCycleSeconds = 0.5 }, interim: words);</value></data>
+    <data name="Program_662" xml:space="preserve"><value>var session = new DictationSession(() => source, new FakeTranscriber(), new DictationOptions { PingStart = false, InterimCycleSeconds = 0.4, InterimWindowSeconds = 2 }, interim: words);</value></data>
+    <data name="Program_684" xml:space="preserve"><value>var o = Observe(new DictationSession(() => source, transcriber, new DictationOptions { PingStart = false }));</value></data>
+    <data name="Program_685" xml:space="preserve"><value>o.Session.Start();</value></data>
+    <data name="Program_692" xml:space="preserve"><value>var source = new FakeSource(); var transcriber = new FakeTranscriber { Responder = _ => "fertig" };</value></data>
+    <data name="Program_693" xml:space="preserve"><value>var o = Observe(new DictationSession(() => source, transcriber, new DictationOptions { PingStart = false }));</value></data>
+    <data name="Program_694" xml:space="preserve"><value>o.Session.Start();</value></data>
+    <data name="Program_696" xml:space="preserve"><value>o.Session.Stop();</value></data>
+    <data name="Program_697" xml:space="preserve"><value>Check(WaitUntil(() => { lock (o.Results) return o.Results.Count > 0; }) && o.Results[0] is { Text: "fertig", Manual: true }, "Manual stop");</value></data>
+    <data name="Program_699" xml:space="preserve"><value>var o2 = Observe(new DictationSession(() => second, transcriber, new DictationOptions { PingStart = false }));</value></data>
+    <data name="Program_700" xml:space="preserve"><value>o2.Session.Start();</value></data>
+    <data name="Program_702" xml:space="preserve"><value>o2.Session.Cancel();</value></data>
+    <data name="Program_704" xml:space="preserve"><value>Check(o2.Results.Count == 0 && o2.Session.State == DictationState.Idle && WaitUntil(() => second.Disposed), "Cancel must not report a result");</value></data>
+    <data name="Program_711" xml:space="preserve"><value>var o = Observe(new DictationSession(() => source, transcriber, new DictationOptions { PingStart = false }));</value></data>
+    <data name="Program_712" xml:space="preserve"><value>o.Session.Start();</value></data>
+    <data name="Program_714" xml:space="preserve"><value>o.Session.Stop();</value></data>
+    <data name="Program_715" xml:space="preserve"><value>Check(WaitUntil(() => o.Errors.Count > 0) && o.Errors[0].Message == "Modell kaputt" && o.Session.State == DictationState.Idle && o.Results.Count == 0, "Recognizer error");</value></data>
+    <data name="Program_717" xml:space="preserve"><value>var o2 = Observe(new DictationSession(() => broken, new FakeTranscriber(), new DictationOptions { PingStart = false }));</value></data>
+    <data name="Program_718" xml:space="preserve"><value>o2.Session.Start();</value></data>
+    <data name="Program_719" xml:space="preserve"><value>Check(WaitUntil(() => o2.Errors.Count > 0) && o2.Session.State == DictationState.Idle, "Microphone error");</value></data>
+    <data name="Program_720" xml:space="preserve"><value>o2.Session.Start();</value></data>
+    <data name="Program_721" xml:space="preserve"><value>Check(o2.Errors.Count == 2, "Session unusable after an error");</value></data>
+    <data name="Program_723" xml:space="preserve"><value>var o3 = Observe(new DictationSession(() => unplugged, new FakeTranscriber(), new DictationOptions { PingStart = false }));</value></data>
+    <data name="Program_724" xml:space="preserve"><value>o3.Session.Start();</value></data>
+    <data name="Program_727" xml:space="preserve"><value>Check(WaitUntil(() => o3.Errors.Count > 0) && o3.Session.State == DictationState.Idle && o3.Results.Count == 0, "Unplugged microphone");</value></data>
+    <data name="Program_732" xml:space="preserve"><value>var o = Observe(new DictationSession(() => source, transcriber, new DictationOptions { PingStart = false }, partialSeconds: 0.3));</value></data>
+    <data name="Program_733" xml:space="preserve"><value>o.Session.Start();</value></data>
+    <data name="Program_736" xml:space="preserve"><value>o.Session.Cancel();</value></data>
+    <data name="Program_771" xml:space="preserve"><value>var sessions = ShortcutRules.SessionShortcuts("Alt");</value></data>
+    <data name="Program_772" xml:space="preserve"><value>Check(sessions.Count == 9 && sessions[0].Shortcut.ToString() == "Alt+1" && sessions[8].Shortcut.ToString() == "Alt+9", "Session shortcuts");</value></data>
+    <data name="Program_779" xml:space="preserve"><value>Check(digit is not null && digit.Contains("Alt+3") && digit.Contains("Sessionwechsel"), "Session digit: " + digit);</value></data>
+    <data name="Program_780" xml:space="preserve"><value>Check(ShortcutRules.FindConflict(new AppSettings { Dictation = new() { Shortcut = "Alt+3" }, Shortcuts = new() { SessionModifier = "Ctrl+Alt" } }) is null, "Other modifier frees Alt+3");</value></data>
+    <data name="Program_788" xml:space="preserve"><value>var fixedUp = new ShortcutOptions { Copy = "C", Paste = "", SessionModifier = "Win" }.Normalized();</value></data>
+    <data name="Program_789" xml:space="preserve"><value>Check(fixedUp.Copy == "Ctrl+Shift+C" && fixedUp.Paste == "Ctrl+Shift+V" && fixedUp.SessionModifier == "Alt", "Normalization");</value></data>
+    <data name="Program_794" xml:space="preserve"><value>Check(!defaults.StartWithWindows && !new Profile().AutoReconnect && defaults.Shortcuts.SessionModifier == "Alt", "Defaults");</value></data>
+    <data name="Program_797" xml:space="preserve"><value>store.Save(new() { Profiles = [profile], StartWithWindows = true, Shortcuts = new() { Copy = "Ctrl+Alt+C", SessionModifier = "Ctrl+Alt" } });</value></data>
+    <data name="Program_799" xml:space="preserve"><value>Check(loaded.Profiles.Single().AutoReconnect && loaded.StartWithWindows && loaded.Shortcuts.Copy == "Ctrl+Alt+C" && loaded.Shortcuts.SessionModifier == "Ctrl+Alt", "Round trip");</value></data>
+    <data name="Program_820" xml:space="preserve"><value>Check(a.Contains("ServerAliveInterval=15") && a.Contains("ServerAliveCountMax=3") && a.Contains("ConnectTimeout=15"), "Keepalive or connect timeout missing: " + string.Join(' ', a));</value></data>
+    <data name="Program_913" xml:space="preserve"><value>store.Save(new() { Window = new WindowLayout { Left = 10, Top = 20, Width = 1000, Height = 700, Maximized = true, ServerOpen = false, ServerWidth = 300, ClipboardOpen = true, ClipboardWidth = 350 } });</value></data>
+    <data name="Program_915" xml:space="preserve"><value>Check(back is { Left: 10, Width: 1000, Maximized: true, ServerOpen: false, ClipboardOpen: true, ClipboardWidth: 350 }, "Round trip");</value></data>
+    <data name="Program_944" xml:space="preserve"><value>Check(poll.ServerEpoch == 1000 && poll.Windows.Count == 4, "Clock and window count");</value></data>
+    <data name="Program_1008" xml:space="preserve"><value>var rung = new WindowActivityTracker().Update(new WindowPoll(1, [Win("@8", 4, "sh", false, true, ["fertig"])]), t0)[0];</value></data>
+    <data name="Program_1203" xml:space="preserve"><value>(LocalServer Server, string Zip, string Sha) FakeRelease(string name, string version = "0.2.14", bool withExe = true)</value></data>
+    <data name="Program_1215" xml:space="preserve"><value>var server = new LocalServer();</value></data>
+    <data name="Program_1217" xml:space="preserve"><value>server.Routes["/api/latest"] = c => LocalServer.Text(c, $"{{\"tag_name\":\"v{version}\",\"body\":\"- fix: Test\",\"assets\":[" +</value></data>
+    <data name="Program_1220" xml:space="preserve"><value>server.Routes["/dl/" + Path.GetFileName(zip)] = c => LocalServer.Bytes(c, File.ReadAllBytes(zip));</value></data>
+    <data name="Program_1221" xml:space="preserve"><value>server.Routes["/dl/" + Path.GetFileName(zip) + ".sha256"] = c => LocalServer.Text(c, sha);</value></data>
+    <data name="Program_1258" xml:space="preserve"><value>string Fails(string name, Action<LocalServer, string> sabotage, Func<UpdateService, UpdateRelease, string, CancellationToken, Task>? run = null, CancellationToken token = default)</value></data>
+    <data name="Program_1275" xml:space="preserve"><value>string wrong = Fails("badsum", (s, zip) => s.Routes["/dl/" + Path.GetFileName(zip) + ".sha256"] = c => LocalServer.Text(c, new string('0', 64) + "  " + Path.GetFileName(zip) + "\n"));</value></data>
+    <data name="Program_1277" xml:space="preserve"><value>string garbage = Fails("junksum", (s, zip) => s.Routes["/dl/" + Path.GetFileName(zip) + ".sha256"] = c => LocalServer.Text(c, "<html>Not Found</html>"));</value></data>
+    <data name="Program_1279" xml:space="preserve"><value>string truncated = Fails("cut", (s, zip) => s.Routes["/dl/" + Path.GetFileName(zip)] = c => LocalServer.Truncated(c, File.ReadAllBytes(zip), 100_000));</value></data>
+    <data name="Program_1296" xml:space="preserve"><value>server3.Routes["/dl/" + Path.GetFileName(zip3)] = c => LocalServer.Slow(c, File.ReadAllBytes(zip3));</value></data>
+    <data name="Program_1315" xml:space="preserve"><value>Check(r.Release is null && r.Error!.Contains("keine Verbindung") && clock.Elapsed < TimeSpan.FromSeconds(5), $"Offline: {r.Error} after {clock.Elapsed}");</value></data>
+    <data name="Program_1323" xml:space="preserve"><value>server.Routes["/api/latest"] = c => LocalServer.Slow(c, Encoding.UTF8.GetBytes("{}"));</value></data>
+    <data name="Program_1358" xml:space="preserve"><value>Profiles = [new Profile { Id = "p1", Name = "devbox", Destination = "devbox", AutoConnect = true, AutoReconnect = true, Mode = StartMode.Tmux, TmuxSession = "main", Command = "htop" },</value></data>
+    <data name="Program_1362" xml:space="preserve"><value>Shortcuts = new() { Copy = "Ctrl+Alt+C", SessionModifier = "Ctrl+Alt" },</value></data>
+    <data name="Program_1430" xml:space="preserve"><value>File.WriteAllText(config, "# my servers\nInclude conf.d/*.conf\n\nHost devbox devbox-alt\n  HostName dev.example.test\n  User me\n  IdentityFile ~/.ssh/dev_key\n  RemoteCommand tmux new -A -s main\n\n# comment between\nHost server1\n  HostName s1.example.test\n\nMatch host *.internal\n  User root\n\nHost *\n  ServerAliveInterval 30\n\nHost wild-*\n  User x\n");</value></data>
+    <data name="Program_1554" xml:space="preserve"><value>var rows = TmuxSessionParser.Parse("Welcome\n$1\twork ; echo nope\t3\t1\n$0\tmain\t2\t0\ninvalid\trow\n");</value></data>
+    <data name="Program_1577" xml:space="preserve"><value>Check(!rows[0].Active && rows[2].Active && rows[2].SessionName == "main", "Active flag or session wrong");</value></data>
+    <data name="Program_1582" xml:space="preserve"><value>Check(rows.Count == 1 && rows[0].SessionId == "$3" && rows[0].WindowId == "@4" && rows[0].Index == 2, "IDs shifted by tabs");</value></data>
+    <data name="Program_1628" xml:space="preserve"><value>Test("Session name is found in typical tmux RemoteCommands", () =></value></data>
+    <data name="Program_1630" xml:space="preserve"><value>Check(TmuxWindowParser.SessionNameFromCommand("tmux new -A -s main") == "main", "new -A -s");</value></data>
+    <data name="Program_1631" xml:space="preserve"><value>Check(TmuxWindowParser.SessionNameFromCommand("tmux new-session -A -s 'work'") == "work", "new-session quoted");</value></data>
+    <data name="Program_1632" xml:space="preserve"><value>Check(TmuxWindowParser.SessionNameFromCommand("tmux attach -t main") == "main", "attach -t");</value></data>
+    <data name="Program_1633" xml:space="preserve"><value>Check(TmuxWindowParser.SessionNameFromCommand("tmux new -As dev") == "dev", "combined flags");</value></data>
+    <data name="Program_1634" xml:space="preserve"><value>Check(TmuxWindowParser.SessionNameFromCommand("bash -lc 'tmux new -A -s x'") == "x", "inside shell");</value></data>
+    <data name="Program_1635" xml:space="preserve"><value>Check(TmuxWindowParser.SessionNameFromCommand("tmux new -A") is null && TmuxWindowParser.SessionNameFromCommand("echo hi") is null</value></data>
+    <data name="Program_1636" xml:space="preserve"><value>&& TmuxWindowParser.SessionNameFromCommand(null) is null && TmuxWindowParser.SessionNameFromCommand("  ") is null, "No name expected");</value></data>
+    <data name="Program_1652" xml:space="preserve"><value>var session = new PtySession();</value></data>
+    <data name="Program_1686" xml:space="preserve"><value>var session = new PtySession();</value></data>
+    <data name="Program_1704" xml:space="preserve"><value>var sessions = await new TmuxSessionQuery().ListAsync(new() { Name = "testhost", Destination = sshHost });</value></data>
+    <data name="Program_1763" xml:space="preserve"><value>var german = Speak("de", "Starte bitte den tmux Server und öffne Claude Code.");</value></data>
+    <data name="Program_1769" xml:space="preserve"><value>Check(textDe.Contains("tmux", StringComparison.OrdinalIgnoreCase) || textDe.Contains("Server", StringComparison.OrdinalIgnoreCase) || textDe.Contains("Claude", StringComparison.OrdinalIgnoreCase), "German not recognized: " + textDe);</value></data>
+    <data name="Program_1808" xml:space="preserve"><value>var spoken = Task.Run(() => { Thread.Sleep(2000); var audio = SpeechBench.Synthesize("de", "Starte bitte den Server."); Console.WriteLine("  (Windows-Stimme spricht über die Lautsprecher)"); SpeakAloud("Starte bitte den Server."); });</value></data>
+    <data name="Program_1833" xml:space="preserve"><value>string[] shortText = ["Starte bitte den tmux Server und öffne Claude Code im Projektordner."];</value></data>
+    <data name="Program_1870" xml:space="preserve"><value>Console.WriteLine($"  Pool-Thread {i}: {(finished == task ? "fertig nach " + sw2.ElapsedMilliseconds + " ms: " + string.Join(" ", task.Result.Select(w => w.Text)) : "HÄNGT nach 8 s")}");</value></data>
+    <data name="Program_1878" xml:space="preserve"><value>Console.Write($"  Fenster {windowSeconds:0.0} s: ");</value></data>
+    <data name="Program_1885" xml:space="preserve"><value>using var session = new DictationSession(() => new WavFileSource(audio, 2.5), traced ? new TracingTranscriber(finalTranscriber, "final") : finalTranscriber, options, partialSeconds: 1.75, interim: streaming ? (traced ? new TracingTranscriber(interimTranscriber, "interim") : interimTranscriber) : null);</value></data>
+    <data name="Program_1886" xml:space="preserve"><value>var result = await SpeechBench.RunAsync(streaming ? "Whisper Streaming (" + options.InterimModel + ", Fenster)" : "Whisper alt (Gesamtsegment, " + options.Model + ")",</value></data>
+    <data name="Program_1918" xml:space="preserve"><value>PtySession? client = null;</value></data>
+    <data name="Program_1923" xml:space="preserve"><value>var session = (await new TmuxSessionQuery().ListAsync(profile)).Single(s => s.Name == "tmgr-osc");</value></data>
+    <data name="Program_1925" xml:space="preserve"><value>client = new PtySession();</value></data>
+    <data name="Program_1983" xml:space="preserve"><value>Check(firstFrame!.ServerEpoch > 1_700_000_000, "Server clock missing: " + firstFrame.ServerEpoch);</value></data>
+    <data name="Program_2014" xml:space="preserve"><value>PtySession? client = null;</value></data>
+    <data name="Program_2018" xml:space="preserve"><value>var session = (await new TmuxSessionQuery().ListAsync(profile)).Single(s => s.Name == "tmgr-nav");</value></data>
+    <data name="Program_2019" xml:space="preserve"><value>client = new PtySession();</value></data>
+    <data name="Program_2021" xml:space="preserve"><value>client.Start(ssh, SshCommand.TmuxAttachArguments(profile, session.Id, (await new TmuxSessionQuery().ListWindowsAsync(profile)).Single(w => w.SessionName == "tmgr-nav" && w.Index == 0).WindowId), 120, 30);</value></data>
+    <data name="Program_2059" xml:space="preserve"><value>var session = new PtySession();</value></data>
+    <data name="Program_2105" xml:space="preserve"><value>PtySession? client = null;</value></data>
+    <data name="Program_2110" xml:space="preserve"><value>var windows = await new TmuxSessionQuery().ListWindowsAsync(profile);</value></data>
+    <data name="Program_2111" xml:space="preserve"><value>var ta = windows.Where(w => w.SessionName == "tmgr-ta").ToList();</value></data>
+    <data name="Program_2112" xml:space="preserve"><value>var tb = windows.Where(w => w.SessionName == "tmgr-tb").ToList();</value></data>
+    <data name="Program_2113" xml:space="preserve"><value>Check(ta.Count == 2 && tb.Count == 2, "Test sessions not listed: " + string.Join(";", windows.Select(w => w.SessionName + "/" + w.Name)));</value></data>
+    <data name="Program_2115" xml:space="preserve"><value>Check(windows.Any(w => w.SessionName == "main"), "Existing session main not listed");</value></data>
+    <data name="Program_2116" xml:space="preserve"><value>string taId = ta[0].SessionId, tbId = tb[0].SessionId;</value></data>
+    <data name="Program_2121" xml:space="preserve"><value>client = new PtySession();</value></data>
+    <data name="Program_2153" xml:space="preserve"><value>sealed class LocalServer : IDisposable</value></data>
+    <data name="Program_2159" xml:space="preserve"><value>public LocalServer()</value></data>
+    <data name="SpeechBench_131" xml:space="preserve"><value>Console.WriteLine($"      {label} Worte: Start {start:0} ms, Fenster {samples.Length / 16000.0:0.0} s");</value></data>
+    <data name="SpeechBench_135" xml:space="preserve"><value>Console.WriteLine($"      {label} Worte: fertig nach {_clock.Elapsed.TotalMilliseconds - start:0} ms: {string.Join(" ", words.Select(w => w.Text))}");</value></data>
+    <data name="SpeechBench_148" xml:space="preserve"><value>Console.WriteLine($"      {label} Text: fertig nach {_clock.Elapsed.TotalMilliseconds - start:0} ms: {text}");</value></data>
+    <data name="Program_154" xml:space="preserve"><value>var tabs = (ListBox)main.FindName("SessionTabs");</value></data>
+    <data name="Program_162" xml:space="preserve"><value>new($"@{index + 1}", index, name, command, current, state, state switch { StripState.Running => "läuft", StripState.Done => "fertig", StripState.Asking => "fragt", _ => "ruhig" }, detail, preview, spark);</value></data>
+    <data name="Program_166" xml:space="preserve"><value>Card(1, "claude", "claude", true, StripState.Running, "claude · 4:12", ["Dateien lesen (12/40)", "Konfiguration ändern …"], [0.3, 0.6, 0.45, 0.8, 0.55, 0.9, 0.7, 1]),</value></data>
+    <data name="Program_178" xml:space="preserve"><value>Check(model.Shortcut == "Ctrl 1" && model.Current && model.Preview1 == "Dateien lesen (12/40)" && model.SparkHeights.Count == WindowActivityTracker.SparkBuckets && model.SparkHeights.All(h => h is >= 1.5 and <= 12), "Card model");</value></data>
+    <data name="Program_316" xml:space="preserve"><value>var favorites = new FavoritesDialog([new Favorite { ProfileId = "p1", Name = "Archyx", SessionName = "main", WindowName = "archyx", Shortcut = "Ctrl+Alt+A" }], profiles,</value></data>
+    <data name="Program_320" xml:space="preserve"><value>Check(favoritesContent.DesiredSize.Height > 150 && favorites.Result is null, "Favorites dialog layout");</value></data>
+    <data name="Program_321" xml:space="preserve"><value>var settingsWithFavorites = new SettingsDialog(new AppSettings { Profiles = [.. profiles], Favorites = [new Favorite { ProfileId = "p1", SessionName = "main", WindowName = "archyx" }] }, [new NavigationPosition("p1", "$0", "main", "@4", "archyx")]);</value></data>
+    <data name="Program_322" xml:space="preserve"><value>((FrameworkElement)settingsWithFavorites.Content).Measure(new Size(620, 3000));</value></data>
+    <data name="Program_323" xml:space="preserve"><value>var saveFavorite = new FavoriteSaveDialog(new Favorite { ProfileId = "p1", SessionName = "main", WindowName = "archyx", Name = "archyx" }, "devbox");</value></data>
+    <data name="Program_324" xml:space="preserve"><value>((FrameworkElement)saveFavorite.Content).Measure(new Size(480, double.PositiveInfinity));</value></data>
+    <data name="Program_325" xml:space="preserve"><value>Check(((FrameworkElement)saveFavorite.Content).DesiredSize.Height > 150 && saveFavorite.Result is null, "Save-favorite dialog layout");</value></data>
+    <data name="Program_372" xml:space="preserve"><value>Page("{\"event\":\"final\",\"index\":0,\"text\":\"Starte den Server\"}");</value></data>
+    <data name="Program_374" xml:space="preserve"><value>Check(interim.SequenceEqual([("", "Starte den"), ("Starte den Server", ""), ("Starte den Server", "und öffne")]), "Interim events: " + string.Join(" | ", interim));</value></data>
+    <data name="Program_425" xml:space="preserve"><value>var families = System.Windows.Media.Fonts.GetFontFamilies(new Uri(Path.Combine(terminal, "fonts") + Path.DirectorySeparatorChar)).Select(f => f.Source).ToList();</value></data>
+    <data name="Program_435" xml:space="preserve"><value>var tabs = (ListBox)main.FindName("SessionTabs");</value></data>
+    <data name="Program_445" xml:space="preserve"><value>foreach (string name in new[] { "ServerButton", "ClipboardButton", "DictationButton", "SettingsButton", "ServerPanel", "ProfilesList", "SessionTabs", "TerminalView", "ClipboardPanel", "ClipsList", "DictationPanel", "ConnectButton", "DisconnectButton", "TabHint" })</value></data>
+    <data name="Program_453" xml:space="preserve"><value>server1.Status = "● SSH läuft";</value></data>
+    <data name="Program_466" xml:space="preserve"><value>var server = (System.Windows.Controls.Primitives.ToggleButton)main.FindName("ServerButton");</value></data>
+    <data name="Program_468" xml:space="preserve"><value>var serverPanel = (FrameworkElement)main.FindName("ServerPanel");</value></data>
+    <data name="Program_518" xml:space="preserve"><value>string items = "[{\"id\":\"favorite:f1\",\"group\":\"Favoriten\",\"title\":\"Archyx\",\"subtitle\":\"devbox\",\"shortcut\":\"Ctrl+Alt+A\",\"showWhenEmpty\":true,\"searchable\":true}]";</value></data>
+    <data name="Program_610" xml:space="preserve"><value>Check(!flat[0].IsEnabled && (string)flat[0].Header == "main · 1 Fenster · verbunden", "Header of connected session: " + flat[0].Header);</value></data>
+    <data name="Program_611" xml:space="preserve"><value>Check(!flat[2].IsEnabled && (string)flat[2].Header == "my__work · 2 Fenster", "Header must escape underscores: " + flat[2].Header);</value></data>
+    <data name="Program_615" xml:space="preserve"><value>Check(chosen is { WindowId: "@2", SessionId: "$0" }, "Click did not choose the window by its IDs");</value></data>
+    <data name="Program_57" xml:space="preserve"><value>new Profile { Id = "p-devbox", Name = "devbox", Destination = "devbox", Mode = StartMode.Tmux, TmuxSession = "main" },</value></data>
+    <data name="Program_58" xml:space="preserve"><value>new Profile { Name = "server1", Destination = "server1", Mode = StartMode.Tmux, TmuxSession = "work" },</value></data>
+    <data name="Program_61" xml:space="preserve"><value>Favorites =</value></data>
+    <data name="Program_63" xml:space="preserve"><value>new Favorite { Name = "Archyx", ProfileId = "p-devbox", SessionName = "main", WindowName = "archyx", Shortcut = "Ctrl+Alt+A" },</value></data>
+    <data name="Program_64" xml:space="preserve"><value>new Favorite { Name = "Build-Log", ProfileId = "p-devbox", SessionName = "main", WindowName = "build", Shortcut = "Ctrl+Alt+B" },</value></data>
+    <data name="Program_101" xml:space="preserve"><value>if (profiles.Items[i] is ProfileItem item) item.Status = "● SSH läuft";</value></data>
 </root>

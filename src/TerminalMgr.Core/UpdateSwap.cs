@@ -31,7 +31,7 @@ namespace TerminalMgr.Core
 
             // 1. The old version steps aside. Nothing has changed yet if this fails (files in use, virus scanner).
             if (!Retry(delegate { MoveDirectory(installDir, backup); }, lockRetrySeconds, log))
-                return new SwapResult(false, "Der alte Ordner ließ sich nicht umbenennen (Dateien in Benutzung?). Die alte Version bleibt unverändert.");
+                return new SwapResult(false, AppLocalization.UpdateSwap34);
             log("Alte Version gesichert: " + backup);
 
             // 2. The new version takes its place.

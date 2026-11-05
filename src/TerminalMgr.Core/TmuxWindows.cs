@@ -2,6 +2,8 @@ using System.Text.RegularExpressions;
 
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 public sealed record TmuxWindowRecord(string SessionId, string SessionName, string WindowId, int Index, string Name, string Command, bool Active)
 {
     /// <summary>"Index: Name", plus the running program when it differs from the window name.</summary>
@@ -54,8 +56,8 @@ public static partial class TmuxWindowParser
 
     public static string Target(string sessionId, string windowId)
     {
-        if (!TmuxSessionParser.IsSessionId(sessionId)) throw new ArgumentException("Ungültige tmux-Session-ID.");
-        if (!IsWindowId(windowId)) throw new ArgumentException("Ungültige tmux-Fenster-ID.");
+        if (!TmuxSessionParser.IsSessionId(sessionId)) throw new ArgumentException(AppLocalization.TmuxWindows57);
+        if (!IsWindowId(windowId)) throw new ArgumentException(AppLocalization.TmuxWindows58);
         return sessionId + ":" + windowId;
     }
 

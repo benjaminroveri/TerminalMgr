@@ -1,5 +1,7 @@
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 /// <param name="Retry">Whether to connect again.</param>
 /// <param name="Delay">Wait before the attempt.</param>
 /// <param name="Attempt">Number of this attempt (1 is the first).</param>
@@ -33,7 +35,7 @@ public sealed class ReconnectTracker
     public ReconnectDecision Lost(bool enabled, int exitCode, DateTimeOffset now)
     {
         if (!enabled) return new(false, TimeSpan.Zero, 0, "Automatische Wiederverbindung ist ausgeschaltet.");
-        if (!IsConnectionLost(exitCode)) return new(false, TimeSpan.Zero, 0, "Die Sitzung wurde regulär beendet.");
+        if (!IsConnectionLost(exitCode)) return new(false, TimeSpan.Zero, 0, AppLocalization.ReconnectPolicy36);
         // A connection that held for a while was healthy: the next drop is a new incident, not another failed attempt.
         if (_connectedSince is { } since && now - since >= StableAfter) _attempts = 0;
         if (_attempts < int.MaxValue) _attempts++;

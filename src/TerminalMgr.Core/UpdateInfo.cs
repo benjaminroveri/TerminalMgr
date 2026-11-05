@@ -87,7 +87,7 @@ public static partial class UpdateInfo
             var names = assets.EnumerateArray().Select(a => a.TryGetProperty("name", out var n) ? n.GetString() ?? "" : "").ToList();
             if (names.Any(n => n.StartsWith($"TerminalMgr-win-{architecture}-", StringComparison.Ordinal) && n.EndsWith(".zip", StringComparison.Ordinal))) return null;
             var others = Architectures.Where(a => a != architecture && names.Any(n => n.StartsWith($"TerminalMgr-win-{a}-", StringComparison.Ordinal))).ToList();
-            return others.Count == 0 ? null : $"Das neueste Release hat kein Paket für Ihren Prozessor ({architecture}); vorhanden: {string.Join(", ", others)}.";
+            return others.Count == 0 ? null : $"string.Format(AppLocalization.Get("UpdateInfo_90"), architecture)", ", others)}.";
         }
         catch (JsonException) { return null; }
     }

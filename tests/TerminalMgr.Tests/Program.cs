@@ -298,7 +298,7 @@ try
         // The loop the user saw under the input box: commas as separate entries between the repeats must not hide the repetition.
         Check(DictationText.CollapseRepeats("Linux, Linux, Linux, Linux") == "Linux,", "Comma-separated loop: " + DictationText.CollapseRepeats("Linux, Linux, Linux, Linux"));
         Check(DictationText.CollapseRepeats("Starte Linux Linux Linux Linux Linux jetzt") == "Starte Linux jetzt", "Loop inside speech");
-        Check(DictationText.CollapseRepeats("der Server der Server der Server der Server läuft") == "der Server läuft", "A repeated phrase is kept once");
+        Check(DictationText.CollapseRepeats("der Server der Server der Server AppLocalization.Get("Program_301")") == "AppLocalization.Get("Program_301")", "A repeated phrase is kept once");
         Check(DictationText.CollapseRepeats("Ja ja ja okay") == "Ja ja ja okay" && DictationText.CollapseRepeats("") == "" && DictationText.CollapseRepeats("ein Satz ohne Schleife") == "ein Satz ohne Schleife", "Speech stays");
         var looped = new List<TimedWord>();
         foreach (string w in new[] { "Linux", ",", "Linux", ",", "Linux", ",", "Linux", "," })
@@ -373,7 +373,7 @@ try
     Test("Dictation: provisional text while speaking, ends after 1.5 s of silence, final text replaces it", () =>
     {
         var source = new FakeSource();
-        var transcriber = new FakeTranscriber { Responder = samples => samples > 3.2 * 16000 ? "Das ist der endgültige Text" : "Das ist" };
+        var transcriber = new FakeTranscriber { Responder = samples => samples > 3.2 * 16000 ? "AppLocalization.Get("Program_376")" : "Das ist" };
         var o = Observe(new DictationSession(() => source, transcriber, new DictationOptions { PingStart = false }, partialSeconds: 1.0));
         o.Session.Start();
         FeedSeconds(source, 2.0, 0.2);
@@ -381,7 +381,7 @@ try
         Check(o.Results.Count == 0 && o.Session.State == DictationState.Recording, "Ended while speaking");
         FeedSeconds(source, 1.7, 0);
         Check(WaitUntil(() => { lock (o.Results) return o.Results.Count > 0; }), "No final result");
-        Check(o.Results[0].Text == "Das ist der endgültige Text" && o.Results[0].Reason == StopReason.Silence && !o.Results[0].Manual, "Final result: " + o.Results[0]);
+        Check(o.Results[0].Text == "AppLocalization.Get("Program_384")" && o.Results[0].Reason == StopReason.Silence && !o.Results[0].Manual, "Final result: " + o.Results[0]);
         Check(transcriber.Calls.Last() >= 3.4 * 16000, "Final run must see the whole segment, saw " + transcriber.Calls.Last());
         Check(o.States.SequenceEqual([DictationState.Recording, DictationState.Processing, DictationState.Idle]), "States: " + string.Join(",", o.States));
         Check(WaitUntil(() => source.Disposed), "Microphone not released");
@@ -471,7 +471,7 @@ try
         Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+2" })) is { } c1 && c1.Contains("Ctrl+2") && c1.Contains("tmux-Fenster"), "Favorite on Ctrl+2");
         Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+Alt+A" }, new Favorite { Name = "B", Shortcut = "Ctrl+Alt+A" })) is { } c2 && c2.Contains("doppelt"), "Two favorites on the same keys");
         Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+B" })) is { } c3 && c3.Contains("tmux"), "Ctrl+B stays with tmux");
-        Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Strg+Q+Q" })) is { } c4 && c4.Contains("ungültig"), "Invalid text");
+        Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Strg+Q+Q" })) is { } c4 && c4.Contains("AppLocalization.Get("Program_474")"), "Invalid text");
         Check(ShortcutRules.FindConflict(With(new Favorite { Name = "A", Shortcut = "Ctrl+Alt+A" }, new Favorite { Name = "Nur Palette" })) is null, "A favorite without shortcut is fine");
         var sameModifier = new AppSettings { Shortcuts = new ShortcutOptions { SessionModifier = "Alt+Shift", WindowModifier = "Alt+Shift" } };
         Check(ShortcutRules.FindConflict(sameModifier) is { } c5 && c5.Contains("doppelt"), "Session and window digits on the same modifier");
@@ -779,7 +779,7 @@ try
         Check(digit is not null && digit.Contains("Alt+3") && digit.Contains("Sessionwechsel"), "Session digit: " + digit);
         Check(ShortcutRules.FindConflict(new AppSettings { Dictation = new() { Shortcut = "Alt+3" }, Shortcuts = new() { SessionModifier = "Ctrl+Alt" } }) is null, "Other modifier frees Alt+3");
         var prefix = ShortcutRules.FindConflict(new AppSettings { Shortcuts = new() { Paste = "ctrl+b" } });
-        Check(prefix is not null && prefix.Contains("tmux-Präfix"), "tmux prefix: " + prefix);
+        Check(prefix is not null && prefix.Contains("AppLocalization.Get("Program_782")"), "tmux prefix: " + prefix);
     });
     Test("Shortcut rules: hints for terminal keys, normalization of bad values", () =>
     {
@@ -869,7 +869,7 @@ try
         string B64(string s) => Convert.ToBase64String(Encoding.UTF8.GetBytes(s));
         Check(Osc52.TryDecode("c;" + B64("Hallo Welt"), out var t1) && t1 == "Hallo Welt", "Plain");
         Check(Osc52.TryDecode(";" + B64("ohne Auswahl"), out var t2) && t2 == "ohne Auswahl", "Empty selection");
-        Check(Osc52.TryDecode("cp;" + B64("äöü ß 日本\nzweite Zeile\ttab"), out var t3) && t3 == "äöü ß 日本\nzweite Zeile\ttab", "Unicode and layout");
+        Check(Osc52.TryDecode("cp;" + B64("AppLocalization.Get("Program_872")"), out var t3) && t3 == "AppLocalization.Get("Program_872")", "Unicode and layout");
         Check(Osc52.TryDecode("c;" + B64("abc").Insert(2, "\r\n"), out var t4) && t4 == "abc", "Whitespace inside base64 must be ignored");
         Check(Osc52.TryDecode("c;" + B64("ab").TrimEnd('='), out var t5) && t5 == "ab", "Missing padding is tolerated");
         Check(Osc52.TryDecode("s0;" + B64("x"), out _), "Cut buffer names");
@@ -1194,7 +1194,7 @@ try
         using (new FileStream(Path.Combine(locked.Install, "version.txt"), FileMode.Open, FileAccess.Read, FileShare.None))
         {
             var lr = UpdateSwap.Apply(locked.Install, locked.Staged, () => true, () => throw new Exception("old app must not be started when nothing changed"), locked.Log.Add, lockRetrySeconds: 1);
-            Check(!lr.Success && lr.Message.Contains("unverändert"), "Locked install folder: " + lr.Message);
+            Check(!lr.Success && lr.Message.Contains("AppLocalization.Get("Program_1197")"), "Locked install folder: " + lr.Message);
         }
         Check(File.ReadAllText(Path.Combine(locked.Install, "version.txt")) == "old" && Directory.Exists(locked.Staged), "A failed swap must leave the old version and the staged folder alone");
     });
@@ -1273,7 +1273,7 @@ try
             }
         }
         string wrong = Fails("badsum", (s, zip) => s.Routes["/dl/" + Path.GetFileName(zip) + ".sha256"] = c => LocalServer.Text(c, new string('0', 64) + "  " + Path.GetFileName(zip) + "\n"));
-        Check(wrong.StartsWith("InvalidDataException") && wrong.Contains("Prüfsumme"), "Wrong checksum: " + wrong);
+        Check(wrong.StartsWith("InvalidDataException") && wrong.Contains("AppLocalization.Get("Program_1276")"), "Wrong checksum: " + wrong);
         string garbage = Fails("junksum", (s, zip) => s.Routes["/dl/" + Path.GetFileName(zip) + ".sha256"] = c => LocalServer.Text(c, "<html>Not Found</html>"));
         Check(garbage.StartsWith("InvalidDataException"), "Garbage checksum file: " + garbage);
         string truncated = Fails("cut", (s, zip) => s.Routes["/dl/" + Path.GetFileName(zip)] = c => LocalServer.Truncated(c, File.ReadAllBytes(zip), 100_000));
@@ -1323,7 +1323,7 @@ try
             server.Routes["/api/latest"] = c => LocalServer.Slow(c, Encoding.UTF8.GetBytes("{}"));
             clock.Restart();
             var slow = service.CheckAsync(TimeSpan.FromMilliseconds(600)).GetAwaiter().GetResult();
-            Check(slow.Error!.Contains("Zeitüberschreitung") && clock.Elapsed < TimeSpan.FromSeconds(3), $"Slow server: {slow.Error} after {clock.Elapsed}");
+            Check(slow.Error!.Contains("AppLocalization.Get("Program_1326")") && clock.Elapsed < TimeSpan.FromSeconds(3), $"Slow server: {slow.Error} after {clock.Elapsed}");
         }
     });
 
@@ -1401,7 +1401,7 @@ try
         Check(ConfigFile.Parse(file, "Geheim-123").Content.Profiles!.Count == 2, "Right password refused");
         foreach (string wrong in new[] { "falsch", "geheim-123", "Geheim-123 " })
         { bool refused = false; try { ConfigFile.Parse(file, wrong); } catch (ConfigPasswordException) { refused = true; } Check(refused, "Wrong password accepted: " + wrong); }
-        bool needsPassword = false; try { ConfigFile.Parse(file, null); } catch (ConfigPasswordException ex) { needsPassword = ex.Message.Contains("passwortgeschützt"); }
+        bool needsPassword = false; try { ConfigFile.Parse(file, null); } catch (ConfigPasswordException ex) { needsPassword = ex.Message.Contains("AppLocalization.Get("Program_1404")"); }
         Check(needsPassword, "A protected file without password must ask for one");
         Check(!ConfigFile.Serialize(content, "0.2.15", DateTimeOffset.Now, "Geheim-123").AsSpan().SequenceEqual(file), "Salt and nonce must differ between exports");
         string tampered = text.Replace("\"data\": \"", "\"data\": \"AAAA");
@@ -1414,7 +1414,7 @@ try
         void Refuses(byte[] file, string expected, string what)
         { try { ConfigFile.Parse(file, null); throw new Exception("Accepted " + what); } catch (ConfigFormatException ex) { Check(ex.Message.Contains(expected), what + ": " + ex.Message); } }
         Refuses(Json("{\"format\":\"tmconfig\",\"formatVersion\":2,\"appVersion\":\"9.0.0\",\"exported\":\"2026-10-25T12:00:00+00:00\",\"content\":{}}"), "neueren Version", "newer format");
-        Refuses(Json("{\"format\":\"tmconfig\",\"formatVersion\":0,\"content\":{}}"), "ungültig", "version 0");
+        Refuses(Json("{\"format\":\"tmconfig\",\"formatVersion\":0,\"content\":{}}"), "AppLocalization.Get("Program_1417")", "version 0");
         Refuses(Json("{\"format\":\"other\",\"formatVersion\":1}"), "keine TerminalMgr-Konfigurationsdatei", "other format");
         Refuses(Json("this is not json"), "keine TerminalMgr-Konfigurationsdatei", "garbage");
         Refuses(Json(""), "keine TerminalMgr-Konfigurationsdatei", "empty file");
@@ -1578,9 +1578,9 @@ try
     });
     Test("tmux window list survives tabs, quotes, semicolons and Unicode in names", () =>
     {
-        var rows = TmuxWindowParser.Parse("$3\t@4\t2\t0\tmy session\ta\tb\tc ; $(rm -x) 'q' \"d\" äöü 日本\tvim\n");
+        var rows = TmuxWindowParser.Parse("$3\t@4\t2\t0\tmy session\ta\tb\tc ; $(rm -x) 'q' \"d\" AppLocalization.Get("Program_1581")\tvim\n");
         Check(rows.Count == 1 && rows[0].SessionId == "$3" && rows[0].WindowId == "@4" && rows[0].Index == 2, "IDs shifted by tabs");
-        Check(rows[0].SessionName == "my session" && rows[0].Name == "a\tb\tc ; $(rm -x) 'q' \"d\" äöü 日本" && rows[0].Command == "vim", "Name or command wrong: " + rows[0]);
+        Check(rows[0].SessionName == "my session" && rows[0].Name == "a\tb\tc ; $(rm -x) 'q' \"d\" AppLocalization.Get("Program_1583")" && rows[0].Command == "vim", "Name or command wrong: " + rows[0]);
     });
     Test("tmux window list: no sessions, banners and malformed rows give nothing", () =>
     {
@@ -1833,7 +1833,7 @@ if (args.Any(a => a.StartsWith("--dictation-bench")))
         string[] shortText = ["Starte bitte den tmux Server und öffne Claude Code im Projektordner."];
         string[] mediumText = ["Erstelle einen neuen Branch für die Konfiguration, schreibe die Tests dazu und schiebe die Änderung auf GitHub, sobald der Build grün ist."];
         string[] longText = ["Erstelle einen neuen Branch für die Konfiguration und schreibe die Tests dazu.", "Danach starte den Docker Container auf dem Entwicklungsserver neu.",
-            "Prüfe im Log mit tail, ob der SSH Verbindungsaufbau noch Fehler meldet.", "Wenn alles grün ist, schiebe die Änderung auf GitHub und öffne einen Pull Request."];
+            "AppLocalization.Get("Program_1836"), ob der SSH Verbindungsaufbau noch Fehler meldet.", "Wenn alles grün ist, schiebe die Änderung auf GitHub und öffne einen Pull Request."];
         var fixtures = new (string Name, string[] Sentences)[] { ("kurz", shortText), ("mittel", mediumText), ("lang", longText) };
         using var finalTranscriber = new WhisperTranscriber();
         using var interimTranscriber = new WhisperTranscriber(interim: true);

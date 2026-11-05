@@ -62,7 +62,7 @@ public static class SpeechBench
         catch (Exception ex)
         {
             engine.Cancel();
-            return new(engineName, name, reference, "", audioSeconds, 1, 1, null, null, 0, 0, 0, 0, timeline, ex is TimeoutException ? "Zeitüberschreitung" : ex.Message);
+            return new(engineName, name, reference, "", audioSeconds, 1, 1, null, null, 0, 0, 0, 0, timeline, ex is TimeoutException ? "AppLocalization.Get("SpeechBench_65")" : ex.Message);
         }
     }
 

@@ -4,6 +4,8 @@ using System.Resources;
 
 namespace TerminalMgr.App.Resources;
 
+using TerminalMgr.App.Resources;
+
 public static class AppLocalization
 {
     private static readonly ResourceManager Manager = new(
@@ -151,4 +153,83 @@ public static class AppLocalization
 
     public static Dictionary<string, string> GetWebStrings() =>
         WebStrings.ToDictionary(pair => pair.Key, pair => Get(pair.Value), StringComparer.Ordinal);
+        public static string ConfigCheck37 => Get("ConfigCheck_37");
+        public static string WhisperModels17 => Get("WhisperModels_17");
+        public static string Profile29 => Get("Profile_29");
+        public static string Navigation85 => Get("Navigation_85");
+        public static string TmuxWindows57 => Get("TmuxWindows_57");
+        public static string TmuxWindows58 => Get("TmuxWindows_58");
+        public static string ConfigFile132 => Get("ConfigFile_132");
+        public static string ConfigFile137 => Get("ConfigFile_137");
+        public static string ConfigFile142 => Get("ConfigFile_142");
+        public static string ConfigFile143 => Get("ConfigFile_143");
+        public static string ConfigFile144 => Get("ConfigFile_144");
+        public static string ConfigFile149 => Get("ConfigFile_149");
+        public static string ConfigFile155 => Get("ConfigFile_155");
+        public static string ConfigFile157 => Get("ConfigFile_157");
+        public static string UpdateSwap34 => Get("UpdateSwap_34");
+        public static string ReconnectPolicy36 => Get("ReconnectPolicy_36");
+        public static string TmuxStripStream41 => Get("TmuxStripStream_41");
+        public static string AiAccountSource25 => Get("AiAccountSource_25");
+        public static string FavoritesDialog44 => Get("FavoritesDialog_44");
+        public static string WindowsSpeechEngine92 => Get("WindowsSpeechEngine_92");
 }
+
+    public static string terminal.spec_187 => Get("terminal.spec_187");
+
+    public static string terminal.spec_191 => Get("terminal.spec_191");
+
+    public static string terminal.spec_213 => Get("terminal.spec_213");
+public static string palette.spec_27 => Get("palette.spec_27");
+
+    public static string palette.spec_28 => Get("palette.spec_28");
+
+    public static string palette.spec_30 => Get("palette.spec_30");
+
+    public static string palette.spec_73 => Get("palette.spec_73");
+
+    public static string palette.spec_75 => Get("palette.spec_75");
+
+    public static string palette.spec_86 => Get("palette.spec_86");
+
+    public static string palette.spec_150 => Get("palette.spec_150");
+
+    public static string Program_872 => Get("Program_872");
+
+    public static string ConfigCheck_44 => Get("ConfigCheck_44");
+
+    public static string UpdateInfo_90 => Get("UpdateInfo_90");
+
+    public static string Program_301 => Get("Program_301");
+
+    public static string Program_376 => Get("Program_376");
+
+    public static string Program_474 => Get("Program_474");
+
+    public static string Program_782 => Get("Program_782");
+
+    public static string Program_1197 => Get("Program_1197");
+
+    public static string Program_1276 => Get("Program_1276");
+
+    public static string Program_1326 => Get("Program_1326");
+
+    public static string Program_1404 => Get("Program_1404");
+
+    public static string Program_1417 => Get("Program_1417");
+
+    public static string Program_1581 => Get("Program_1581");
+
+    public static string SpeechBench_65 => Get("SpeechBench_65");
+
+    public static string Program_1836 => Get("Program_1836");
+
+    public static string Program_384 => Get("Program_384");
+
+    public static string Program_1583 => Get("Program_1583");
+
+    public static string ConfigCheck_37 => Get("ConfigCheck_37");
+
+    public static string ConfigCheck_124 => Get("ConfigCheck_124");
+
+    public static string ConfigCheck_35 => Get("ConfigCheck_35");

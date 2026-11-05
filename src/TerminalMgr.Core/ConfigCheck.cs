@@ -1,5 +1,7 @@
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 public sealed record ProfileProblem(string ProfileName, string Message);
 
 /// <summary>Reads the output of "ssh -G alias" (the effective settings, no connection is made) and finds what keeps a profile from connecting.</summary>
@@ -32,14 +34,14 @@ public static class ConfigCheck
         var keys = effective.GetValueOrDefault("identityfile") ?? [];
         var explicitKeys = keys.Where(k => !DefaultKeyNames.Contains(Path.GetFileName(k), StringComparer.OrdinalIgnoreCase)).ToList();
         foreach (string key in explicitKeys.Where(k => !fileExists(Expand(k))))
-            problems.Add(new(profile.Name, $"Schlüsseldatei fehlt: {key} (separat auf diesen Rechner kopieren)"));
+            problems.Add(new(profile.Name, $"string.Format(AppLocalization.Get("ConfigCheck_35"), key)"));
         if (explicitKeys.Count == 0 && !keys.Any(k => fileExists(Expand(k))))
-            problems.Add(new(profile.Name, "Im Ordner .ssh liegt kein Standard-Schlüssel; die Anmeldung klappt nur mit einem SSH-Agenten oder einem Passwort."));
+            problems.Add(new(profile.Name, AppLocalization.ConfigCheck37));
 
         bool direct = profile.Destination.Contains('@') || profile.Destination.Contains('.');
         string? host = effective.GetValueOrDefault("hostname")?.FirstOrDefault();
         if (!direct && host is not null && string.Equals(host, profile.Destination, StringComparison.OrdinalIgnoreCase))
-            problems.Add(new(profile.Name, $"Der Host „{profile.Destination}“ ist in der SSH-Config nicht definiert; der Name wird direkt aufgelöst."));
+            problems.Add(new(profile.Name, $"string.Format(AppLocalization.Get("ConfigCheck_44"), profile.Destination)"));
         return problems;
     }
 }

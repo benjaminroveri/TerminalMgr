@@ -4,6 +4,8 @@ using TerminalMgr.Core;
 
 namespace TerminalMgr.Windows;
 
+using TerminalMgr.App.Resources;
+
 /// <summary>
 /// One long-lived, noninteractive SSH connection that runs the frame loop of <see cref="WindowStripParser.Script"/> on the server:
 /// once a second the windows of one session with their screens. One connection instead of one SSH call per second; it uses key or
@@ -38,7 +40,7 @@ public sealed class TmuxStripStream : IAsyncDisposable
     {
         var frame = new StringBuilder();
         var error = _process.StandardError.ReadToEndAsync();
-        const string reason = "Die Verbindung für die Fensterleiste wurde beendet.";
+        const string reason = AppLocalization.TmuxStripStream41;
         try
         {
             string? line;

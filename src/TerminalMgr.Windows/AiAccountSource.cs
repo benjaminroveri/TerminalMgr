@@ -7,6 +7,8 @@ using TerminalMgr.Core;
 
 namespace TerminalMgr.Windows;
 
+using TerminalMgr.App.Resources;
+
 /// <summary>Read-only CLI connections, separate from the user's PTY. No model turns, login or token scraping.</summary>
 public sealed class AiAccountSource : IAiAccountSource
 {
@@ -22,7 +24,7 @@ public sealed class AiAccountSource : IAiAccountSource
         try { return await read(); }
         catch (OperationCanceledException) when (token.IsCancellationRequested) { throw; }
         catch (Exception ex) when (ex is OperationCanceledException or IOException or InvalidOperationException or System.ComponentModel.Win32Exception or JsonException)
-        { return AiAccountSnapshot.Unavailable(provider, "CLI nicht erreichbar, nicht installiert oder Abfrage nicht unterstützt") with { Error = "Abfrage fehlgeschlagen · Anmeldung / SSH-Key und CLI-Version prüfen" }; }
+        { return AiAccountSnapshot.Unavailable(provider, AppLocalization.AiAccountSource25) with { Error = "Abfrage fehlgeschlagen · Anmeldung / SSH-Key und CLI-Version prüfen" }; }
     }
 
     public static ProcessStartInfo Command(Profile? profile, string executable, params string[] arguments)

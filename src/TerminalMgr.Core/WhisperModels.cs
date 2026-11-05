@@ -1,5 +1,7 @@
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 public sealed record WhisperModel(string Name, string FileName, long ApproxBytes, string Description)
 {
     public Uri Url => new("https://huggingface.co/ggerganov/whisper.cpp/resolve/main/" + FileName);
@@ -14,7 +16,7 @@ public static class WhisperModels
     public static IReadOnlyList<WhisperModel> All { get; } =
     [
         new("large-v3-turbo-q5_0", "ggml-large-v3-turbo-q5_0.bin", 574_000_000, "Gutes Deutsch mit englischen Fachbegriffen (Vorgabe)"),
-        new("small-q5_1", "ggml-small-q5_1.bin", 190_000_000, "Leichter, für schwächere Rechner"),
+        new("small-q5_1", "ggml-small-q5_1.bin", 190_000_000, AppLocalization.WhisperModels17),
         new("small", "ggml-small.bin", 488_000_000, "Leichter, unquantisiert"),
         new("tiny", "ggml-tiny.bin", 78_000_000, "Sehr schnell, aber ungenau (zum Ausprobieren)")
     ];

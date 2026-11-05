@@ -5,6 +5,8 @@ using System.Text.Json.Serialization;
 
 namespace TerminalMgr.Core;
 
+using TerminalMgr.App.Resources;
+
 /// <param name="Aliases">The names after "Host" in the SSH config block.</param>
 /// <param name="Text">The block as written: the Host line and everything up to the next Host or Match line.</param>
 public sealed record SshHostBlock(IReadOnlyList<string> Aliases, string Text);
@@ -129,32 +131,32 @@ public static class ConfigFile
     {
         var info = ReadHeader(file, out var envelope);
         if (!info.Encrypted) return (info, envelope.Content ?? new ConfigContent());
-        if (string.IsNullOrEmpty(password)) throw new ConfigPasswordException("Die Datei ist passwortgeschützt. Bitte das Passwort eingeben.");
+        if (string.IsNullOrEmpty(password)) throw new ConfigPasswordException(AppLocalization.ConfigFile132);
         var e = envelope.Encryption!;
         try
         {
             byte[] salt = Convert.FromBase64String(e.Salt), nonce = Convert.FromBase64String(e.Nonce), tag = Convert.FromBase64String(e.Tag), cipher = Convert.FromBase64String(envelope.Data ?? "");
-            if (e.Iterations is < 10_000 or > 5_000_000 || salt.Length != 16 || nonce.Length != 12 || tag.Length != 16) throw new ConfigFormatException("Die Verschlüsselungsangaben der Datei sind ungültig.");
+            if (e.Iterations is < 10_000 or > 5_000_000 || salt.Length != 16 || nonce.Length != 12 || tag.Length != 16) throw new ConfigFormatException(AppLocalization.ConfigFile137);
             byte[] key = Rfc2898DeriveBytes.Pbkdf2(password, salt, e.Iterations, HashAlgorithmName.SHA256, 32), plain = new byte[cipher.Length];
             using (var aes = new AesGcm(key, tag.Length)) aes.Decrypt(nonce, cipher, tag, plain, AssociatedData);
             return (info, JsonSerializer.Deserialize<ConfigContent>(plain, Options) ?? new ConfigContent());
         }
-        catch (CryptographicException) { throw new ConfigPasswordException("Falsches Passwort oder beschädigte Datei."); }
-        catch (FormatException) { throw new ConfigFormatException("Die Datei ist beschädigt (ungültige Kodierung)."); }
-        catch (JsonException) { throw new ConfigFormatException("Die Datei ist beschädigt."); }
+        catch (CryptographicException) { throw new ConfigPasswordException(AppLocalization.ConfigFile142); }
+        catch (FormatException) { throw new ConfigFormatException(AppLocalization.ConfigFile143); }
+        catch (JsonException) { throw new ConfigFormatException(AppLocalization.ConfigFile144); }
     }
 
     private static ConfigFileInfo ReadHeader(byte[] file, out Envelope envelope)
     {
-        if (file.Length > MaxFileBytes) throw new ConfigFormatException("Die Datei ist ungewöhnlich groß und wird nicht gelesen.");
+        if (file.Length > MaxFileBytes) throw new ConfigFormatException(AppLocalization.ConfigFile149);
         try { envelope = JsonSerializer.Deserialize<Envelope>(file, Options) ?? throw new ConfigFormatException("Die Datei ist leer."); }
         catch (JsonException) { throw new ConfigFormatException("Das ist keine TerminalMgr-Konfigurationsdatei."); }
         if (envelope.Format != FormatName) throw new ConfigFormatException("Das ist keine TerminalMgr-Konfigurationsdatei.");
         if (envelope.FormatVersion > CurrentFormatVersion)
             throw new ConfigFormatException($"Die Datei stammt aus einer neueren Version von TerminalMgr (Format {envelope.FormatVersion}, diese Version kennt Format {CurrentFormatVersion}). Bitte TerminalMgr aktualisieren und es noch einmal versuchen.");
-        if (envelope.FormatVersion < 1) throw new ConfigFormatException("Die Formatversion der Datei ist ungültig.");
+        if (envelope.FormatVersion < 1) throw new ConfigFormatException(AppLocalization.ConfigFile155);
         bool encrypted = envelope.Encryption is not null;
-        if (encrypted && string.IsNullOrEmpty(envelope.Data)) throw new ConfigFormatException("Die verschlüsselten Daten fehlen.");
+        if (encrypted && string.IsNullOrEmpty(envelope.Data)) throw new ConfigFormatException(AppLocalization.ConfigFile157);
         return new(envelope.FormatVersion, envelope.AppVersion, envelope.Exported, encrypted);
     }
 }

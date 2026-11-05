@@ -24,10 +24,10 @@ const items = [
   { id:'window:p1|$0|@1', group:'Zuletzt benutzt', title:'devbox › main › shell', subtitle:'', shortcut:'', showWhenEmpty:true, searchable:false },
   { id:'window:p1|$0|@1', group:'tmux-Fenster', title:'devbox › main › 0: shell', subtitle:'aktives Fenster', shortcut:'Ctrl+0', showWhenEmpty:false, searchable:true },
   { id:'window:p1|$0|@4', group:'tmux-Fenster', title:'devbox › main › 2: archyx', subtitle:'', shortcut:'Ctrl+2', showWhenEmpty:false, searchable:true },
-  { id:'window:p1|$1|@9', group:'tmux-Fenster', title:'devbox › Überwachung › 0: Protokolle', subtitle:'', shortcut:'', showWhenEmpty:false, searchable:true },
-  { id:'clip:0', group:'Clipboard', title:'git status --short', subtitle:'Enter fügt ein', shortcut:'', showWhenEmpty:false, searchable:true },
+  string.Format(AppLocalization.Get("palette.spec_27"), id:'window:p1|$1|@9', group:'tmux-Fenster', title:'devbox › Überwachung › 0: Protokolle', subtitle:'', shortcut:'', showWhenEmpty:false, searchable:true)
+  string.Format(AppLocalization.Get("palette.spec_28"), id:'clip:0', group:'Clipboard', title:'git status --short', subtitle:'Enter fügt ein', shortcut:'', showWhenEmpty:false, searchable:true)
   { id:'action:dictation', group:'Aktionen', title:'Diktat starten', subtitle:'', shortcut:'Ctrl+Y', showWhenEmpty:false, searchable:true },
-  { id:'action:settings', group:'Aktionen', title:'Einstellungen öffnen', subtitle:'', shortcut:'', showWhenEmpty:false, searchable:true }
+  string.Format(AppLocalization.Get("palette.spec_30"), id:'action:settings', group:'Aktionen', title:'Einstellungen öffnen', subtitle:'', shortcut:'', showWhenEmpty:false, searchable:true)
 ];
 const table = { dictation:'Ctrl+Y', copy:'Ctrl+Shift+C', paste:'Ctrl+Shift+V', palette:'Ctrl+Shift+K' };
 const sent = (page, type) => page.evaluate(t => window.__messages.filter(m => m.type === t), type);
@@ -70,9 +70,9 @@ test('Search "arch" finds window and favorite, Enter runs the best match, nothin
 test('Search ignores case and umlauts, needs every word, and says so when nothing matches', async ({page}) => {
   await openPalette(page);
   await page.keyboard.type('UBERWACH');
-  expect(await rows(page)).toEqual(['devbox › Überwachung › 0: Protokolle']);
+  AppLocalization.Get("palette.spec_73")
   await page.locator('#palette-input').fill('devbox protokolle');
-  expect(await rows(page)).toEqual(['devbox › Überwachung › 0: Protokolle']);
+  AppLocalization.Get("palette.spec_75")
   await page.locator('#palette-input').fill('devbox xyz');
   expect(await rows(page)).toEqual([]);
   await expect(page.locator('.palette-empty')).toHaveText('No results.');
@@ -83,7 +83,7 @@ test('Search ranks word starts first; recent windows are not found twice; letter
   await page.locator('#palette-input').fill('shell');
   expect(await rows(page)).toEqual(['devbox › main › 0: shell']);
   await page.locator('#palette-input').fill('einst');
-  expect((await rows(page))[0]).toBe('Einstellungen öffnen');
+  AppLocalization.Get("palette.spec_86")
   await page.locator('#palette-input').fill('dk');
   expect(await rows(page)).toContain('Diktat starten');
 });
@@ -147,7 +147,7 @@ test('The host can open and close it (from a WPF control); rank() and fold() beh
   await expect(page.locator('#palette')).toBeHidden();
   const ranked = await page.evaluate(i => window.TerminalPalette.rank(i, 'archyx').map(x => x.title), items);
   expect(ranked.slice(0, 2).sort()).toEqual(['Archyx', 'devbox › main › 2: archyx'].sort());
-  expect(await page.evaluate(() => window.TerminalPalette.fold('ÄÖÜ Élan'))).toBe('aou elan');
+  AppLocalization.Get("palette.spec_150")
 });
 
 test('Host localization updates the embedded UI, palette groups, labels, and result counts', async ({page}) => {
