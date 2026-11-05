@@ -50,93 +50,93 @@ public sealed class SettingsDialog : Window
             Text = AppLocalization.LanguageRestartNote, TextWrapping = TextWrapping.Wrap,
             Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, -8, 0, 8)
         });
-        _startWithWindows = new CheckBox { Content = "TerminalMgr bei der Windows-Anmeldung starten", IsChecked = settings.StartWithWindows };
+        _startWithWindows = new CheckBox { Content = AppLocalization.Get("StartWithWindows"), IsChecked = settings.StartWithWindows };
         _panel.Children.Add(_startWithWindows);
 
         Heading(AppLocalization.AIProvidersHeading);
-        _panel.Children.Add(new TextBlock { Text = "Claude, ChatGPT/Codex und OpenRouter verbinden. Verfügbare Kontodaten, Limits und API-Budgets erscheinen unter der Serverliste.", TextWrapping = TextWrapping.Wrap });
-        var aiSetup = new Button { Content = "KI-Anbieter einrichten …", HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
+        _panel.Children.Add(new TextBlock { Text = AppLocalization.Get("AIProvidersDescription"), TextWrapping = TextWrapping.Wrap });
+        var aiSetup = new Button { Content = AppLocalization.Get("AIProvidersSetup"), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
         aiSetup.Click += (_, _) => AiSetupRequested?.Invoke();
         _panel.Children.Add(aiSetup);
 
         Heading(AppLocalization.UpdatesHeading);
         _skippedVersion = settings.Update.SkippedVersion;
-        _checkUpdates = new CheckBox { Content = "Beim Start nach neuen Versionen suchen", IsChecked = settings.Update.CheckOnStart,
-            ToolTip = "Fragt anonym die öffentliche GitHub-Release-Liste ab; ohne Netz startet die App unverändert weiter." };
+        _checkUpdates = new CheckBox { Content = AppLocalization.Get("CheckOnStart"), IsChecked = settings.Update.CheckOnStart,
+            ToolTip = AppLocalization.Get("CheckOnStartTooltip") };
         _panel.Children.Add(_checkUpdates);
         var updateButtons = new WrapPanel();
-        var checkNow = new Button { Content = "Jetzt nach Updates suchen", ToolTip = "Speichert die Einstellungen und sucht sofort nach einer neueren Version." };
+        var checkNow = new Button { Content = AppLocalization.Get("CheckNow"), ToolTip = AppLocalization.Get("CheckNowTooltip") };
         checkNow.Click += (_, _) => { CheckForUpdatesNow = true; Save(); };
-        var resetSkipped = new Button { Content = _skippedVersion is null ? "Keine Version übersprungen" : $"Übersprungene Version {_skippedVersion} zurücksetzen", IsEnabled = _skippedVersion is not null };
-        resetSkipped.Click += (_, _) => { _skippedVersion = null; resetSkipped.Content = "Keine Version übersprungen"; resetSkipped.IsEnabled = false; };
+        var resetSkipped = new Button { Content = _skippedVersion is null ? AppLocalization.Get("NoSkippedVersion") : string.Format(AppLocalization.Get("ResetSkippedVersion"), _skippedVersion), IsEnabled = _skippedVersion is not null };
+        resetSkipped.Click += (_, _) => { _skippedVersion = null; resetSkipped.Content = AppLocalization.Get("NoSkippedVersion"); resetSkipped.IsEnabled = false; };
         updateButtons.Children.Add(checkNow);
         updateButtons.Children.Add(resetSkipped);
         _panel.Children.Add(updateButtons);
 
-        Heading("Konfiguration");
-        _panel.Children.Add(new TextBlock { Text = "Profile, Einstellungen, angeheftete Clipboard-Einträge und SSH-Host-Blöcke in eine .tmconfig-Datei sichern (optional mit Passwort) oder auf einem anderen Rechner einlesen.",
+        Heading(AppLocalization.Get("ConfigurationHeading"));
+        _panel.Children.Add(new TextBlock { Text = AppLocalization.Get("ConfigurationDescription"),
             TextWrapping = TextWrapping.Wrap, Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, 0, 0, 6) });
         var configButtons = new WrapPanel();
-        var export = new Button { Content = "Konfiguration exportieren …", ToolTip = "Speichert die Einstellungen und öffnet die Auswahl." };
+        var export = new Button { Content = AppLocalization.Get("ExportConfig"), ToolTip = AppLocalization.Get("ExportConfigTooltip") };
         export.Click += (_, _) => { ConfigAction = ConfigAction.Export; Save(); };
-        var import = new Button { Content = "Konfiguration importieren …", ToolTip = "Speichert die Einstellungen, zeigt vor dem Einlesen eine Vorschau und legt Sicherungen an." };
+        var import = new Button { Content = AppLocalization.Get("ImportConfig"), ToolTip = AppLocalization.Get("ImportConfigTooltip") };
         import.Click += (_, _) => { ConfigAction = ConfigAction.Import; Save(); };
         configButtons.Children.Add(export);
         configButtons.Children.Add(import);
         _panel.Children.Add(configButtons);
 
-        Heading("Tastenkürzel");
-        _panel.Children.Add(new TextBlock { Text = "Feld anklicken und Kombination drücken. Mit Ctrl oder Alt, nur F1 bis F12 gehen allein. Ctrl+B bleibt für tmux reserviert.",
+        Heading(AppLocalization.Get("ShortcutsHeading"));
+        _panel.Children.Add(new TextBlock { Text = AppLocalization.Get("ShortcutsDescription"),
             TextWrapping = TextWrapping.Wrap, Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, 0, 0, 8) });
-        _dictationShortcut = ShortcutField("Diktat starten und stoppen", dictation.Shortcut, new DictationOptions().Shortcut);
-        _copyShortcut = ShortcutField("Markierung kopieren", shortcuts.Copy, new ShortcutOptions().Copy);
-        _pasteShortcut = ShortcutField("Zwischenablage einfügen", shortcuts.Paste, new ShortcutOptions().Paste);
-        _sessionModifier = Combo("Session wechseln: Tasten plus 1 bis 9", ShortcutRules.SessionModifiers.Select(m => m + "+1 … 9"), shortcuts.SessionModifier + "+1 … 9");
+        _dictationShortcut = ShortcutField(AppLocalization.Get("DictationStartStop"), dictation.Shortcut, new DictationOptions().Shortcut);
+        _copyShortcut = ShortcutField(AppLocalization.Get("CopySelection"), shortcuts.Copy, new ShortcutOptions().Copy);
+        _pasteShortcut = ShortcutField(AppLocalization.Get("PasteClipboard"), shortcuts.Paste, new ShortcutOptions().Paste);
+        _sessionModifier = Combo(AppLocalization.Get("SessionModifier"), ShortcutRules.SessionModifiers.Select(m => m + "+1 … 9"), shortcuts.SessionModifier + "+1 … 9");
 
-        _windowModifier = Combo("tmux-Fenster der aktuellen Session: Tasten plus 0 bis 9", ShortcutRules.WindowModifiers.Select(m => m + "+0 … 9"), shortcuts.WindowModifier + "+0 … 9");
-        _windowModifier.ToolTip = "Wechselt per tmux-Befehl, ohne dass ein Zeichen im Programm ankommt. Ctrl+0 bis 9 hatten im Terminal eine seltene Altbedeutung (Ctrl+3 ist Escape); Alt+Shift vermeidet das.";
-        _nextShortcut = ShortcutField("Nächstes tmux-Fenster", shortcuts.NextWindow, new ShortcutOptions().NextWindow);
-        _previousShortcut = ShortcutField("Voriges tmux-Fenster", shortcuts.PreviousWindow, new ShortcutOptions().PreviousWindow);
-        _backShortcut = ShortcutField("Zurück zum zuletzt benutzten Fenster (auch auf einem anderen Server)", shortcuts.Back, new ShortcutOptions().Back);
-        _paletteShortcut = ShortcutField("Befehlspalette öffnen (nicht Ctrl+K: das ist in der Shell „bis Zeilenende löschen“)", shortcuts.Palette, new ShortcutOptions().Palette);
-        var favoritesButton = new Button { Content = $"Favoriten verwalten … ({_favorites.Count})", ToolTip = "tmux-Fenster mit eigenem Tastenkürzel", HorizontalAlignment = HorizontalAlignment.Left };
+        _windowModifier = Combo(AppLocalization.Get("WindowModifier"), ShortcutRules.WindowModifiers.Select(m => m + "+0 … 9"), shortcuts.WindowModifier + "+0 … 9");
+        _windowModifier.ToolTip = AppLocalization.Get("WindowModifierTooltip");
+        _nextShortcut = ShortcutField(AppLocalization.Get("NextWindow"), shortcuts.NextWindow, new ShortcutOptions().NextWindow);
+        _previousShortcut = ShortcutField(AppLocalization.Get("PreviousWindow"), shortcuts.PreviousWindow, new ShortcutOptions().PreviousWindow);
+        _backShortcut = ShortcutField(AppLocalization.Get("BackShortcut"), shortcuts.Back, new ShortcutOptions().Back);
+        _paletteShortcut = ShortcutField(AppLocalization.Get("PaletteShortcut"), shortcuts.Palette, new ShortcutOptions().Palette);
+        var favoritesButton = new Button { Content = string.Format(AppLocalization.Get("FavoritesButton"), _favorites.Count), ToolTip = AppLocalization.Get("FavoritesButtonTooltip"), HorizontalAlignment = HorizontalAlignment.Left };
         favoritesButton.Click += (_, _) =>
         {
             var dialog = new FavoritesDialog(_favorites, _original.Profiles, recentWindows ?? []) { Owner = this };
-            if (dialog.ShowDialog() == true && dialog.Result is { } result) { _favorites = result; favoritesButton.Content = $"Favoriten verwalten … ({_favorites.Count})"; }
+            if (dialog.ShowDialog() == true && dialog.Result is { } result) { _favorites = result; favoritesButton.Content = string.Format(AppLocalization.Get("FavoritesButton"), _favorites.Count); }
         };
         _panel.Children.Add(favoritesButton);
 
-        Heading("Clipboard");
-        _historyLimit = Field("Ungeheftete Einträge im Verlauf (1 bis 1000)", settings.ClipHistoryLimit.ToString());
-        _acceptOsc52 = new CheckBox { Content = "Kopieren aus Programmen übernehmen (OSC 52, z. B. Markieren in Claude Code oder tmux)", IsChecked = settings.AcceptOsc52,
-            ToolTip = "Programme in der Session können so Text in die Zwischenablage legen. Lesen der Zwischenablage ist nie möglich." };
+        Heading(AppLocalization.Get("ClipboardHeading"));
+        _historyLimit =        Field(AppLocalization.Get("HistoryLimitLabel"), settings.ClipHistoryLimit.ToString());
+        _acceptOsc52 = new CheckBox { Content = AppLocalization.Get("AcceptOsc52Label"), IsChecked = settings.AcceptOsc52,
+            ToolTip = AppLocalization.Get("AcceptOsc52Tooltip") };
         _panel.Children.Add(_acceptOsc52);
-        _copyOnSelect = new CheckBox { Content = "Markierung sofort kopieren (überall gleich: Shell, tmux, Claude Code)", IsChecked = settings.CopyOnSelect,
-            ToolTip = "Aus: Eine Markierung wird mit Rechtsklick (oder der Kopieren-Taste) in die Zwischenablage übernommen. Rechtsklick ohne Markierung fügt ein." };
+        _copyOnSelect = new CheckBox { Content = AppLocalization.Get("CopyOnSelectLabel"), IsChecked = settings.CopyOnSelect,
+            ToolTip = AppLocalization.Get("CopyOnSelectTooltip") };
         _panel.Children.Add(_copyOnSelect);
 
-        Heading("Diktat");
-        _engine = Combo("Spracherkennung (Engine)", SpeechEngineIds.All.Select(SpeechEngineIds.Label), SpeechEngineIds.Label(dictation.Engine));
-        _engine.ToolTip = "Whisper läuft lokal auf der Grafikkarte, ohne Schlüssel und ohne Dienst. Die Web Speech API und die Windows-Spracherkennung sind zum Vergleich da; sie laufen auf diesem System nur mit Einschränkungen (siehe docs/dictation-engines.md).";
-        _microphone = Combo("Mikrofon", MicrophoneNames(), dictation.Microphone is { Length: > 0 } m ? m : DefaultMicrophone);
-        _model = Combo("Modell (wird beim ersten Diktat nach Rückfrage geladen)", WhisperModels.All.Select(ModelLabel), ModelLabel(WhisperModels.Get(dictation.Model)));
-        _interimModel = Combo("Schnelles Modell für den Zwischenstand beim Sprechen", WhisperModels.All.Select(ModelLabel), ModelLabel(WhisperModels.Get(dictation.InterimModel)));
-        _language = Combo("Sprache", ["Deutsch", "Englisch", "Automatisch erkennen"], dictation.Language switch { "en" => "Englisch", "auto" => "Automatisch erkennen", _ => "Deutsch" });
-        _prompt = Field("Fachbegriffe für die Erkennung (Initial-Prompt)", dictation.InitialPrompt);
+        Heading(AppLocalization.Get("DictationHeading"));
+        _engine = Combo(AppLocalization.Get("EngineLabel"), SpeechEngineIds.All.Select(SpeechEngineIds.Label), SpeechEngineIds.Label(dictation.Engine));
+        _engine.ToolTip = AppLocalization.Get("EngineTooltip");
+        _microphone = Combo(AppLocalization.Get("MicrophoneLabel"), MicrophoneNames(), dictation.Microphone is { Length: > 0 } m ? m : DefaultMicrophone);
+        _model = Combo(AppLocalization.Get("ModelLabel"), WhisperModels.All.Select(ModelLabel), ModelLabel(WhisperModels.Get(dictation.Model)));
+        _interimModel = Combo(AppLocalization.Get("FastModelLabel"), WhisperModels.All.Select(ModelLabel), ModelLabel(WhisperModels.Get(dictation.InterimModel)));
+        _language = Combo(AppLocalization.Get("LanguageLabel"), ["Deutsch", "Englisch", "Automatisch erkennen"], dictation.Language switch { "en" => "Englisch", "auto" => "Automatisch erkennen", _ => "Deutsch" });
+        _prompt = Field(AppLocalization.Get("PromptLabel"), dictation.InitialPrompt);
         _prompt.AcceptsReturn = true; _prompt.TextWrapping = TextWrapping.Wrap; _prompt.Height = 70; _prompt.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-        _silence = Field("Stilledauer bis zum Ende der Aufnahme in Sekunden (0,5 bis 10)", dictation.SilenceSeconds.ToString(CultureInfo.CurrentCulture));
-        _pingStart = new CheckBox { Content = "Signalton, wenn das Mikrofon bereit ist (ab jetzt sprechen)", IsChecked = dictation.PingStart, Margin = new Thickness(0, 10, 0, 0) };
-        _pingEnd = new CheckBox { Content = "Signalton am Ende der Aufnahme", IsChecked = dictation.PingEnd };
+        _silence = Field(AppLocalization.Get("SilenceLabel"), dictation.SilenceSeconds.ToString(CultureInfo.CurrentCulture));
+        _pingStart = new CheckBox { Content = AppLocalization.Get("PingStartLabel"), IsChecked = dictation.PingStart, Margin = new Thickness(0, 10, 0, 0) };
+        _pingEnd = new CheckBox { Content = AppLocalization.Get("PingEndLabel"), IsChecked = dictation.PingEnd };
         _panel.Children.Add(_pingStart);
         _panel.Children.Add(_pingEnd);
-        _pingVolume = Field("Lautstärke der Signaltöne in Prozent (0 bis 100, 0 = stumm)", dictation.PingVolume.ToString(CultureInfo.CurrentCulture));
-        _prepareAtStart = new CheckBox { Content = "Spracherkennung beim Start von TerminalMgr vorbereiten (das erste Diktat startet schneller, braucht dauerhaft Speicher)", IsChecked = dictation.PrepareAtStart, Margin = new Thickness(0, 8, 0, 0) };
+        _pingVolume = Field(AppLocalization.Get("PingVolumeLabel"), dictation.PingVolume.ToString(CultureInfo.CurrentCulture));
+        _prepareAtStart = new CheckBox { Content = AppLocalization.Get("PrepareAtStartLabel"), IsChecked = dictation.PrepareAtStart, Margin = new Thickness(0, 8, 0, 0) };
         _panel.Children.Add(_prepareAtStart);
-        _threshold = Field("Pegelschwelle für Sprache (0,002 bis 0,2; Vorgabe 0,015, höher = unempfindlicher)", dictation.LevelThreshold.ToString(CultureInfo.CurrentCulture));
+        _threshold = Field(AppLocalization.Get("ThresholdLabel"), dictation.LevelThreshold.ToString(CultureInfo.CurrentCulture));
 
         _panel.Children.Add(new TextBlock {
-            Text = $"TerminalMgr {AppInfo.Version} · Einstellungen, angeheftete Clipboard-Einträge und Modelle: {AppPaths.DataDirectory()}",
+            Text = $"TerminalMgr {AppInfo.Version} · {AppLocalization.Get("ClipboardEntriesLabel")}: {AppPaths.DataDirectory()}",
             TextWrapping = TextWrapping.Wrap, Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, 18, 0, 0) });
         var buttons = new WrapPanel { Margin = new Thickness(0, 12, 0, 0) };
         _panel.Children.Add(buttons);

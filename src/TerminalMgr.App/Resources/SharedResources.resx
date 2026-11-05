@@ -64,4 +64,53 @@
 <data name="SaveButton" xml:space="preserve"><value>Save</value></data>
 <data name="CancelButton" xml:space="preserve"><value>Cancel</value></data>
 <data name="StandardButton" xml:space="preserve"><value>Standard</value></data>
+<data name="StartWithWindows" xml:space="preserve"><value>Start TerminalMgr at Windows login</value></data>
+<data name="AIProvidersDescription" xml:space="preserve"><value>Choose AI providers, source, and refresh. Available accounts, limits, and API budgets appear under the server list.</value></data>
+<data name="AIProvidersSetup" xml:space="preserve"><value>Set up AI providers …</value></data>
+<data name="CheckOnStart" xml:space="preserve"><value>Check for updates on startup</value></data>
+<data name="CheckOnStartTooltip" xml:space="preserve"><value>Anonymously queries GitHub release list; without network the app continues.</value></data>
+<data name="CheckNow" xml:space="preserve"><value>Check for updates now</value></data>
+<data name="CheckNowTooltip" xml:space="preserve"><value>Saves settings and checks for newer version immediately.</value></data>
+<data name="NoSkippedVersion" xml:space="preserve"><value>No version skipped</value></data>
+<data name="ResetSkippedVersion" xml:space="preserve"><value>Reset skipped version {0}</value></data>
+<data name="ConfigurationHeading" xml:space="preserve"><value>Configuration</value></data>
+<data name="ConfigurationDescription" xml:space="preserve"><value>Profiles, settings, pinned clipboard entries, and SSH host blocks to a .tmconfig file (optional with password) or load on another machine.</value></data>
+<data name="ExportConfig" xml:space="preserve"><value>Export configuration …</value></data>
+<data name="ExportConfigTooltip" xml:space="preserve"><value>Saves settings and opens selection.</value></data>
+<data name="ImportConfig" xml:space="preserve"><value>Import configuration …</value></data>
+<data name="ImportConfigTooltip" xml:space="preserve"><value>Saves settings, shows preview before import, and creates backups.</value></data>
+<data name="ShortcutsHeading" xml:space="preserve"><value>Shortcuts</value></data>
+<data name="ShortcutsDescription" xml:space="preserve"><value>Click field and press combination. Ctrl or Alt alone only up to F12. Ctrl+B reserved for tmux.</value></data>
+<data name="DictationStartStop" xml:space="preserve"><value>Start/stop dictation</value></data>
+<data name="CopySelection" xml:space="preserve"><value>Copy selection</value></data>
+<data name="PasteClipboard" xml:space="preserve"><value>Paste clipboard</value></data>
+<data name="SessionModifier" xml:space="preserve"><value>Session switch: keys + 1-9</value></data>
+<data name="WindowModifier" xml:space="preserve"><value>tmux window switch: keys + 0-9</value></data>
+<data name="WindowModifierTooltip" xml:space="preserve"><value>Switch via tmux command without sending a character to the program.</value></data>
+<data name="NextWindow" xml:space="preserve"><value>Next tmux window</value></data>
+<data name="PreviousWindow" xml:space="preserve"><value>Previous tmux window</value></data>
+<data name="BackShortcut" xml:space="preserve"><value>Back to last used window (also on another server)</value></data>
+<data name="PaletteShortcut" xml:space="preserve"><value>Open command palette (not Ctrl+K: shell 'delete to line end')</value></data>
+<data name="FavoritesButton" xml:space="preserve"><value>Manage favorites … ({0})</value></data>
+<data name="FavoritesButtonTooltip" xml:space="preserve"><value>tmux windows with own shortcut</value></data>
+<data name="ClipboardHeading" xml:space="preserve"><value>Clipboard</value></data>
+<data name="HistoryLimitLabel" xml:space="preserve"><value>Unpinned entries in history (1-1000)</value></data>
+<data name="AcceptOsc52Label" xml:space="preserve"><value>Accept text copied from programs (OSC 52, e.g., Claude Code or tmux)</value></data>
+<data name="AcceptOsc52Tooltip" xml:space="preserve"><value>Programs in the session can put text into the clipboard. Reading the clipboard is never possible.</value></data>
+<data name="CopyOnSelectLabel" xml:space="preserve"><value>Copy selection immediately (same everywhere: shell, tmux, Claude Code)</value></data>
+<data name="CopyOnSelectTooltip" xml:space="preserve"><value>Off: selection copied with right-click (or copy button). Right-click without selection inserts.</value></data>
+<data name="DictationHeading" xml:space="preserve"><value>Dictation</value></data>
+<data name="EngineLabel" xml:space="preserve"><value>Speech recognition (Engine)</value></data>
+<data name="EngineTooltip" xml:space="preserve"><value>Whisper runs locally on GPU, no key, no service. Web Speech API and Windows Speech Recognition are there for comparison; they run only with limitations.</value></data>
+<data name="MicrophoneLabel" xml:space="preserve"><value>Microphone</value></data>
+<data name="ModelLabel" xml:space="preserve"><value>Model (loaded on first dictation after prompt)</value></data>
+<data name="FastModelLabel" xml:space="preserve"><value>Fast model for interim state while speaking</value></data>
+<data name="PromptLabel" xml:space="preserve"><value>Terms for recognition (Initial Prompt)</value></data>
+<data name="SilenceLabel" xml:space="preserve"><value>Silence duration until recording ends in seconds (0.5-10)</value></data>
+<data name="PingStartLabel" xml:space="preserve"><value>Sound when mic ready (start speaking)</value></data>
+<data name="PingEndLabel" xml:space="preserve"><value>Sound at recording end</value></data>
+<data name="PingVolumeLabel" xml:space="preserve"><value>Signal volume in percent (0-100, 0 = mute)</value></data>
+<data name="PrepareAtStartLabel" xml:space="preserve"><value>Prepare speech recognition at TerminalMgr start</value></data>
+<data name="ThresholdLabel" xml:space="preserve"><value>Level threshold for speech (0.002-0.2; default 0.015, higher = less sensitive)</value></data>
+<data name="ClipboardEntriesLabel" xml:space="preserve"><value>Clipboard entries</value></data>
 </root>
