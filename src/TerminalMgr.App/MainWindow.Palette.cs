@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Windows;
+using TerminalMgr.App.Resources;
 using TerminalMgr.Core;
 using TerminalMgr.Windows;
 
@@ -44,8 +45,18 @@ public partial class MainWindow
 
     private object PaletteMessageItems() => BuildPaletteItems().Select(i => new
     {
-        id = i.Id, group = i.Group, title = i.Title, subtitle = i.Subtitle, shortcut = i.Shortcut, showWhenEmpty = i.ShowWhenEmpty, searchable = i.Searchable
+        id = i.Id, group = LocalizePaletteGroup(i.Group), title = i.Title, subtitle = i.Subtitle, shortcut = i.Shortcut, showWhenEmpty = i.ShowWhenEmpty, searchable = i.Searchable
     }).ToList();
+
+    private static string LocalizePaletteGroup(string group) => group switch
+    {
+        PaletteBuilder.FavoritesGroup => AppLocalization.Get("Web.GroupFavorites"),
+        PaletteBuilder.RecentGroup => AppLocalization.Get("Web.GroupRecent"),
+        PaletteBuilder.WindowsGroup => AppLocalization.Get("Web.GroupWindows"),
+        PaletteBuilder.ClipboardGroup => AppLocalization.Get("Web.GroupClipboard"),
+        PaletteBuilder.ActionsGroup => AppLocalization.Get("Web.GroupActions"),
+        _ => group
+    };
 
     private void PostPaletteItems() => Post(new { type = "paletteItems", items = PaletteMessageItems() });
 

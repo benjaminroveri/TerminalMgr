@@ -47,28 +47,64 @@
     return ranked.map(r => r.item);
   }
 
-  const groupOrder = ['Favoriten', 'Zuletzt benutzt', 'tmux-Fenster', 'Clipboard', 'Aktionen'];
+  let strings = {
+    emptyTitle:'Your servers. One workspace.',
+    emptyDescriptionFirst:'Select a profile and connect.',
+    emptyDescriptionSecond:'Or import your existing SSH config.',
+    emptyShortcut:'Ctrl+B is reserved for tmux.',
+    paletteLabel:'Command palette',
+    palettePlaceholder:'Find a window, favorite, clipboard entry, or action…',
+    paletteHelp:'↑↓ move · Enter run · Ctrl+D save as favorite · Esc close',
+    paletteNoItems:'No entries. Connect a server or add favorites.',
+    paletteNoResults:'No results.',
+    paletteNoRecent:'No favorites or recent windows yet. Type to search.',
+    paletteResultCountOne:'{0} result',
+    paletteResultCountOther:'{0} results',
+    groupFavorites:'Favorites',
+    groupRecent:'Recently used',
+    groupWindows:'tmux windows',
+    groupClipboard:'Clipboard',
+    groupActions:'Actions'
+  };
+  let groupOrder = [strings.groupFavorites, strings.groupRecent, strings.groupWindows, strings.groupClipboard, strings.groupActions];
   // Empty input: favorites and the windows used last, by group.
   function whenEmpty(items) {
     const shown = items.filter(i => i.showWhenEmpty);
     return groupOrder.flatMap(group => shown.filter(i => i.group === group)).concat(shown.filter(i => !groupOrder.includes(i.group)));
   }
 
+  function applyLocalization(values) {
+    strings = { ...strings, ...values };
+    groupOrder = [strings.groupFavorites, strings.groupRecent, strings.groupWindows, strings.groupClipboard, strings.groupActions];
+    document.documentElement.lang = values.culture || document.documentElement.lang;
+    document.getElementById('empty-title').textContent = strings.emptyTitle;
+    document.getElementById('empty-description-first').textContent = strings.emptyDescriptionFirst;
+    document.getElementById('empty-description-second').textContent = strings.emptyDescriptionSecond;
+    document.getElementById('empty-shortcut').textContent = strings.emptyShortcut;
+    if (!root) return;
+    root.querySelector('[aria-label]').setAttribute('aria-label', strings.paletteLabel);
+    input.placeholder = strings.palettePlaceholder;
+    root.querySelector('.palette-help').textContent = strings.paletteHelp;
+    if (opened) render(shown[selected]?.id);
+  }
+
+  let root = null, input = null, list = null, count = null;
   function create({ send, onClosed }) {
-    const root = document.createElement('div');
+    root = document.createElement('div');
     root.id = 'palette';
     root.hidden = true;
     root.innerHTML = `
-      <div class="palette-box" role="dialog" aria-modal="true" aria-label="Befehlspalette">
+      <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
         <input id="palette-input" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true"
-               aria-controls="palette-list" aria-autocomplete="list" placeholder="Fenster, Favorit, Clipboard oder Aktion …">
+               aria-controls="palette-list" aria-autocomplete="list" placeholder="Find a window, favorite, clipboard entry, or action…">
         <ul id="palette-list" role="listbox"></ul>
-        <div class="palette-foot"><span id="palette-count" aria-live="polite"></span><span>↑↓ wählen · Enter ausführen · Ctrl+D als Favorit · Esc schließen</span></div>
+        <div class="palette-foot"><span id="palette-count" aria-live="polite"></span><span class="palette-help">↑↓ move · Enter run · Ctrl+D save as favorite · Esc close</span></div>
       </div>`;
     document.body.append(root);
-    const input = root.querySelector('#palette-input');
-    const list = root.querySelector('#palette-list');
-    const count = root.querySelector('#palette-count');
+    input = root.querySelector('#palette-input');
+    list = root.querySelector('#palette-list');
+    count = root.querySelector('#palette-count');
+    applyLocalization(strings);
     let items = [], shown = [], selected = 0, opened = false;
 
     const isOpen = () => opened;
@@ -102,10 +138,12 @@
       if (shown.length === 0) {
         const none = document.createElement('li');
         none.className = 'palette-empty'; none.setAttribute('role', 'presentation');
-        none.textContent = items.length === 0 ? 'Keine Einträge. Server verbinden oder Favoriten anlegen.' : searching ? 'Nichts gefunden.' : 'Noch keine Favoriten oder zuletzt benutzten Fenster. Tippen zum Suchen.';
+        none.textContent = items.length === 0 ? strings.paletteNoItems : searching ? strings.paletteNoResults : strings.paletteNoRecent;
         list.append(none);
       }
-      count.textContent = shown.length ? `${shown.length} Treffer` : '';
+      count.textContent = shown.length
+        ? (shown.length === 1 ? strings.paletteResultCountOne : strings.paletteResultCountOther).replace('{0}', String(shown.length))
+        : '';
       mark();
     }
 
@@ -165,6 +203,7 @@
 
     return {
       isOpen,
+      setLocalization: applyLocalization,
       open(newItems) {
         items = newItems ?? items;
         opened = true; root.hidden = false; input.value = '';

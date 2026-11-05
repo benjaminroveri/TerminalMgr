@@ -75,7 +75,7 @@ test('Search ignores case and umlauts, needs every word, and says so when nothin
   expect(await rows(page)).toEqual(['devbox › Überwachung › 0: Protokolle']);
   await page.locator('#palette-input').fill('devbox xyz');
   expect(await rows(page)).toEqual([]);
-  await expect(page.locator('.palette-empty')).toHaveText('Nichts gefunden.');
+  await expect(page.locator('.palette-empty')).toHaveText('No results.');
 });
 
 test('Search ranks word starts first; recent windows are not found twice; letters in order are enough', async ({page}) => {
@@ -148,4 +148,44 @@ test('The host can open and close it (from a WPF control); rank() and fold() beh
   const ranked = await page.evaluate(i => window.TerminalPalette.rank(i, 'archyx').map(x => x.title), items);
   expect(ranked.slice(0, 2).sort()).toEqual(['Archyx', 'devbox › main › 2: archyx'].sort());
   expect(await page.evaluate(() => window.TerminalPalette.fold('ÄÖÜ Élan'))).toBe('aou elan');
+});
+
+test('Host localization updates the embedded UI, palette groups, labels, and result counts', async ({page}) => {
+  const strings = {
+    emptyTitle:'Tus servidores',
+    emptyDescriptionFirst:'Selecciona un perfil.',
+    emptyDescriptionSecond:'Importa SSH.',
+    emptyShortcut:'Ctrl+B para tmux.',
+    paletteLabel:'Paleta de comandos',
+    palettePlaceholder:'Buscar…',
+    paletteHelp:'Mover · ejecutar · cerrar',
+    paletteNoItems:'Sin elementos.',
+    paletteNoResults:'Sin resultados.',
+    paletteNoRecent:'Sin actividad reciente.',
+    paletteResultCountOne:'{0} resultado',
+    paletteResultCountOther:'{0} resultados',
+    groupFavorites:'Favoritos',
+    groupRecent:'Recientes',
+    groupWindows:'Ventanas tmux',
+    groupClipboard:'Portapapeles',
+    groupActions:'Acciones'
+  };
+  await page.evaluate(s => window.__hostMessage({type:'i18n', culture:'es', strings:s}), strings);
+  expect(await page.locator('#empty-title').textContent()).toBe('Tus servidores');
+  expect(await page.locator('#empty-description-second').textContent()).toBe('Importa SSH.');
+  expect(await page.locator('html').getAttribute('lang')).toBe('es');
+  const localizedGroups = { Favoriten:'Favoritos', 'Zuletzt benutzt':'Recientes', 'tmux-Fenster':'Ventanas tmux', Clipboard:'Portapapeles', Aktionen:'Acciones' };
+  await page.evaluate(({paletteItems, groups, shortcuts}) => {
+    window.__hostMessage({type:'shortcuts', shortcuts, sessionModifier:'Alt'});
+    window.__hostMessage({type:'paletteItems', items:paletteItems.map(item => ({...item, group:groups[item.group] ?? item.group}))});
+  }, {paletteItems:items, groups:localizedGroups, shortcuts:table});
+  await page.keyboard.press('Control+Shift+K');
+  await expect(page.locator('#palette')).toBeVisible();
+  await expect(page.locator('#palette-input')).toHaveAttribute('placeholder', 'Buscar…');
+  await expect(page.locator('#palette [role="dialog"]')).toHaveAttribute('aria-label', 'Paleta de comandos');
+  expect(await page.locator('#palette .palette-group').allTextContents()).toEqual(['Favoritos', 'Recientes']);
+  await page.locator('#palette-input').fill('arch');
+  await expect(page.locator('#palette-count')).toHaveText('2 resultados');
+  await page.locator('#palette-input').fill('no-match');
+  await expect(page.locator('.palette-empty')).toHaveText('Sin resultados.');
 });

@@ -1,99 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Root>
-  <data item="WindowTitle">
-    <value>TerminalMgr</value>
-  </data>
-  <data item="LoadingText">
-    <value>Terminal wird vorbereitet …</value>
-  </data>
-  <data item="SettingsTooltip">
-    <value>Fokusmodus: Seitenbereiche ausblenden</value>
-  </data>
-  <data item="ServerListTooltip">
-    <value>Server: Liste auf- und zuklappen</value>
-  </data>
-  <data item="ClipboardTooltip">
-    <value>Clipboard: rechte Spalte ein- und ausblenden</value>
-  </data>
-  <data item="DictationTooltip">
-    <value>Diktat starten (Ctrl+Y)</value>
-  </data>
-  <data item="StripTooltip">
-    <value>Fensterleiste: tmux-Fenster mit Status ein- und ausblenden</value>
-  </data>
-  <data item="ServerListTitle">
-    <value>SERVER</value>
-  </data>
-  <data item="AddProfileButton">
-    <value>+ Profil</value>
-  </data>
-  <data item="ImportProfilesButton">
-    <value>Import</value>
-  </data>
-  <data item="ConnectButton">
-    <value>Verbinden</value>
-  </data>
-  <data item="DisconnectButton">
-    <value>Trennen</value>
-  </data>
-  <data item="EditProfileButton">
-    <value>Profil …</value>
-  </data>
-  <data item="AutostartButton">
-    <value>Autostart-Profile verbinden</value>
-  </data>
-  <data item="SessionHintText">
-    <value>Alt+1 … Alt+9 · Session wechseln</value>
-  </data>
-  <data item="AiSourceLabel">
-    <value>Server auswählen oder Dieser PC über ⋯</value>
-  </data>
-  <data item="AiCollapseButton">
-    <value>⌄ KI-ABOS</value>
-  </data>
-  <data item="AiMenuButton">
-    <value>⋯</value>
-  </data>
-  <data item="AiCountText">
-    <value>0</value>
-  </data>
-  <data item="AiPanelTitle">
-    <value>KI-Anbieter, Quelle und Aktualisieren</value>
-  </data>
-  <data item="ClipboardTitle">
-    <value>CLIPBOARD</value>
-  </data>
-  <data item="ClipboardHintText">
-    <value>Doppelklick zum Einfügen</value>
-  </data>
-  <data item="PaletteButton">
-    <value>Alles finden</value>
-  </data>
-  <data item="PaletteButtonText">
-    <value>Ctrl+Shift+K alles finden</value>
-  </data>
-  <data item="DictationStatus">
-    <value>Bereit</value>
-  </data>
-  <data item="DictationTitle">
-    <value>Diktat</value>
-  </data>
-  <data item="DictationRecordButton">
-    <value>● Aufnahme</value>
-  </data>
-  <data item="DictationInsertButton">
-    <value>Einfügen ↵</value>
-  </data>
-  <data item="DictationInsertRunButton">
-    <value>+ Enter ⌃↵</value>
-  </data>
-  <data item="DictationDiscardButton">
-    <value>Esc</value>
-  </data>
-  <data item="DictationInsertText">
-    <value>Enter einfügen · Ctrl+Enter einfügen + ausführen · Shift+Enter Zeilenumbruch · Esc verwerfen</value>
-  </data>
-  <data item="EmptyStateText">
-    <value>Keine Einträge</value>
-  </data>
-</Root>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="WindowTitle" xml:space="preserve"><value>TerminalMgr</value></data>
+  <data name="LoadingTitle" xml:space="preserve"><value>Deine Server. Ein Arbeitsplatz.</value></data>
+  <data name="LoadingText" xml:space="preserve"><value>Terminal wird vorbereitet…</value></data>
+  <data name="FocusModeTooltip" xml:space="preserve"><value>Fokusmodus: Seitenbereiche ausblenden</value></data>
+  <data name="SettingsTooltip" xml:space="preserve"><value>Einstellungen</value></data>
+  <data name="ServerListTooltip" xml:space="preserve"><value>Serverliste ein- oder ausblenden</value></data>
+  <data name="ClipboardTooltip" xml:space="preserve"><value>Rechte Spalte ein- oder ausblenden</value></data>
+  <data name="DictationTooltip" xml:space="preserve"><value>Diktat starten (Ctrl+Y)</value></data>
+  <data name="DictationTooltipFormat" xml:space="preserve"><value>Diktat starten ({0})</value></data>
+  <data name="StripTooltip" xml:space="preserve"><value>tmux-Fensterleiste ein- oder ausblenden</value></data>
+  <data name="ServerListTitle" xml:space="preserve"><value>SERVER</value></data>
+  <data name="AddProfileButton" xml:space="preserve"><value>+ Profil</value></data>
+  <data name="ImportProfilesButton" xml:space="preserve"><value>Importieren</value></data>
+  <data name="ConnectButton" xml:space="preserve"><value>Verbinden</value></data>
+  <data name="DisconnectButton" xml:space="preserve"><value>Trennen</value></data>
+  <data name="EditProfileButton" xml:space="preserve"><value>Profil bearbeiten…</value></data>
+  <data name="AutostartButton" xml:space="preserve"><value>Profile beim Start verbinden</value></data>
+  <data name="SessionHintText" xml:space="preserve"><value>Alt+1 … Alt+9 · Session wechseln</value></data>
+  <data name="AiSourceLabel" xml:space="preserve"><value>Server oder Dieser PC über ⋯ auswählen</value></data>
+  <data name="AiPanelTitle" xml:space="preserve"><value>KI-Anbieter, Quelle und aktualisieren</value></data>
+  <data name="ClipboardTitle" xml:space="preserve"><value>CLIPBOARD</value></data>
+  <data name="ClipboardHintText" xml:space="preserve"><value>Doppelklicken zum Einfügen</value></data>
+  <data name="PaletteButton" xml:space="preserve"><value>Alles finden</value></data>
+  <data name="PaletteButtonText" xml:space="preserve"><value>Ctrl+Shift+K · Alles finden</value></data>
+  <data name="DictationStatus" xml:space="preserve"><value>Bereit</value></data>
+  <data name="DictationTitle" xml:space="preserve"><value>Diktat</value></data>
+  <data name="DictationRecordButton" xml:space="preserve"><value>● Aufnehmen</value></data>
+  <data name="DictationInsertButton" xml:space="preserve"><value>Einfügen ↵</value></data>
+  <data name="DictationInsertRunButton" xml:space="preserve"><value>+ Enter ⌃↵</value></data>
+  <data name="DictationDiscardButton" xml:space="preserve"><value>Esc</value></data>
+  <data name="DictationInsertText" xml:space="preserve"><value>Enter fügt ein · Ctrl+Enter fügt ein und führt aus · Shift+Enter erzeugt einen Zeilenumbruch · Esc verwirft</value></data>
+  <data name="EmptyStateText" xml:space="preserve"><value>Keine Einträge</value></data>
+  <data name="LanguageLabel" xml:space="preserve"><value>Sprache der Benutzeroberfläche</value></data>
+  <data name="LanguageRestartNotice" xml:space="preserve"><value>Spracheinstellung gespeichert. TerminalMgr neu starten, um sie anzuwenden.</value></data>
+  <data name="LanguageRestartNote" xml:space="preserve"><value>Änderungen werden nach einem Neustart von TerminalMgr wirksam.</value></data>
+  <data name="LanguageSystemDefault" xml:space="preserve"><value>Systemstandard</value></data>
+  <data name="GeneralHeading" xml:space="preserve"><value>Allgemein</value></data>
+  <data name="Web.EmptyTitle" xml:space="preserve"><value>Deine Server. Ein Arbeitsplatz.</value></data>
+  <data name="Web.EmptyDescriptionFirst" xml:space="preserve"><value>Profil auswählen und verbinden.</value></data>
+  <data name="Web.EmptyDescriptionSecond" xml:space="preserve"><value>Oder deine bestehende SSH-Config importieren.</value></data>
+  <data name="Web.EmptyShortcut" xml:space="preserve"><value>Ctrl+B bleibt tmux vorbehalten.</value></data>
+  <data name="Web.PaletteLabel" xml:space="preserve"><value>Befehlspalette</value></data>
+  <data name="Web.PalettePlaceholder" xml:space="preserve"><value>Fenster, Favorit, Clipboard-Eintrag oder Aktion suchen…</value></data>
+  <data name="Web.PaletteHelp" xml:space="preserve"><value>↑↓ bewegen · Enter ausführen · Ctrl+D als Favorit speichern · Esc schließen</value></data>
+  <data name="Web.PaletteNoItems" xml:space="preserve"><value>Keine Einträge. Server verbinden oder Favoriten anlegen.</value></data>
+  <data name="Web.PaletteNoResults" xml:space="preserve"><value>Nichts gefunden.</value></data>
+  <data name="Web.PaletteNoRecent" xml:space="preserve"><value>Noch keine Favoriten oder zuletzt benutzten Fenster. Tippen zum Suchen.</value></data>
+  <data name="Web.PaletteResultCountOne" xml:space="preserve"><value>{0} Treffer</value></data>
+  <data name="Web.PaletteResultCountOther" xml:space="preserve"><value>{0} Treffer</value></data>
+  <data name="Web.GroupFavorites" xml:space="preserve"><value>Favoriten</value></data>
+  <data name="Web.GroupRecent" xml:space="preserve"><value>Zuletzt benutzt</value></data>
+  <data name="Web.GroupWindows" xml:space="preserve"><value>tmux-Fenster</value></data>
+  <data name="Web.GroupClipboard" xml:space="preserve"><value>Clipboard</value></data>
+  <data name="Web.GroupActions" xml:space="preserve"><value>Aktionen</value></data>
+</root>

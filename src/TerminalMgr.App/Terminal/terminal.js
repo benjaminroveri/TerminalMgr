@@ -201,6 +201,9 @@
         for (const session of sessions.values()) { session.term.options.theme = xtermTheme(); session.term.options.fontFamily = monoFont(); }
         fitActive();
         break;
+      case 'i18n':
+        palette.setLocalization({ ...m.strings, culture:m.culture });
+        break;
       case 'toast': showToast(m.text ?? ''); break;
       case 'palette':
         if (m.cmd === 'open') { if (!palette.isOpen()) { palette.open(m.items ?? null); send({ type:'paletteOpened' }); } }

@@ -97,9 +97,16 @@ try
     {
         var store = new SettingsStore(Path.Combine(root, "settings"));
         var profile = new Profile { Name = "dev", Destination = "dev", AutoConnect = true, Mode = StartMode.Tmux };
-        store.Save(new() { Profiles = [profile], PinnedClips = [new("a\nb", "dev", DateTimeOffset.Now, true)], FontSize = 17 });
+        store.Save(new() { Profiles = [profile], PinnedClips = [new("a\nb", "dev", DateTimeOffset.Now, true)], FontSize = 17, UiLanguage = "es" });
         var loaded = store.Load();
-        Check(loaded.Profiles.Single() == profile && loaded.PinnedClips.Single().Text == "a\nb" && loaded.FontSize == 17, "Round-trip failed");
+        Check(loaded.Profiles.Single() == profile && loaded.PinnedClips.Single().Text == "a\nb" && loaded.FontSize == 17 && loaded.UiLanguage == "es", "Round-trip failed");
+    });
+    Test("UI language preference and culture fallback", () =>
+    {
+        Check(UiLanguage.ResolveCulture("es", "de-DE").Name == "es", "Explicit language preference was ignored");
+        Check(UiLanguage.ResolveCulture(null, "de-DE").Name == "de", "Supported Windows language was ignored");
+        Check(UiLanguage.ResolveCulture(null, "es-MX").Name == "es", "Regional culture did not fall back to its language");
+        Check(UiLanguage.ResolveCulture("fr", "it-IT").Name == "en", "Unsupported cultures must fall back to English");
     });
     Test("Corrupt settings are not silently discarded", () =>
     {

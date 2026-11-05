@@ -1,10 +1,12 @@
 using System.Collections;
+using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Threading;
 using TerminalMgr.App;
+using TerminalMgr.App.Resources;
 using TerminalMgr.Core;
 using TerminalMgr.Windows;
 
@@ -549,6 +551,42 @@ internal static class Program
         Console.WriteLine("PASS Version from Directory.Build.props reaches the title bar, the assembly and the file version: " + declared);
     }
 
+    private static void TestLocalizationCatalogs()
+    {
+        var catalogs = new[] { "en", "de", "es" }.ToDictionary(
+            culture => culture, AppLocalization.GetCatalog, StringComparer.Ordinal);
+        var keys = catalogs["en"].Keys.ToHashSet(StringComparer.Ordinal);
+        foreach (var (culture, catalog) in catalogs)
+        {
+            Check(catalog.Keys.ToHashSet(StringComparer.Ordinal).SetEquals(keys), $"Resource keys differ for {culture}");
+            foreach (var (key, value) in catalog)
+            {
+                Check(!string.IsNullOrWhiteSpace(value), $"Empty {culture} translation for {key}");
+                string[] expected = System.Text.RegularExpressions.Regex.Matches(catalogs["en"][key], @"(?<!\{)\{\d+\}(?!\})")
+                    .Select(match => match.Value).OrderBy(match => match, StringComparer.Ordinal).ToArray();
+                string[] actual = System.Text.RegularExpressions.Regex.Matches(value, @"(?<!\{)\{\d+\}(?!\})")
+                    .Select(match => match.Value).OrderBy(match => match, StringComparer.Ordinal).ToArray();
+                Check(actual.SequenceEqual(expected), $"Format placeholders differ for {culture}:{key}");
+            }
+        }
+
+        CultureInfo previous = AppLocalization.Culture;
+        try
+        {
+            foreach (var culture in new[] { "en", "de", "es" })
+            {
+                AppLocalization.SetCulture(CultureInfo.GetCultureInfo(culture));
+                Check(AppLocalization.Get("LanguageLabel") != catalogs["en"]["LanguageLabel"] || culture == "en",
+                    $"Culture {culture} did not select its resources");
+                Check(AppLocalization.GetWebStrings().Values.All(value => !string.IsNullOrWhiteSpace(value)),
+                    $"Web localization is incomplete for {culture}");
+            }
+        }
+        finally { AppLocalization.SetCulture(previous); }
+
+        Console.WriteLine("PASS i18n catalogs: matching keys, translations, placeholders and culture lookup");
+    }
+
     private static void TestShortcutKeys()
     {
         Check(ShortcutKeys.FromWpf(System.Windows.Input.Key.Y) == "Y" && ShortcutKeys.FromWpf(System.Windows.Input.Key.D7) == "7"
@@ -647,6 +685,7 @@ internal static class Program
 
             var app = new App();
             app.InitializeComponent();
+            TestLocalizationCatalogs();
             if (args.Contains("--ai-only")) { TestAiSubscriptions(); return 0; }
             if (args.Contains("--clipboard-only")) { TestClipboardCompactDesign(); TestClipboardFullText(); return 0; }
             var main = new MainWindow();

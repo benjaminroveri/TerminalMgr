@@ -111,6 +111,8 @@ public sealed record UpdateOptions
 
 public sealed record AppSettings
 {
+    /// <summary>UI language preference: null follows Windows; otherwise one of "en", "de", or "es".</summary>
+    public string? UiLanguage { get; init; }
     public UpdateOptions Update { get; init; } = new();
     public DictationOptions Dictation { get; init; } = new();
     public ShortcutOptions Shortcuts { get; init; } = new();

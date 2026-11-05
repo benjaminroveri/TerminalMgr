@@ -10,6 +10,7 @@ using System.Windows.Interop;
 using System.Windows.Threading;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Win32;
+using TerminalMgr.App.Resources;
 using TerminalMgr.Core;
 using TerminalMgr.Windows;
 
@@ -56,7 +57,7 @@ public partial class MainWindow : Window
         System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged += NetworkAvailabilityChanged;
         SystemEvents.PowerModeChanged += PowerModeChanged;
         SizeChanged += (_, _) => UpdateDictationHeight();
-        Title = "TerminalMgr " + AppInfo.Version;
+        Title = AppLocalization.WindowTitle + " " + AppInfo.Version;
         _dataDirectory = AppPaths.DataDirectory();
         _store = new SettingsStore(_dataDirectory);
         ProfilesList.ItemsSource = _profiles;
@@ -153,6 +154,7 @@ public partial class MainWindow : Window
                 case "ready":
                     _ready = true;
                     LoadingOverlay.Visibility = Visibility.Collapsed;
+                    Post(new { type = "i18n", culture = AppLocalization.Culture.Name, strings = AppLocalization.GetWebStrings() });
                     PostTheme();
                     Post(new { type = "font", size = _fontSize });
                     PostShortcuts();
@@ -811,12 +813,14 @@ public partial class MainWindow : Window
         var dialog = new SettingsDialog(_settings, RecentWindows) { Owner = this };
         dialog.AiSetupRequested += () => OpenAiSetup(dialog);
         if (dialog.ShowDialog() != true || dialog.Result is not { } result) return;
+        bool languageChanged = !string.Equals(_settings.UiLanguage, result.UiLanguage, StringComparison.OrdinalIgnoreCase);
         _settings = result;
         _clipList.MaxUnpinned = result.ClipHistoryLimit;
         PostShortcuts();
         PostTerminalSettings();
         ApplySettingsToUi();
         RenderClips(); SaveSettings();
+        if (languageChanged) StatusText.Text = AppLocalization.LanguageRestartNotice;
         if (dialog.CheckForUpdatesNow) _ = CheckForUpdatesNowAsync();
         if (dialog.ConfigAction == ConfigAction.Export) _ = ExportConfigAsync();
         else if (dialog.ConfigAction == ConfigAction.Import) _ = ImportConfigAsync();
@@ -826,7 +830,7 @@ public partial class MainWindow : Window
     private void ApplySettingsToUi()
     {
         var shortcuts = _settings.Shortcuts.Normalized();
-        DictationButton.ToolTip = "Diktat starten (" + DictationSettings.Shortcut + ")";
+        DictationButton.ToolTip = string.Format(AppLocalization.Culture, AppLocalization.Get("DictationTooltipFormat"), DictationSettings.Shortcut);
         SessionHint.Text = $"{shortcuts.SessionModifier}+1 … {shortcuts.SessionModifier}+9 · Session wechseln";
         ApplyPaletteHint();
         string? exe = Environment.ProcessPath;

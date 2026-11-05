@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using TerminalMgr.App.Resources;
 using TerminalMgr.Core;
 using TerminalMgr.Windows;
 
@@ -25,7 +26,7 @@ public sealed class SettingsDialog : Window
     public event Action? AiSetupRequested;
     private readonly TextBox _pingVolume;
     private readonly TextBox _historyLimit, _dictationShortcut, _copyShortcut, _pasteShortcut, _prompt, _silence, _threshold;
-    private readonly ComboBox _microphone, _model, _interimModel, _language, _sessionModifier, _engine, _windowModifier;
+    private readonly ComboBox _microphone, _model, _interimModel, _language, _sessionModifier, _engine, _windowModifier, _uiLanguage;
     private readonly TextBox _nextShortcut, _previousShortcut, _backShortcut, _paletteShortcut;
     private List<Favorite> _favorites;
     public AppSettings? Result { get; private set; }
@@ -41,7 +42,14 @@ public sealed class SettingsDialog : Window
         Width = 620; Height = 860; MinHeight = 420; WindowStartupLocation = WindowStartupLocation.CenterOwner;
         Content = new ScrollViewer { Content = _panel, VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
 
-        Heading("Allgemein");
+        Heading(AppLocalization.Get("GeneralHeading"));
+        _uiLanguage = Combo(AppLocalization.LanguageLabel,
+            [AppLocalization.LanguageSystemDefault, "English", "Deutsch", "Español"],
+            settings.UiLanguage switch { "en" => "English", "de" => "Deutsch", "es" => "Español", _ => AppLocalization.LanguageSystemDefault });
+        _panel.Children.Add(new TextBlock {
+            Text = AppLocalization.LanguageRestartNote, TextWrapping = TextWrapping.Wrap,
+            Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, -8, 0, 8)
+        });
         _startWithWindows = new CheckBox { Content = "TerminalMgr bei der Windows-Anmeldung starten", IsChecked = settings.StartWithWindows };
         _panel.Children.Add(_startWithWindows);
 
@@ -217,6 +225,7 @@ public sealed class SettingsDialog : Window
         { Warn("Die Lautstärke der Signaltöne muss zwischen 0 und 100 liegen."); return; }
         string microphone = (string)_microphone.SelectedItem;
         var candidate = _original with {
+            UiLanguage = _uiLanguage.SelectedIndex switch { 1 => "en", 2 => "de", 3 => "es", _ => null },
             ClipHistoryLimit = limit,
             StartWithWindows = _startWithWindows.IsChecked == true,
             AcceptOsc52 = _acceptOsc52.IsChecked == true,

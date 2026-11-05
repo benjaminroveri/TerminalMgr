@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:">
@@ -8,7 +8,7 @@
 <title>TerminalMgr Terminal</title>
 </head>
 <body>
-<div id="empty"><div class="mark">›_</div><h1>Deine Server. Ein Arbeitsplatz.</h1><p>Profil auswählen und verbinden.<br>Oder deine bestehende SSH-Config importieren.</p><small>Ctrl+B bleibt tmux vorbehalten.</small></div>
+<div id="empty"><div class="mark">›_</div><h1 id="empty-title">Your servers. One workspace.</h1><p><span id="empty-description-first">Select a profile and connect.</span><br><span id="empty-description-second">Or import your existing SSH config.</span></p><small id="empty-shortcut">Ctrl+B is reserved for tmux.</small></div>
 <div id="terminals"></div>
 <script src="vendor/xterm.js"></script><script src="vendor/addon-fit.js"></script><script src="vendor/addon-web-links.js"></script><script src="palette.js"></script><script src="terminal.js"></script>
 </body>
