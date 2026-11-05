@@ -38,7 +38,7 @@ public sealed class SettingsDialog : Window
         var dictation = settings.Dictation.Normalized();
         var shortcuts = settings.Shortcuts.Normalized();
         Style = (Style)FindResource(typeof(Window));
-        Title = "Einstellungen";
+        Title = AppLocalization.SettingsTitle;
         Width = 620; Height = 860; MinHeight = 420; WindowStartupLocation = WindowStartupLocation.CenterOwner;
         Content = new ScrollViewer { Content = _panel, VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
 
@@ -53,13 +53,13 @@ public sealed class SettingsDialog : Window
         _startWithWindows = new CheckBox { Content = "TerminalMgr bei der Windows-Anmeldung starten", IsChecked = settings.StartWithWindows };
         _panel.Children.Add(_startWithWindows);
 
-        Heading("KI-Anbieter");
+        Heading(AppLocalization.AIProvidersHeading);
         _panel.Children.Add(new TextBlock { Text = "Claude, ChatGPT/Codex und OpenRouter verbinden. Verfügbare Kontodaten, Limits und API-Budgets erscheinen unter der Serverliste.", TextWrapping = TextWrapping.Wrap });
         var aiSetup = new Button { Content = "KI-Anbieter einrichten …", HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
         aiSetup.Click += (_, _) => AiSetupRequested?.Invoke();
         _panel.Children.Add(aiSetup);
 
-        Heading("Updates");
+        Heading(AppLocalization.UpdatesHeading);
         _skippedVersion = settings.Update.SkippedVersion;
         _checkUpdates = new CheckBox { Content = "Beim Start nach neuen Versionen suchen", IsChecked = settings.Update.CheckOnStart,
             ToolTip = "Fragt anonym die öffentliche GitHub-Release-Liste ab; ohne Netz startet die App unverändert weiter." };
@@ -140,10 +140,10 @@ public sealed class SettingsDialog : Window
             TextWrapping = TextWrapping.Wrap, Foreground = Brushes.LightSlateGray, FontSize = 11, Margin = new Thickness(0, 18, 0, 0) });
         var buttons = new WrapPanel { Margin = new Thickness(0, 12, 0, 0) };
         _panel.Children.Add(buttons);
-        var save = new Button { Content = "Speichern", IsDefault = true };
+        var save = new Button { Content = AppLocalization.SaveButton, IsDefault = true };
         save.Click += (_, _) => Save();
         buttons.Children.Add(save);
-        buttons.Children.Add(new Button { Content = "Abbrechen", IsCancel = true });
+        buttons.Children.Add(new Button { Content = AppLocalization.CancelButton, IsCancel = true });
     }
 
     private void Heading(string text) => _panel.Children.Add(new TextBlock {
@@ -166,7 +166,7 @@ public sealed class SettingsDialog : Window
         void ShowHint() => hint.Text = Shortcut.TryParse(box.Text, out var s) ? ShortcutRules.TerminalHint(s) ?? "" : "";
         box.TextChanged += (_, _) => ShowHint();
         box.PreviewKeyDown += CaptureShortcut;
-        var reset = new Button { Content = "Standard", ToolTip = standard, Margin = new Thickness(6, 0, 0, 0) };
+        var reset = new Button { Content = AppLocalization.StandardButton, ToolTip = standard, Margin = new Thickness(6, 0, 0, 0) };
         reset.Click += (_, _) => box.Text = standard;
         var row = new DockPanel { LastChildFill = true };
         DockPanel.SetDock(reset, Dock.Right);

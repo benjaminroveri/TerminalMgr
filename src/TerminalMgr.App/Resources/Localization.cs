@@ -36,6 +36,12 @@ public static class AppLocalization
             StringComparer.Ordinal);
     }
 
+    public static string SettingsTitle => Get(nameof(SettingsTitle));
+    public static string AIProvidersHeading => Get(nameof(AIProvidersHeading));
+    public static string UpdatesHeading => Get(nameof(UpdatesHeading));
+    public static string SaveButton => Get(nameof(SaveButton));
+    public static string CancelButton => Get(nameof(CancelButton));
+    public static string StandardButton => Get(nameof(StandardButton));
     public static string WindowTitle => Get(nameof(WindowTitle));
     public static string LoadingTitle => Get(nameof(LoadingTitle));
     public static string LoadingText => Get(nameof(LoadingText));
