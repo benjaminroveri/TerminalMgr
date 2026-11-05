@@ -1,28 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <TargetFramework>net8.0-windows10.0.19041</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Assets\\TerminalMgr.ico</ApplicationIcon>
-    <AssemblyTitle>TerminalMgr</AssemblyTitle>
-    <AssemblyVersion>3.0.0</AssemblyVersion>
-    <AssemblyCompany>TerminalMgr</AssemblyCompany>
-    <AssemblyProduct>TerminalMgr</AssemblyProduct>
-    <AssemblyCopyright>Copyright (C) TerminalMgr</AssemblyCopyright>
-    <AssemblyTrademark>TerminalMgr</AssemblyTrademark>
+    <AssemblyTitle>TerminalMgr.App</AssemblyTitle>
+    <AssemblyVersion>0.2.0</AssemblyVersion>
+    <FileVersion>0.2.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../TerminalMgr.Windows/TerminalMgr.Windows.csproj" />
-    <!-- The updater is a separate small .NET Framework program: only built before this project, never referenced as a library. -->
-    <ProjectReference Include="../TerminalMgr.Updater/TerminalMgr.Updater.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
-    <Content Include="..\TerminalMgr.Updater\\bin\\$(Configuration)\\net48\\TerminalMgr.Updater.exe" Link="TerminalMgr.Updater.exe" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="..\TerminalMgr.Updater\\bin\\$(Configuration)\\net48\\TerminalMgr.Updater.exe.config" Link="TerminalMgr.Updater.exe.config" CopyToOutputDirectory="PreserveNewest" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4191.47" />
-    <Resource Include="Assets\\TerminalMgr.ico" />
-    <Resource Include="Assets\\TerminalMgr.png" />
-
-    <Content Include="Terminal\\**\\*\" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Integrations\\**\\*\" CopyToOutputDirectory="PreserveNewest" />
+    <Resource Include="Resources\**\*.resx" />
   </ItemGroup>
 </Project>
