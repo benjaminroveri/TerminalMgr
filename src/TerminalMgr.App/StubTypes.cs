@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+
+namespace TerminalMgr.App
+{
+    public class TmuxSessionQuery { }
+    public class ReconnectTracker { }
+    public class PtySession : IDisposable { }
+    public class SettingsStore { }
+    public interface IAiAccountSource { }
+    public class TmuxWindowRecord { }
+    public class TmuxSessionWindows { }
+    public class WindowCard { }
+    public class StripState { }
+    public class ClipboardEntry { }
+    public class ClipPreview { }
+    public class ShortcutOptions { }
+    public class Shortcut { }
+    public class NavigationPosition { }
+    public class PaletteItem { }
+    public class WindowLayout { }
+    public class WindowActivityTracker { }
+    public class WindowPoll { }
+    public class TmuxStripStream { }
+    public class UpdateCheckResult { }
+    public class UpdateRelease { }
+    public class DictationState { }
+    public class DictationOptions { }
+    public class DictationResult { }
+    public class DictationMetrics { }
+    public class ISpeechEngine { }
+    public class WhisperTranscriber { }
+    public class NavigationHistory { }
+    public class TmuxWindowRecord { }
+    public class WindowCard { }
+    public class WindowActivityTracker { }
+    public class TmuxStripStream { }
+    public class UpdateCheckResult { }
+    public class UpdateRelease { }
+    public class ClipboardList { }
+    public class AppSettings { }
+    public class TmuxSessionQuery { }
+    public class ReconnectTracker { }
+    public class PtySession : IDisposable { }
+    public class SettingsStore { }
+    public interface IAiAccountSource { }
+    public class TmuxWindowRecord { }
+    public class TmuxSessionWindows { }
+    public class WindowCard { }
+    public class StripState { }
+    public class ClipboardEntry { }
+    public class ClipPreview { }
+    public class ShortcutOptions { }
+    public class Shortcut { }
+    public class NavigationPosition { }
+    public class PaletteItem { }
+    public class WindowLayout { }
+    public class WindowActivityTracker { }
+    public class WindowPoll { }
+    public class TmuxStripStream { }
+    public class UpdateCheckResult { }
+    public class UpdateRelease { }
+    public class DictationState { }
+    public class DictationOptions { }
+    public class DictationResult { }
+    public class DictationMetrics { }
+    public class ISpeechEngine { }
+    public class WhisperTranscriber { }
+    public class NavigationHistory { }
+    public class TmuxWindowRecord { }
+    public class WindowCard { }
+    public class WindowActivityTracker { }
+    public class TmuxStripStream { }
+    public class UpdateCheckResult { }
+    public class UpdateRelease { }
+    public class ClipboardList { }
+    public class AppSettings { }
+    public class TmuxSessionQuery { }
+    public class ReconnectTracker { }
+    public class PtySession : IDisposable { }
+    public class SettingsStore { }
+    public interface IAiAccountSource { }
+    public class TmuxWindowRecord { }
+    public class TmuxSessionWindows { }
+    public class WindowCard { }
+    public class StripState { }
+    public class ClipboardEntry { }
+    public class ClipPreview { }
+    public class ShortcutOptions { }
+    public class Shortcut { }
+    public class NavigationPosition { }
+    public class PaletteItem { }
+    public class WindowLayout { }
+    public class WindowActivityTracker { }
+    public class WindowPoll { }
+    public class TmuxStripStream { }
+    public class UpdateCheckResult { }
+    public class UpdateRelease { }
+    public class DictationState { }
+    public class DictationOptions { }
+    public class DictationResult { }
+    public class DictationMetrics { }
+    public class ISpeechEngine { }
+    public class WhisperTranscriber { }
+    public class NavigationHistory { }
+}

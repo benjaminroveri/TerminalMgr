@@ -34,14 +34,14 @@ public static class ConfigCheck
         var keys = effective.GetValueOrDefault("identityfile") ?? [];
         var explicitKeys = keys.Where(k => !DefaultKeyNames.Contains(Path.GetFileName(k), StringComparer.OrdinalIgnoreCase)).ToList();
         foreach (string key in explicitKeys.Where(k => !fileExists(Expand(k))))
-            problems.Add(new(profile.Name, $"string.Format(AppLocalization.Get("ConfigCheck_35"), key)"));
+            problems.Add(new(profile.Name, string.Format(AppLocalization.Get("ConfigCheck_35"), key)));
         if (explicitKeys.Count == 0 && !keys.Any(k => fileExists(Expand(k))))
             problems.Add(new(profile.Name, AppLocalization.ConfigCheck37));
 
         bool direct = profile.Destination.Contains('@') || profile.Destination.Contains('.');
         string? host = effective.GetValueOrDefault("hostname")?.FirstOrDefault();
         if (!direct && host is not null && string.Equals(host, profile.Destination, StringComparison.OrdinalIgnoreCase))
-            problems.Add(new(profile.Name, $"string.Format(AppLocalization.Get("ConfigCheck_44"), profile.Destination)"));
+            problems.Add(new(profile.Name, string.Format(AppLocalization.Get("ConfigCheck_44"), profile.Destination)));
         return problems;
     }
 }

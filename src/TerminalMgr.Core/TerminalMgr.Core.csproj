@@ -4,6 +4,6 @@
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TerminalMgr.App\TerminalMgr.App.csproj" />
+    <ProjectReference Include="..\\TerminalMgr.App\\TerminalMgr.App.csproj" />
   </ItemGroup>
 </Project>

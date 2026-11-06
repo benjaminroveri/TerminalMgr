@@ -12,6 +12,5 @@
   <ItemGroup>
     <Compile Include="../TerminalMgr.Core/UpdateSwap.cs" Link="UpdateSwap.cs" />
     <Reference Include="System.Windows.Forms" />
-    <ProjectReference Include="..\TerminalMgr.App\TerminalMgr.App.csproj" />
   </ItemGroup>
 </Project>
