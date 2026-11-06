@@ -20,3 +20,5 @@ config.bak-*
 *.ppk
 id_*
 !id_*.md
+
+.fake
